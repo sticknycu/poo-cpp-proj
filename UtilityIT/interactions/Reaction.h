@@ -6,22 +6,9 @@
 #define UTILITYIT_REACTION_H
 
 #include <iostream>
-#include <vector>
 #include <filesystem>
 
 class Reaction {
-
-    Reaction() {
-    }
-
-    Reaction(std::filesystem location) {
-        this->location = location;
-    }
-
-    Reaction(long id, std::filesystem location) {
-        this->id = id;
-        this->location = location;
-    }
 
 private:
     long id;
@@ -29,6 +16,10 @@ private:
     std::filesystem location;
 
 public:
+
+    Reaction() {
+    }
+
     long getId() {
         return this->id;
     }

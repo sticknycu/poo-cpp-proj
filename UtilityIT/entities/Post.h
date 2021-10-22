@@ -16,6 +16,8 @@ private:
     std::string description;
     Reaction reactions[];
     Comment comments[];
+    User createdBy;
+    long creationDate;
 
 public:
     long getId() {
@@ -67,6 +69,22 @@ public:
             id++;
         }
         return comment;
+    }
+
+    User getCreatedBy() {
+        return this->createdBy;
+    }
+
+    void setCreatedBy(User user) {
+        this->createdBy = user;
+    }
+
+    long getCreationDate() {
+        return this->creationDate;
+    }
+
+    void setCreationDate(long date) {
+        this->creationDate = date;
     }
 };
 

@@ -17,6 +17,9 @@ private:
 
 public:
 
+    Comment() {
+    }
+
     long getId() {
         return this->id;
     }
