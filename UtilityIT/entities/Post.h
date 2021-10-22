@@ -8,83 +8,94 @@
 #include <iostream>
 #include "../interactions/Reaction.h"
 #include "../interactions/Comment.h"
+#include "enums/ReactionEnum.h"
+#include <vector>
 
 class Post {
 private:
     long id;
     std::string name;
     std::string description;
-    Reaction reactions[];
-    Comment comments[];
+    std::vector<ReactionEnum> reactions;
+    std::vector<Comment> comments;
     User createdBy;
     long creationDate;
 
 public:
-    long getId() {
-        return this->id;
+    Post(long id, const std::string &name, const std::string &description, Reaction *reactions, Comment *comments,
+         const User &createdBy, long creationDate) : id(id), name(name), description(description), reactions(reactions), comments(comments),
+         createdBy(createdBy), creationDate(creationDate) {
+        this->id = id;
+        this->name = name;
+        this->description = description;
+        this->reactions = reactions;
+        this->comments = comments;
+        this->createdBy = createdBy;
+        this->creationDate = creationDate;
+    }
+
+    long getId() const {
+        return id;
     }
 
     void setId(long id) {
         this->id = id;
     }
 
-    std::string getName() {
-        return this->name;
+    const std::string &getName() const {
+        return name;
     }
 
-    void setName(std::string name) {
+    void setName(const std::string &name) {
         this->name = name;
     }
 
-    std::string getDescription() {
-        return this->description;
+    const std::string &getDescription() const {
+        return description;
     }
 
-    void setDescription(std::string description) {
+    void setDescription(const std::string &description) {
         this->description = description;
     }
 
-
-    // TODO: Add reaction and comment
-
-    Reaction[] getReactions(std::string path) {
-        Reaction reaction[] = new Reaction;
-        long id = 0;
-        for (const auto &entry: std::filesystem::directory_iterator(path)) {
-            reaction->setId(id);
-            reaction->setLocation(entry.path());
-            reaction->setName(entry.path().filename());
-            id++;
-        }
-        return reaction;
+    Reaction *getReactions() const {
+        return reactions;
     }
 
-    Comment[] getComments(std::string path) {
-        Comment comment[] = new Comment;
-        long id = 0;
-        for (const auto & entry : std::filesystem::directory_iterator(path)) {
-            comment->setId(id);
-            comment->setLocation(entry.path());
-            comment->setName(entry.path().filename());
-            id++;
-        }
-        return comment;
+    void setReactions(Reaction *reactions) {
+        this->reactions = reactions;
     }
 
-    User getCreatedBy() {
-        return this->createdBy;
+    Comment *getComments() const {
+        return comments;
     }
 
-    void setCreatedBy(User user) {
-        this->createdBy = user;
+    void setComments(Comment *comments) {
+        this->comments = comments;
     }
 
-    long getCreationDate() {
-        return this->creationDate;
+    const User &getCreatedBy() const {
+        return createdBy;
     }
 
-    void setCreationDate(long date) {
-        this->creationDate = date;
+    void setCreatedBy(const User &createdBy) {
+        this->createdBy = createdBy;
+    }
+
+    long getCreationDate() const {
+        return creationDate;
+    }
+
+    void setCreationDate(long creationDate) {
+        this->creationDate = creationDate;
+    }
+
+    void setReactions1(const std::vector<ReactionEnum> &reactions) {
+        this->reactions = reactions;
+    }
+
+    void setComments1(const std::vector<Comment> &comments) {
+        this->comments = comments;
     }
 };
 

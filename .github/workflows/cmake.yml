@@ -1,0 +1,77 @@
+name: C++ CI
+
+on:
+  push:
+    branches: [master] # replace with main (if applicable)
+    tags: '*'
+  pull_request:
+    branches: [master] # replace with main (if applicable)
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    env:
+      BUILD_TYPE: release
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04]
+        cxx: [g++, clang++]
+        include:
+          - os: macos-10.15
+            cxx: clang++
+          - os: windows-2019
+            cxx: cl
+          - os: windows-2019
+            cxx: g++
+            cmake_generator: "\"MinGW Makefiles\""
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare env
+        shell: bash
+        run: |
+          echo $GITHUB_WORKSPACE/UtilityIT/
+          mkdir $GITHUB_WORKSPACE/UtilityIT/build
+          mkdir $GITHUB_WORKSPACE/UtilityIT/artifacts
+      - name: Configure CMake
+        env:
+          CXX: ${{ matrix.cxx }}
+        # Use a bash shell so we can use the same syntax for environment variable
+        # access regardless of the host operating system
+        # https://github.com/saxbophone/CPP20-Cross-Platform-Template
+        shell: bash
+        working-directory: ${{ github.workspace }}/UtilityIT/build
+        run: |
+          CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE/UtilityIT/ -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+      - name: Build
+        working-directory: ${{ github.workspace }}/UtilityIT/build
+        shell: bash
+        # Execute the build.  You can specify a specific target with "--target <NAME>"
+        run: cmake --build . --config $BUILD_TYPE
+
+      - name: Install
+        # working-directory: ${{ github.workspace }}/UtilityIT/build
+        shell: bash
+        # Use CMake to "install" build artifacts (only interested in CMake registered targets) to our custom artifacts directory
+        run: cmake --install build --config $BUILD_TYPE --prefix artifacts
+
+      - name: Set Tag Name
+        shell: bash
+        # trim prefix from ref to get tag name
+        run: echo "TAG_NAME=${GITHUB_REF#'refs/tags/'}" >> $GITHUB_ENV
+
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          type: 'zip'
+          path: artifacts
+          filename: release_${{ env.TAG_NAME }}_${{ matrix.os }}_${{ matrix.cxx }}.zip
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            release_${{ env.TAG_NAME }}_${{ matrix.os }}_${{ matrix.cxx }}.zip

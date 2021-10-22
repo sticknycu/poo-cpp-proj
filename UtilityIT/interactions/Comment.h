@@ -6,6 +6,7 @@
 #define UTILITYIT_COMMENT_H
 
 #include <iostream>
+#include <utility>
 #include "../entities/User.h"
 
 class Comment {
@@ -16,39 +17,43 @@ private:
     std::string text;
 
 public:
-
-    Comment() {
+    Comment(long id, User createdBy, long creationDate, std::string text) : id(id), createdBy(std::move(createdBy)),
+                                                                                          creationDate(creationDate),
+                                                                                          text(std::move(text)) {
+        this->id = id;
+        this->createdBy = createdBy;
+        this->text = text;
     }
 
-    long getId() {
-        return this->id;
+    long getId() const {
+        return id;
     }
 
     void setId(long id) {
         this->id = id;
     }
 
-    User getCreatedBy() {
-        return this->createdBy;
+    const User &getCreatedBy() const {
+        return createdBy;
     }
 
-    void setCreatedBy(User user) {
-        this->user = user;
+    void setCreatedBy(const User &createdBy) {
+        this->createdBy = createdBy;
     }
 
-    long getCreationDate() {
-        return this->creationDate;
+    long getCreationDate() const {
+        return creationDate;
     }
 
     void setCreationDate(long creationDate) {
         this->creationDate = creationDate;
     }
 
-    std::string getText() {
-        return this->text;
+    const std::string &getText() const {
+        return text;
     }
 
-    void setText(std::string text) {
+    void setText(const std::string &text) {
         this->text = text;
     }
 };
