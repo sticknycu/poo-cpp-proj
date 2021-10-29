@@ -1,0 +1,23 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Prerequisites\n*.d\n\n# Compiled Object files\n*.slo\n*.lo\n*.o\n*.obj\n\n# Precompiled Headers\n*.gch\n*.pch\n\n# Compiled Dynamic libraries\n*.so\n*.dylib\n*.dll\n\n# Fortran module files\n*.mod\n*.smod\n\n# Compiled Static libraries\n*.lai\n*.la\n*.a\n*.lib\n\n# IDEA\n.idea\n\n# CMake debug\ncmake-build-debug\n\n# Executables\n*.exe\n*.out\n*.app\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision e5a53088bc1ba84006b0a8309392f72738ec0ffa)
++++ b/.gitignore	(date 1635520523562)
+@@ -27,10 +27,10 @@
+ *.lib
+ 
+ # IDEA
+-.idea
++.idea/*
+ 
+ # CMake debug
+-cmake-build-debug
++cmake-build-debug/*
+ 
+ # Executables
+ *.exe
