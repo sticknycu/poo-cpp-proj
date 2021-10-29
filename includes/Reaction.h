@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/21/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_REACTION_H
 #define UTILITYIT_REACTION_H

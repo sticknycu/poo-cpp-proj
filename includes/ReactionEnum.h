@@ -1,6 +1,7 @@
 //
 // Created by nycuro on 10/22/21.
 //
+#pragma once
 
 #ifndef UTILITYIT_REACTIONENUM_H
 #define UTILITYIT_REACTIONENUM_H

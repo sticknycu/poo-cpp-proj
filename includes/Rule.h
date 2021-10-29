@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/22/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_RULE_H
 #define UTILITYIT_RULE_H

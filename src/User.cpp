@@ -6,7 +6,7 @@
 
 // Implementarea constructorului de initializare
 User::User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
-           const int &cnp, const std::string &sex, const long &birthdayDate, const Profile &userProfile) {
+           const int &cnp, const std::string &sex, const long &birthdayDate, Profile* &userProfile) {
     std::cout << "[DEBUG] Apelare constructor User.h";
     this->email = email;
     this->password = password;

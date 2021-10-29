@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/22/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_PROFILE_H
 #define UTILITYIT_PROFILE_H
@@ -11,11 +12,15 @@
 #include "User.h"
 #include "Group.h"
 
-class Profile: User {
+class Post;
+class Group;
+class User;
+
+class Profile {
 private:
-    std::vector<Post> posts;
-    std::vector<Group> groups;
-    std::vector<User> followers;
+    std::vector<Post*> posts;
+    std::vector<Group*> groups;
+    std::vector<User*> followers;
     std::vector<std::string> studies;
     std::vector<std::string> livingPlaces;
     /*std::vector<std::string> otherNames;
@@ -38,7 +43,7 @@ public:
     Profile() =default;
 
     // constructor de initializare
-    Profile(const std::vector<Post> &posts, const std::vector<Group> &groups, const std::vector<User> &followers,
+    Profile(const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
          const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces);
 
     // destructor

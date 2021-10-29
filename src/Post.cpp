@@ -5,8 +5,8 @@
 #include "../includes/Post.h"
 
 // Implementarea constructorului de initializare
-Post::Post(const long &id, const std::string &name, const std::string &description, const std::vector<ReactionEnum> &reactions,
-           const std::vector<Comment> &comments, const User &createdBy, const long &creationDate) {
+Post::Post(const long &id, const std::string &name, const std::string &description, const std::vector<ReactionEnum*> &reactions,
+           const std::vector<Comment*> &comments, User* createdBy, const long &creationDate) {
     std::cout << "[DEBUG] Apelare constructor Post.h";
     this->id = id;
     this->name = name;

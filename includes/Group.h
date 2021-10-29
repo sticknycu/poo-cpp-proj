@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/22/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_GROUP_H
 #define UTILITYIT_GROUP_H
@@ -9,7 +10,10 @@
 #include "Rule.h"
 #include "Post.h"
 #include "User.h"
-#include <vector>
+
+class Rule;
+class Post;
+class User;
 
 class Group {
 

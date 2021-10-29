@@ -5,7 +5,7 @@
 #include "../includes/Profile.h"
 
 // Implementarea constructorului de initializare
-Profile::Profile(const std::vector<Post> &posts, const std::vector<Group> &groups, const std::vector<User> &followers,
+Profile::Profile(const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
                  const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces) {
     std::cout << "[DEBUG] Apelare constructor Profile.h";
     this->posts = posts;

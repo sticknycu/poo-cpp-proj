@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/21/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_USER_H
 #define UTILITYIT_USER_H
@@ -8,6 +9,8 @@
 #include <iostream>
 #include <utility>
 #include "Profile.h"
+
+class Profile;
 
 class User {
 
@@ -19,7 +22,7 @@ private:
     int cnp;
     std::string sex;
     long birthdayDate;
-    Profile userProfile;
+    Profile *userProfile;
 
 public:
     // constructor default
@@ -27,7 +30,7 @@ public:
 
     // constructor de initializare
     User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
-         const int &cnp, const std::string &sex, const long &birthdayDate, const Profile &userProfile);
+         const int &cnp, const std::string &sex, const long &birthdayDate, Profile* &userProfile);
 
     // destructor
     ~User();

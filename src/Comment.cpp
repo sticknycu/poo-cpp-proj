@@ -5,7 +5,7 @@
 #include "../includes/Comment.h"
 
 // Implementarea constructorului de initializare
-Comment::Comment(const long &id, const User &createdBy, const long &creationDate, const std::string &text) {
+Comment::Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text) {
     std::cout << "[DEBUG] Apelare constructor Comment.h";
     this->id = id;
     this->createdBy = createdBy;

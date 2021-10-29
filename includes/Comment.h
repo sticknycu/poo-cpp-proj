@@ -1,6 +1,7 @@
 //
 // Created by NicolaeMarius.Ghergu on 10/21/2021.
 //
+#pragma once
 
 #ifndef UTILITYIT_COMMENT_H
 #define UTILITYIT_COMMENT_H
@@ -8,10 +9,12 @@
 #include <iostream>
 #include "User.h"
 
+class User;
+
 class Comment {
 private:
     long id;
-    User createdBy;
+    User *createdBy;
     long creationDate;
     std::string text;
 
@@ -21,7 +24,7 @@ public:
     Comment() =default;
 
     // constructor de initializare
-    Comment(const long &id, const User &createdBy, const long &creationDate, const std::string &text);
+    Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text);
 
     // destructor
     ~Comment();
