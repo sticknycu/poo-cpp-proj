@@ -18,6 +18,7 @@ class User;
 
 class Profile {
 private:
+    long profileId;
     std::vector<Post*> posts;
     std::vector<Group*> groups;
     std::vector<User*> followers;
@@ -43,7 +44,7 @@ public:
     Profile() =default;
 
     // constructor de initializare
-    Profile(const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
+    Profile(const long &profileId, const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
          const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces);
 
     // destructor

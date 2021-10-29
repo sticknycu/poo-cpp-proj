@@ -7,7 +7,7 @@
 // Implementarea constructorului de initializare
 Event::Event(const std::string &name, const std::string &description, const long &timestamp, const long &duration,
       const std::vector<User> &peopleInvited, const std::vector<User> &peopleJoined, const std::vector<User> &peopleInterested) {
-    std::cout << "[DEBUG] Apelare constructor Event.h";
+    std::cout << "[DEBUG] Apelare constructor Event.h" << std::endl;
     this->name = name;
     this->description = description;
     this->timestamp = timestamp;
@@ -19,12 +19,12 @@ Event::Event(const std::string &name, const std::string &description, const long
 
 // Implementarea destructorului
 Event::~Event() {
-    std::cout << "[DEBUG] Apelare destructor Event.h";
+    std::cout << "[DEBUG] Apelare destructor Event.h" << std::endl;
 }
 
 // Implementarea constructorului de copiere
 Event::Event(const Event &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Event.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Event.h" << std::endl;
     this->name = copie.name;
     this->description = copie.description;
     this->timestamp = copie.timestamp;
@@ -36,7 +36,7 @@ Event::Event(const Event &copie) {
 
 // Implementarea operatorului =
 Event &Event::operator=(const Event &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Event.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Event.h" << std::endl;
     this->name = copie.name;
     this->description = copie.description;
     this->timestamp = copie.timestamp;

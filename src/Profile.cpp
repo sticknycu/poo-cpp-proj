@@ -5,9 +5,10 @@
 #include "../includes/Profile.h"
 
 // Implementarea constructorului de initializare
-Profile::Profile(const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
+Profile::Profile(const long &profileId, const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
                  const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces) {
-    std::cout << "[DEBUG] Apelare constructor Profile.h";
+    std::cout << "[DEBUG] Apelare constructor Profile.h" << std::endl;
+    this->profileId = profileId;
     this->posts = posts;
     this->groups = groups;
     this->followers = followers;
@@ -17,12 +18,13 @@ Profile::Profile(const std::vector<Post*> &posts, const std::vector<Group*> &gro
 
 // Implementarea destructorului
 Profile::~Profile() {
-    std::cout << "[DEBUG] Apelare destructor Profile.h";
+    std::cout << "[DEBUG] Apelare destructor Profile.h" << std::endl;
 }
 
 // Implementarea constructorului de copiere
 Profile::Profile(const Profile &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Profile.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Profile.h" << std::endl;
+    this->profileId = copie.profileId;
     this->posts = copie.posts;
     this->groups = copie.groups;
     this->followers = copie.followers;
@@ -32,7 +34,8 @@ Profile::Profile(const Profile &copie) {
 
 // Implementarea operatorului =
 Profile &Profile::operator=(const Profile &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Profile.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Profile.h" << std::endl;
+    this->profileId = copie.profileId;
     this->posts = copie.posts;
     this->groups = copie.groups;
     this->followers = copie.followers;

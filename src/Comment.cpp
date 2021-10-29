@@ -6,7 +6,7 @@
 
 // Implementarea constructorului de initializare
 Comment::Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text) {
-    std::cout << "[DEBUG] Apelare constructor Comment.h";
+    std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
     this->createdBy = createdBy;
     this->creationDate = creationDate;
@@ -15,12 +15,12 @@ Comment::Comment(const long &id, User *createdBy, const long &creationDate, cons
 
 // Implementarea destructorului
 Comment::~Comment() {
-    std::cout << "[DEBUG] Apelare destructor Comment.h";
+    std::cout << "[DEBUG] Apelare destructor Comment.h" << std::endl;
 }
 
 // Implementarea constructorului de copiere
 Comment::Comment(const Comment &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Comment.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Comment.h" << std::endl;
     this->id = copie.id;
     this->text = copie.text;
     this->creationDate = copie.creationDate;
@@ -29,7 +29,7 @@ Comment::Comment(const Comment &copie) {
 
 // Implementarea operatorului =
 Comment &Comment::operator=(const Comment &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Comment.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Comment.h" << std::endl;
     this->id = copie.id;
     this->text = copie.text;
     this->creationDate = copie.creationDate;

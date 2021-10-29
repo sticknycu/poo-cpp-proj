@@ -38,22 +38,22 @@ public:
             auto reactionEnumCast = static_cast<ReactionEnum>(i);
             switch (reactionEnumCast) {
                 case ReactionEnum::LIKE:
-                    stringName = "Like";
+                    stringName = "Like" << std::endl;
                     break;
                 case ReactionEnum::DISLIKE:
-                    stringName = "Dislike";
+                    stringName = "Dislike" << std::endl;
                     break;
                 case ReactionEnum::LOVE:
-                    stringName = "Love";
+                    stringName = "Love" << std::endl;
                     break;
                 case ReactionEnum::SAD:
-                    stringName = "Sad";
+                    stringName = "Sad" << std::endl;
                     break;
                 case ReactionEnum::CRY:
-                    stringName = "Cry";
+                    stringName = "Cry" << std::endl;
                     break;
                 case ReactionEnum::NERVOUS:
-                    stringName = "Nervous";
+                    stringName = "Nervous" << std::endl;
                     break;
                 case ReactionEnum::LAST_REACTION:
                     break;

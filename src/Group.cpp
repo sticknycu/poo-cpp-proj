@@ -7,7 +7,7 @@
 // Implementarea constructorului de initializare
 Group::Group(const std::string &description, const std::vector<Rule> &rules, const std::vector<Post> &posts,
               const std::vector<User> &peopleJoined, const std::vector<User> &peopleRequestedToJoin) {
-    std::cout << "[DEBUG] Apelare constructor Group.h";
+    std::cout << "[DEBUG] Apelare constructor Group.h" << std::endl;
     this->description = description;
     this->rules = rules;
     this->posts = posts;
@@ -17,12 +17,12 @@ Group::Group(const std::string &description, const std::vector<Rule> &rules, con
 
 // Implementarea destructorului
 Group::~Group() {
-    std::cout << "[DEBUG] Apelare destructor Group.h";
+    std::cout << "[DEBUG] Apelare destructor Group.h" << std::endl;
 }
 
 // Implementarea constructorului de copiere
 Group::Group(const Group &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Group.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Group.h" << std::endl;
     this->description = copie.description;
     this->rules = copie.rules;
     this->posts = copie.posts;
@@ -32,7 +32,7 @@ Group::Group(const Group &copie) {
 
 // Implementarea operatorului =
 Group &Group::operator=(const Group &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Group.h";
+    std::cout << "[DEBUG] Apelare constructor de copiere Group.h" << std::endl;
     this->description = copie.description;
     this->rules = copie.rules;
     this->posts = copie.posts;

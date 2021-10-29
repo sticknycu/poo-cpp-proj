@@ -39,6 +39,12 @@ public:
     User(const User& copie);
 
     User& operator=(const User& copie);
+
+    std::string& getEmail();
+
+    void setEmail(std::string &email);
+
+    static bool checkUserAvailability(const User& user);
 };
 
 
