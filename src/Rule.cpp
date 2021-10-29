@@ -1,0 +1,33 @@
+//
+// Created by nycuro on 10/30/21.
+//
+
+#include "../includes/Rule.h"
+
+// Implementarea constructorului de initializare
+Rule::Rule(const long &id, const std::string &text) {
+    std::cout << "[DEBUG] Apelare constructor Rule.h";
+    this->id = id;
+    this->text = text;
+}
+
+// Implementarea destructorului
+Rule::~Rule() {
+    std::cout << "[DEBUG] Apelare destructor Rule.h";
+}
+
+// Implementarea constructorului de copiere
+Rule::Rule(const Rule &copie) {
+    std::cout << "[DEBUG] Apelare constructor de copiere Rule.h";
+    this->id = copie.id;
+    this->text = copie.text;
+}
+
+// Implementarea operatorului =
+Rule &Rule::operator=(const Rule &copie) {
+    std::cout << "[DEBUG] Apelare constructor de copiere Rule.h";
+    this->id = copie.id;
+    this->text = copie.text;
+    return *this;
+}
+

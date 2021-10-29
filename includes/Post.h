@@ -28,7 +28,7 @@ public:
 
     // constructor de initializare
     Post(const long &id, const std::string &name, const std::string &description, const std::vector<ReactionEnum> &reactions,
-         const std::vector<Comment> &comments, const User &user, const long &creationDate);
+         const std::vector<Comment> &comments, const User &createdBy, const long &creationDate);
 
     // destructor
     ~Post();

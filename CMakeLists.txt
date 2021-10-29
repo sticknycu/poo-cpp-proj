@@ -8,6 +8,12 @@ add_executable(UtilityIT
 
         src/Comment.cpp
         src/Event.cpp
+        src/Group.cpp
+        src/Post.cpp
+        src/Profile.cpp
+        src/Reaction.cpp
+        src/Rule.cpp
+        src/User.cpp
 
         includes/User.h
         includes/Post.h

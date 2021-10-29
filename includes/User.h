@@ -12,12 +12,11 @@
 class User {
 
 private:
-    std::string username;
-    std::string password;
-    std::string firstName;
-    std::string lastName;
-    int cnp;
     std::string email;
+    std::string password;
+    std::string firstname;
+    std::string lastname;
+    int cnp;
     std::string sex;
     long birthdayDate;
     Profile userProfile;
@@ -27,8 +26,8 @@ public:
     User() =default;
 
     // constructor de initializare
-    User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
-         const int &cnp, const std::string &email, const std::string &sex, const long &birthdayDate, const Profile &userProfile);
+    User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
+         const int &cnp, const std::string &sex, const long &birthdayDate, const Profile &userProfile);
 
     // destructor
     ~User();
