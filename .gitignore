@@ -28,6 +28,7 @@
 
 # IDEA
 .idea/*
+cmake-build-debug/*
 
 # CMake debug
 UtilityIT/cmake-build-debug/*
