@@ -5,16 +5,20 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(UtilityIT
         main.cpp
-        entities/User.h
-        entities/Post.h
 
-        interactions/Reaction.h
-        interactions/Comment.h
+        src/Comment.cpp
+        src/Event.cpp
 
-        entities/Profile.h
-        entities/Event.h
-        entities/Group.h
-        entities/Rule.h
+        includes/User.h
+        includes/Post.h
 
-        entities/enums/ReactionEnum.h
+        includes/Reaction.h
+        includes/Comment.h
+
+        includes/Profile.h
+        includes/Event.h
+        includes/Group.h
+        includes/Rule.h
+
+        includes/ReactionEnum.h
         )

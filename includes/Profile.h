@@ -13,8 +13,7 @@
 
 class Profile: public User {
 private:
-    User userProfile;
-    std::vector<Post> posts{};
+    std::vector<Post> posts;
     std::vector<std::string> workList;
     std::vector<std::string> studies;
     std::vector<std::string> livingPlaces;
@@ -34,7 +33,7 @@ private:
     std::vector<User> followers;
 
 public:
-    Profile(User userProfile, std::vector<Post> posts, std::vector<std::string> workList,
+    Profile(std::vector<Post> posts, std::vector<std::string> workList,
             std::vector<std::string> studies, std::vector<std::string> livingPlaces,
             std::vector<std::string> otherNames, std::vector<std::string> relationship,
             std::vector<std::string> family, std::vector<std::string> interests,
@@ -42,14 +41,13 @@ public:
             std::vector<std::string> visits, std::vector<std::string> games,
             std::vector<std::string> pagesLiked, std::vector<User> usersFollowed,
             std::vector<std::string> events, long creationDate, std::vector<Group> groups,
-            std::vector<User> followers) : userProfile(std::move(userProfile)), posts(std::move(posts)), workList(std::move(workList)),
+            std::vector<User> followers) : posts(std::move(posts)), workList(std::move(workList)),
                                                   studies(std::move(studies)), livingPlaces(std::move(livingPlaces)), otherNames(std::move(otherNames)),
                                                   relationship(std::move(relationship)), family(std::move(family)), interests(std::move(interests)),
                                                   religion(std::move(religion)), policyOrientation(std::move(policyOrientation)),
                                                   visits(std::move(visits)), games(std::move(games)), pagesLiked(std::move(pagesLiked)),
                                                   usersFollowed(std::move(usersFollowed)), events(std::move(events)),
                                                   creationDate(creationDate), groups(std::move(groups)), followers(std::move(followers)) {
-        this->userProfile = userProfile;
         this->posts = posts;
         this->workList = workList;
         this->studies = studies;
@@ -68,14 +66,6 @@ public:
         this->creationDate = creationDate;
         this->groups = groups;
         this->followers = followers;
-    }
-
-    const User &getUserProfile() const {
-        return userProfile;
-    }
-
-    void setUserProfile(const User &userProfile) {
-        this->userProfile = userProfile;
     }
 
     const std::vector<Post> &getPosts() const {

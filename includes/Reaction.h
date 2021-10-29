@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <filesystem>
-#include "../entities/enums/ReactionEnum.h"
+#include "ReactionEnum.h"
 
 class Reaction {
 
@@ -16,23 +16,24 @@ private:
     std::string name;
 
 public:
-    Reaction(long id, const std::string &name) : id(id), name(name) {
-        this->id = id;
-        this->name = name;
-    }
+    // constructor default
+    Reaction() =default;
 
-    long getId() const {
-        return id;
-    }
+    // constructor de initializare
+    Reaction(const long &id, const std::string &name);
 
-    void setId(long id) {
-        this->id = id;
-    }
+    // destructor
+    ~Reaction();
 
-    std::string &getName() {
+    // constructor de copiere
+    Reaction(const Reaction& copie);
+
+    Reaction& operator=(const Reaction& copie);
+
+    /*std::string &getName() {
         std::string stringName;
-        ReactionEnum reactionEnum = new ReactionEnum;
-        for (int i = ReactionEnum; i != ReactionEnum::LAST_REACTION; i++) {
+        ReactionEnum reactionEnum;
+        for (auto i = ReactionEnum::LIKE; i != ReactionEnum::LAST_REACTION; i++) {
             auto reactionEnumCast = static_cast<ReactionEnum>(i);
             switch (reactionEnumCast) {
                 case ReactionEnum::LIKE:
@@ -57,8 +58,8 @@ public:
                     break;
             }
         }
-        return &stringName; // ?? reference ??
-    }
+        return stringName; // ?? reference ??
+    }*/
 };
 
 
