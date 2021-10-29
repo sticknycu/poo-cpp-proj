@@ -1,3 +1,0 @@
-/home/nycuro/CLionProjects/poo-cpp-proj/UtilityIT/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/nycuro/CLionProjects/poo-cpp-proj/UtilityIT/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/nycuro/CLionProjects/poo-cpp-proj/UtilityIT/cmake-build-debug/CMakeFiles/UtilityIT.dir
