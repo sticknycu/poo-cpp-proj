@@ -14,7 +14,7 @@
 class Profile: public User {
 private:
     User userProfile;
-    std::vector<Post> posts{};
+    std::vector<Post> posts;
     std::vector<std::string> workList;
     std::vector<std::string> studies;
     std::vector<std::string> livingPlaces;

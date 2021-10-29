@@ -32,7 +32,7 @@ public:
         this->duration = duration;
         this->peopleInvited = peopleInvited;
         this->peopleJoined = peopleJoined;
-        this->peopleInvited = peopleInterested;
+        this->peopleInterested = peopleInterested;
     }
 
     const std::string &getName() const {

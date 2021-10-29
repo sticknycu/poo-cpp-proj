@@ -55,7 +55,7 @@ jobs:
         # working-directory: ${{ github.workspace }}/UtilityIT/build
         shell: bash
         # Use CMake to "install" build artifacts (only interested in CMake registered targets) to our custom artifacts directory
-        run: cmake --install build --config $BUILD_TYPE --prefix artifacts
+        run: cmake --install UtilityIT/build --config $BUILD_TYPE --prefix artifacts
 
       - name: Set Tag Name
         shell: bash
