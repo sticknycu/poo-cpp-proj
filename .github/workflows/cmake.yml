@@ -33,7 +33,7 @@ jobs:
         shell: bash
         run: |
           echo $GITHUB_WORKSPACE/UtilityIT/
-          mkdir $GITHUB_WORKSPACE/UtilityIT/build
+          mkdir $GITHUB_WORKSPACE/build
           mkdir $GITHUB_WORKSPACE/UtilityIT/artifacts
       - name: Configure CMake
         env:
@@ -42,17 +42,17 @@ jobs:
         # access regardless of the host operating system
         # https://github.com/saxbophone/CPP20-Cross-Platform-Template
         shell: bash
-        working-directory: ${{ github.workspace }}/UtilityIT/build
+        working-directory: ${{ github.workspace }}/build
         run: |
           CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE/UtilityIT/ -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
       - name: Build
-        working-directory: ${{ github.workspace }}/UtilityIT/build
+        working-directory: ${{ github.workspace }}/build
         shell: bash
         # Execute the build.  You can specify a specific target with "--target <NAME>"
         run: cmake --build . --config $BUILD_TYPE
 
       - name: Install
-        # working-directory: ${{ github.workspace }}/UtilityIT/build
+        # working-directory: ${{ github.workspace }}/build
         shell: bash
         # Use CMake to "install" build artifacts (only interested in CMake registered targets) to our custom artifacts directory
         run: cmake --install build --config $BUILD_TYPE --prefix artifacts
