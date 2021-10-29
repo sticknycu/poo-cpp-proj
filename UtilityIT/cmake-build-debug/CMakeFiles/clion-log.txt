@@ -1,4 +1,0 @@
-/app/extra/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/nycuro/CLionProjects/poo-cpp-proj/UtilityIT
--- Configuring done
--- Generating done
--- Build files have been written to: /home/nycuro/CLionProjects/poo-cpp-proj/UtilityIT/cmake-build-debug
