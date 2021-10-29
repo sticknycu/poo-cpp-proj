@@ -27,10 +27,11 @@
 *.lib
 
 # IDEA
-.idea
+.idea/*
 
 # CMake debug
-cmake-build-debug
+UtilityIT/cmake-build-debug/*
+
 
 # Executables
 *.exe
