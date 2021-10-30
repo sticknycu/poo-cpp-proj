@@ -26,9 +26,6 @@ public:
     // operatorul =
     Utils& operator=(const Utils& copie);
 
-    // operatorul <<
-    friend std::ostream &operator<<(std::ostream &os, const Utils &utils);
-
     // Implementarea pentru a face split al unui string.
     static std::vector<std::string> explodeString(std::string &text);
 
