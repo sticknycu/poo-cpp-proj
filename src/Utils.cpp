@@ -30,9 +30,8 @@ Utils &Utils::operator=(const Utils &copie) {
 }
 
 // Implementarea pentru a face split unui string.
-std::vector<std::string> Utils::explodeString(std::string &text) {
+std::vector<std::string> Utils::explodeString(std::string &text, char delimiter) {
     std::vector<std::string> words{};
-    char delimiter = '|';
 
     std::istringstream sstream(text);
     std::string word;
@@ -46,16 +45,8 @@ std::vector<std::string> Utils::explodeString(std::string &text) {
 
 // Functia pentru a salva datele in fisier
 void Utils::handleRegister(User &user) {
-    std::ifstream readableOnly;
     std::ofstream file;
     std::string empty;
-
-    readableOnly.open("accounts.txt", std::ios::in);
-
-    int i = 1;
-    while (getline(readableOnly, empty)) {
-        i++;
-    }
 
     std::string username = user.getUsername();
     std::string password = user.getPassword();
@@ -63,15 +54,13 @@ void Utils::handleRegister(User &user) {
     std::string lastname = user.getLastname();
     std::string cnp = std::to_string(user.getCNP());
     std::string sex = user.getSex();
-    std::string id = std::to_string(i);
 
     std::string data = username
             .append("|").append(password)
             .append("|").append(firstname)
             .append("|").append(lastname)
             .append("|").append(cnp)
-            .append("|").append(sex)
-            .append("|").append(id);
+            .append("|").append(sex);
 
     file.open("accounts.txt", std::ios::out | std::ios::app);
 
@@ -165,10 +154,10 @@ User Utils::configurateUser(User &user) {
     std::string text;
     std::cout << "Facem acest lucru deoarece trebuie sa respectam legislatia in vigoare." << std::endl;
     std::cout << "Astfel, spune-ne care este prenumele tau:" << std::endl;
-    std::cin >> text;
+    text = handleInput(text);
     user.setFirstname(text);
     std::cout << "Ne-ar interesa si care este numele tau de familie:" << std::endl;
-    std::cin >> text;
+    text = handleInput(text);
     user.setLastname(text);
     std::cout << "Spune-ne te rog si CNP-ul tau:" << std::endl;
     std::cin >> text;
@@ -183,7 +172,26 @@ User Utils::configurateUser(User &user) {
 }
 
 Profile Utils::configureProfile(User &user) {
+    std::cout << "Ne bucuram ca iti doresti sa iti configurezi profilul. De aceea, te rugam sa ne spui urmatoarele informatii:" << std::endl;
     Profile profile;
+    profile.setId(user.getCNP());
+    std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+
+    std::string valuableStringForStudies;
+    std::string valuableStringForLivingPlaces;
+
+    std::string valuableString;
+    valuableString = handleInput(valuableString);
+    valuableStringForStudies = valuableString;
+    std::vector<std::string> studies = Utils::explodeString(valuableString, ',');
+    profile.setStudies(studies);
+    std::cout << "Unde locuiesti si unde ai locuit pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+    valuableString = handleInput(valuableString);
+    valuableStringForLivingPlaces = valuableString;
+    std::vector<std::string> livingPlaces = Utils::explodeString(valuableString, ',');
+    profile.setLivingPlaces(livingPlaces);
+    // functie care salveaza informatiile in fisier.
+    std::cout << "Ai configurat profilul cu succes!" << std::endl;
     return profile;
 }
 
@@ -195,16 +203,9 @@ void Utils::navigatePlatform(User &user) {
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
     std::cout << "Foloseste comanda respectiva!" << std::endl;
-    std::string inputString;
-    for(;;) {
-        std::cin >> inputString;
 
-        if (!inputString.empty()) {
-            break;
-        } else if (std::cin.fail()) {
-            std::cin.clear(); // unset failbit
-        }
-    }
+    std::string inputString;
+    inputString = handleInput(inputString);
     if (inputString == "/createPost") {
         //TODO : Create post
     } else if (inputString == "/enterGroup") {
@@ -213,10 +214,24 @@ void Utils::navigatePlatform(User &user) {
         //TODO: Access event
     } else if (inputString == "/profile") {
         configureProfile(user);
+        navigatePlatform(user);
     } else if (inputString == "/exit") {
         std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
     } else {
         std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
         navigatePlatform(user);
     }
+}
+
+std::string Utils::handleInput(std::string &text) {
+    for(;;) {
+        getline(std::cin, text);
+
+        if (!text.empty()) {
+            break;
+        } else if (std::cin.fail()) {
+            std::cin.clear(); // unset failbit
+        }
+    }
+    return text;
 }

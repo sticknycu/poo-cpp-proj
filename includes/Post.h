@@ -18,7 +18,6 @@ class User;
 class Post {
 private:
     long id;
-    std::string name;
     std::string description;
     std::vector<ReactionEnum*> reactions;
     std::vector<Comment*> comments;
@@ -30,7 +29,7 @@ public:
     Post() =default;
 
     // constructor de initializare
-    Post(const long &id, const std::string &name, const std::string &description, const std::vector<ReactionEnum*> &reactions,
+    Post(const long &id, const std::string &description, const std::vector<ReactionEnum*> &reactions,
          const std::vector<Comment*> &comments, User* createdBy, const long &creationDate);
 
     // destructor

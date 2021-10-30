@@ -1,19 +1,8 @@
-nghergu17|pooproject|Nicolae Marius|Ghergu|5000000000000|M|1
-nghergu14|pooproject|Nicolae Marius|Ghergu|5000000000001|M|2
-nghergu13|pa55|Marius|Ghergu|5000000000002|M|3
-nghergu12|pa22|Nicolae|Marius|5000000000003|M|4
-nghergu11|pa77|Nicolae|Marius|500000000003|F|5
-nghergu10|pa99|Nicolae|Ghergu|500000000004|F|6
-nghergu20|poo|Nicolae|Ghergu|500000000001|F|7
-ngher1|pa55|nicolae|ghergu|501|F|8
-n11|paa5|nicolae|ghergu|555|F|9
-kaka|doi|dap|e|5|F|10
-sal|cf|sallll|cfff|555|F|11
-salutare|cefaci|salutareee|cefaciii|5|F|12
-user123|user123|useruser|userda|5|F|13
-userman|usermanman|usermanman|usermanman|5|F|14
-bambam|bambumbam|bambambam|bambam|5|F|15
-salutcfmai|salsal|dasalut|estitare|6|F|16
-numastiu|cudastea|off|da|7|F|17
-haifrt|mergiodata|salut|da|9|F|18
-tepup|estitare|prpenumeda|familieda|6|F|19
+nghergu17|pooproject|Nicolae Marius|Ghergu|5000000000000|M
+nghergu14|pooproject|Nicolae Marius|Ghergu|5000000000001|M
+nghergu13|pa55|Marius|Ghergu|5000000000002|M
+nghergu12|pa22|Nicolae|Marius|5000000000003|M
+nghergu11|pa77|Nicolae|Marius|500000000004|F
+nghergu10|pa99|Nicolae|Ghergu|500000000005|F
+nghergu20|poo|Nicolae|Ghergu|500000000006|F
+ngher1|pa55|nicolae|ghergu|501|F

@@ -18,6 +18,7 @@ class User;
 class Group {
 
 private:
+    std::string name;
     std::string description;
     std::vector<Rule> rules;
     std::vector<Post> posts;
@@ -29,7 +30,7 @@ public:
     Group() =default;
 
     // constructor de initializare
-    Group(const std::string &description, const std::vector<Rule> &rules, const std::vector<Post> &posts,
+    Group(const std::string &name, const std::string &description, const std::vector<Rule> &rules, const std::vector<Post> &posts,
           const std::vector<User> &peopleJoined, const std::vector<User> &peopleRequestedToJoin);
 
     // destructor

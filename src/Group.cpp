@@ -5,9 +5,10 @@
 #include "../includes/Group.h"
 
 // Implementarea constructorului de initializare
-Group::Group(const std::string &description, const std::vector<Rule> &rules, const std::vector<Post> &posts,
+Group::Group(const std::string &name, const std::string &description, const std::vector<Rule> &rules, const std::vector<Post> &posts,
               const std::vector<User> &peopleJoined, const std::vector<User> &peopleRequestedToJoin) {
     std::cout << "[DEBUG] Apelare constructor Group.h" << std::endl;
+    this->name = name;
     this->description = description;
     this->rules = rules;
     this->posts = posts;
@@ -23,6 +24,7 @@ Group::~Group() {
 // Implementarea constructorului de copiere
 Group::Group(const Group &copie) {
     std::cout << "[DEBUG] Apelare constructor de copiere Group.h" << std::endl;
+    this->name = copie.name;
     this->description = copie.description;
     this->rules = copie.rules;
     this->posts = copie.posts;
@@ -33,6 +35,7 @@ Group::Group(const Group &copie) {
 // Implementarea operatorului =
 Group &Group::operator=(const Group &copie) {
     std::cout << "[DEBUG] Apelare operator = Group.h" << std::endl;
+    this->name = copie.name;
     this->description = copie.description;
     this->rules = copie.rules;
     this->posts = copie.posts;
@@ -44,6 +47,7 @@ Group &Group::operator=(const Group &copie) {
 // Implementarea operatorului <<
 std::ostream &operator<<(std::ostream &os, const Group &group) {
     std::cout << "[DEBUG] Apelare operator << Group.h" << std::endl;
+    os << std::endl << group.name;
     os << std::endl << group.description;
     for (const auto &rule : group.rules) {
         os << std::endl << rule;

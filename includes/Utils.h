@@ -27,7 +27,7 @@ public:
     Utils& operator=(const Utils& copie);
 
     // Implementarea pentru a face split al unui string.
-    static std::vector<std::string> explodeString(std::string &text);
+    static std::vector<std::string> explodeString(std::string &text, char delimiter);
 
     // inregistrarea utilizatorului
     static void registerUser();
@@ -46,6 +46,9 @@ public:
 
     // Handle register for users. Function for save user information to file.
     static void handleRegister(User &user);
+
+    // Handle string when is shit and don't want to
+    static std::string handleInput(std::string &text);
 
 
 };

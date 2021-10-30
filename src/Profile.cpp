@@ -65,3 +65,63 @@ std::ostream &operator<<(std::ostream &os, const Profile &profile) {
     }
     return os;
 }
+
+// Getter pentru campul "profileId"
+long &Profile::getId() {
+    return this->profileId;
+}
+
+// Setter pentru campul "profileId"
+void Profile::setId(const long &id) {
+    this->profileId = id;
+}
+
+// Getter pentru campul "posts"
+std::vector<Post*> Profile::getPosts() {
+    return this->posts;
+}
+
+// Setter pentru campul "posts
+void Profile::setPosts(std::vector<Post*> &posts) {
+    this->posts = posts;
+}
+
+// Getter pentru campul "groups"
+std::vector<Group*> Profile::getGroups() {
+    return this->groups;
+}
+
+// Setter pentru campul "groups"
+void Profile::setGroups(const std::vector<Group*> &groups) {
+    this->groups = groups;
+}
+
+// Getter pentru campul "followers"
+std::vector<User*> &Profile::getFollowers() {
+    return this->followers;
+}
+
+// Setter pentru campul "followers"
+void Profile::setFollowers(const std::vector<User*> &followers) {
+    this->followers = followers;
+}
+
+// Getter pentru campul "studies"
+std::vector<std::string> &Profile::getStudies() {
+    return this->studies;
+}
+
+// Setter pentru campul "studies"
+void Profile::setStudies(const std::vector<std::string> &studies) {
+    this->studies = studies;
+}
+
+// Getter pentru campul "livingPlaces"
+std::vector<std::string> &Profile::getLivingPlaces() {
+    return this->livingPlaces;
+}
+
+// Setter pentru campul "livingPlaces"
+void Profile::setLivingPlaces(const std::vector<std::string> &livingPlaces) {
+    this->livingPlaces = livingPlaces;
+}

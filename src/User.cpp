@@ -130,7 +130,7 @@ bool User::checkUserAvailability(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::explodeString(data);
+        std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
         for (const auto &word : wordsExploded) {
             if (user.getUsername() == word) {
                 file.close();
@@ -151,7 +151,7 @@ User User::getUserInformationFromDatabase(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::explodeString(data);
+        std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
         if (user.getUsername() == wordsExploded.at(0)) {
             user.setPassword(wordsExploded.at(1));
             user.setFirstname(wordsExploded.at(2));
