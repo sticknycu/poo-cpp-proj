@@ -28,7 +28,7 @@ Utils &Utils::operator=(const Utils &copie) {
     return *this;
 }
 
-// Implementarea pentru a face split al unui string.
+// Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::explodeString(std::string &text) {
     std::vector<std::string> words{};
     char delimiter = '|';
