@@ -15,13 +15,12 @@ class Profile;
 class User {
 
 private:
-    std::string email;
+    std::string username;
     std::string password;
     std::string firstname;
     std::string lastname;
     int cnp;
     std::string sex;
-    long birthdayDate;
     Profile *userProfile;
 
 public:
@@ -29,8 +28,8 @@ public:
     User() =default;
 
     // constructor de initializare
-    User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
-         const int &cnp, const std::string &sex, const long &birthdayDate, Profile* &userProfile);
+    User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
+         const int &cnp, const std::string &sex, Profile* &userProfile);
 
     // destructor
     ~User();
@@ -40,11 +39,33 @@ public:
 
     User& operator=(const User& copie);
 
-    std::string& getEmail();
+    std::string& getUsername();
 
-    void setEmail(std::string &email);
+    void setUsername(std::string &text);
 
-    static bool checkUserAvailability(const User& user);
+    std::string& getPassword();
+
+    void setPassword(std::string &text);
+
+    std::string& getFirstname();
+
+    void setFirstname(std::string &text);
+
+    std::string& getLastname();
+
+    void setLastname(std::string &text);
+
+    int& getCNP();
+
+    void setCNP(const int &text);
+
+    std::string& getSex();
+
+    void setSex(std::string &text);
+
+    static bool checkUserAvailability(User &user);
+
+    static User getUserInformationFromDatabase(User &user);
 };
 
 

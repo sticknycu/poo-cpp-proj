@@ -7,16 +7,15 @@
 #include "../includes/Utils.h"
 
 // Implementarea constructorului de initializare
-User::User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
-           const int &cnp, const std::string &sex, const long &birthdayDate, Profile* &userProfile) {
+User::User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
+           const int &cnp, const std::string &sex, Profile* &userProfile) {
     std::cout << "[DEBUG] Apelare constructor User.h" << std::endl;
-    this->email = email;
+    this->username = username;
     this->password = password;
     this->firstname = firstname;
     this->lastname = lastname;
     this->cnp = cnp;
     this->sex = sex;
-    this->birthdayDate = birthdayDate;
     this->userProfile = userProfile;
 }
 
@@ -28,42 +27,90 @@ User::~User() {
 // Implementarea constructorului de copiere
 User::User(const User &copie) {
     std::cout << "[DEBUG] Apelare constructor de copiere User.h" << std::endl;
-    this->email = copie.email;
+    this->username = copie.username;
     this->password = copie.password;
     this->firstname = copie.firstname;
     this->lastname = copie.lastname;
     this->cnp = copie.cnp;
     this->sex = copie.sex;
-    this->birthdayDate = copie.birthdayDate;
     this->userProfile = copie.userProfile;
 }
 
 // Implementarea operatorului =
 User &User::operator=(const User &copie) {
     std::cout << "[DEBUG] Apelare constructor de copiere User.h" << std::endl;
-    this->email = copie.email;
+    this->username = copie.username;
     this->password = copie.password;
     this->firstname = copie.firstname;
     this->lastname = copie.lastname;
     this->cnp = copie.cnp;
     this->sex = copie.sex;
-    this->birthdayDate = copie.birthdayDate;
     this->userProfile = copie.userProfile;
     return *this;
 }
 
-// Getter pentru campul "email"
-std::string& User::getEmail() {
-    return this->email;
+// Getter pentru campul "username"
+std::string& User::getUsername() {
+    return this->username;
 }
 
-// Setter pentru campul "email"
-void User::setEmail(std::string &userEmail) {
-    this->email = userEmail;
+// Setter pentru campul "username"
+void User::setUsername(std::string &text) {
+    this->username = text;
+}
+
+// Getter pentru campul "password"
+std::string& User::getPassword() {
+    return this->password;
+}
+
+// Setter pentru campul "password"
+void User::setPassword(std::string &text) {
+    this->password = text;
+}
+
+// Getter pentru campul "firstname"
+std::string& User::getFirstname() {
+    return this->firstname;
+}
+
+// Setter pentru campul "firstname"
+void User::setFirstname(std::string &text) {
+    this->firstname = text;
+}
+
+// Getter pentru campul "lastname"
+std::string& User::getLastname() {
+    return this->firstname;
+}
+
+// Setter pentru campul "lastname"
+void User::setLastname(std::string &text) {
+    this->lastname = text;
+}
+
+// Getter pentru campul "cnp"
+int& User::getCNP() {
+    return this->cnp;
+}
+
+// Setter pentru campul "cnp"
+void User::setCNP(const int &text) {
+    this->cnp = text;
+}
+
+// Getter pentru campul "sex"
+std::string& User::getSex() {
+    return this->sex;
+}
+
+// Setter pentru campul "sex"
+void User::setSex(std::string &text) {
+    this->sex = text;
 }
 
 // Implementarea de la userAvailability (verific daca user-ul exista)
-bool User::checkUserAvailability(const User &user) {
+bool User::checkUserAvailability(User &user) {
     std::ifstream file;
     std::string data;
 
@@ -72,7 +119,7 @@ bool User::checkUserAvailability(const User &user) {
     while (std::getline(file, data)) {
         std::vector<std::string> wordsExploded = Utils::explodeString(data);
         for (const auto &word : wordsExploded) {
-            if (user.email == word) {
+            if (user.getUsername() == word) {
                 file.close();
                 return true;
             }
@@ -82,5 +129,27 @@ bool User::checkUserAvailability(const User &user) {
     file.close();
 
     return false;
+}
+
+User User::getUserInformationFromDatabase(User &user) {
+    std::ifstream file;
+    std::string data;
+
+    file.open("accounts.txt");
+
+    while (std::getline(file, data)) {
+        std::vector<std::string> wordsExploded = Utils::explodeString(data);
+        if (user.getUsername() == wordsExploded.at(0)) {
+            user.setPassword(wordsExploded.at(1));
+            user.setFirstname(wordsExploded.at(2));
+            user.setLastname(wordsExploded.at(3));
+            user.setCNP(reinterpret_cast<const int &>(wordsExploded.at(4)));
+            user.setSex(wordsExploded.at(5));
+        }
+    }
+
+    file.close();
+
+    return user;
 }
 
