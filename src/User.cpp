@@ -81,7 +81,7 @@ void User::setFirstname(std::string &text) {
 
 // Getter pentru campul "lastname"
 std::string& User::getLastname() {
-    return this->firstname;
+    return this->lastname;
 }
 
 // Setter pentru campul "lastname"

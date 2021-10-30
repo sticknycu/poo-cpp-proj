@@ -3,10 +3,10 @@
 //
 
 #include "../includes/Utils.h"
-#include "../includes/Profile.h"
 #include <vector>
 #include <iostream>
 #include <sstream>
+#include <fstream>
 
 // Implementarea constructorului de initializare
 Utils::Utils() {
@@ -43,6 +43,43 @@ std::vector<std::string> Utils::explodeString(std::string &text) {
 
     return words;
 }
+
+// Functia pentru a salva datele in fisier
+void Utils::handleRegister(User &user) {
+    std::ifstream readableOnly;
+    std::ofstream file;
+    std::string empty;
+
+    readableOnly.open("accounts.txt", std::ios::in);
+
+    int i = 1;
+    while (getline(readableOnly, empty)) {
+        i++;
+    }
+
+    std::string username = user.getUsername();
+    std::string password = user.getPassword();
+    std::string firstname = user.getFirstname();
+    std::string lastname = user.getLastname();
+    std::string cnp = std::to_string(user.getCNP());
+    std::string sex = user.getSex();
+    std::string id = std::to_string(i);
+
+    std::string data = username
+            .append("|").append(password)
+            .append("|").append(firstname)
+            .append("|").append(lastname)
+            .append("|").append(cnp)
+            .append("|").append(sex)
+            .append("|").append(id);
+
+    file.open("accounts.txt", std::ios::out | std::ios::app);
+
+    file << std::endl << data;
+
+    file.close();
+}
+
 
 // Implementarea pentru register
 User Utils::registerUser() {
@@ -134,10 +171,14 @@ User Utils::configurateUser(User &user) {
     std::cin >> text;
     user.setLastname(text);
     std::cout << "Spune-ne te rog si CNP-ul tau:" << std::endl;
+    std::cin >> text;
+    user.setCNP(std::stol(text));
     // TODO: verify age
     std::cout << "Ultimul pas este despre sexul tau, te rog sa ni-l comunici:" << std::endl;
     std::cin >> text;
+    text = std::toupper(text[0]);
     user.setSex(text);
+    handleRegister(user);
     return user;
 }
 

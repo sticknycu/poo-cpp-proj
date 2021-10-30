@@ -44,6 +44,9 @@ public:
     // Navigarea pe plaforma
     static void navigatePlatform(User &user);
 
+    // Handle register for users. Function for save user information to file.
+    static void handleRegister(User &user);
+
 
 };
 
