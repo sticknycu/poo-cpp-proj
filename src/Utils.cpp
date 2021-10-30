@@ -43,7 +43,7 @@ std::vector<std::string> Utils::explodeString(std::string &text, char delimiter)
     return words;
 }
 
-// Functia pentru a salva datele in fisier
+// Functia pentru a salva datele utilizatorului in fisier
 void Utils::handleRegister(User &user) {
     std::ofstream file;
     std::string empty;
@@ -67,6 +67,89 @@ void Utils::handleRegister(User &user) {
     file << std::endl << data;
 
     file.close();
+}
+
+// Functia pentru a salva profilele in fisier
+void Utils::handleProfile(Profile &profile) {
+    std::ofstream file;
+    std::string empty;
+
+    manageExistanceProfileData(profile);
+
+    std::string id = std::to_string(profile.getId());
+
+    std::string stringPosts;
+    std::vector<Post*> posts = profile.getPosts();
+    for (auto post : posts) {
+        if (stringPosts.empty()) {
+            stringPosts.append(std::to_string(post->getId()));
+        } else {
+            stringPosts = stringPosts
+                    .append((new std::string())->assign(1, ','))
+                    .append(std::to_string(post->getId()));
+        }
+    }
+
+    std::string stringGroups;
+    std::vector<Group*> groups = profile.getGroups();
+    for (auto group : groups) {
+        if (stringGroups.empty()) {
+            stringGroups.append(group->getName());
+        } else {
+            stringGroups = stringGroups
+                    .append((new std::string())->assign(1, ','))
+                    .append(group->getName());
+        }
+    }
+
+    std::string stringFollowers;
+    std::vector<User*> followers = profile.getFollowers();
+    for (auto follower : followers) {
+        if (stringFollowers.empty()) {
+            stringFollowers.append(follower->getUsername());
+        } else {
+            stringFollowers = stringFollowers
+                    .append((new std::string())->assign(1, ','))
+                    .append(follower->getUsername());
+        }
+    }
+
+    std::string stringStudies;
+    std::vector<std::string> studies = profile.getStudies();
+    for (const auto& study : studies) {
+        if (stringStudies.empty()) {
+            stringStudies = stringStudies.append(study);
+        } else {
+            stringStudies = stringStudies
+                    .append((new std::string())->assign(1, ','))
+                    .append(study);
+        }
+    }
+
+    std::string stringLivingPlaces;
+    std::vector<std::string> livingPlaces = profile.getLivingPlaces();
+    for (const auto& livingPlace : livingPlaces) {
+        if (stringLivingPlaces.empty()) {
+            stringLivingPlaces.append(livingPlace);
+        } else {
+            stringLivingPlaces = stringLivingPlaces
+                    .append((new std::string())->assign(1, ','))
+                    .append(livingPlace);
+        }
+    }
+
+    std::string data = id
+            .append("|").append(stringPosts)
+            .append("|").append(stringGroups)
+            .append("|").append(stringFollowers)
+            .append("|").append(stringStudies)
+            .append("|").append(stringLivingPlaces);
+
+    //file.open("profiles.txt", std::ios::out | std::ios::app);
+
+    //file << std::endl << data;
+
+    //file.close();
 }
 
 
@@ -177,20 +260,19 @@ Profile Utils::configureProfile(User &user) {
     profile.setId(user.getCNP());
     std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
 
-    std::string valuableStringForStudies;
-    std::string valuableStringForLivingPlaces;
-
     std::string valuableString;
     valuableString = handleInput(valuableString);
-    valuableStringForStudies = valuableString;
+
     std::vector<std::string> studies = Utils::explodeString(valuableString, ',');
     profile.setStudies(studies);
     std::cout << "Unde locuiesti si unde ai locuit pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+
     valuableString = handleInput(valuableString);
-    valuableStringForLivingPlaces = valuableString;
     std::vector<std::string> livingPlaces = Utils::explodeString(valuableString, ',');
     profile.setLivingPlaces(livingPlaces);
-    // functie care salveaza informatiile in fisier.
+
+    handleProfile(profile);
+
     std::cout << "Ai configurat profilul cu succes!" << std::endl;
     return profile;
 }
@@ -234,4 +316,38 @@ std::string Utils::handleInput(std::string &text) {
         }
     }
     return text;
+}
+
+void Utils::manageExistanceProfileData(Profile &profile) {
+    std::ifstream oldFile;
+    std::ofstream newFile;
+    std::string data;
+
+    oldFile.open("profiles.txt");
+
+    bool exist = false;
+    while (std::getline(oldFile, data)) {
+        std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
+        if (wordsExploded.at(0) == std::to_string(profile.getId())) {
+            exist = true;
+            break;
+        }
+    }
+
+
+    data = "";
+    if (exist) {
+        newFile.open("profilesNew.txt", std::ios::out | std::ios::app);
+        while (std::getline(oldFile, data)) {
+            std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
+            if (wordsExploded.at(0) != std::to_string(profile.getId())) {
+                newFile << data << std::endl;
+            }
+        }
+    }
+
+    oldFile.close();
+    newFile.close();
+    remove("profiles.txt");
+    rename("profilesNew.txt", "profiles.txt");
 }

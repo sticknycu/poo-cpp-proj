@@ -43,6 +43,10 @@ public:
 
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Group &group);
+
+    std::string &getName();
+
+    void setName(const std::string &name);
 };
 
 #endif //UTILITYIT_GROUP_H

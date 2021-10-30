@@ -43,6 +43,10 @@ public:
 
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Post &post);
+
+    long &getId();
+
+    void setId(const long &id);
 };
 
 

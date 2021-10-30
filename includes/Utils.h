@@ -47,10 +47,14 @@ public:
     // Handle register for users. Function for save user information to file.
     static void handleRegister(User &user);
 
+    // Handle profile for users. Function for save profile information to file.
+    static void handleProfile(Profile &profile);
+
     // Handle string when is shit and don't want to
     static std::string handleInput(std::string &text);
 
-
+    // Handle data to be removed if that exists already in file when profile is updated
+    static void manageExistanceProfileData(Profile &profile);
 };
 
 #endif //UTILITYIT_UTILS_H

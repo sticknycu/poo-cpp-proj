@@ -58,3 +58,11 @@ std::ostream &operator<<(std::ostream &os, const Post &post) {
     os << std::endl << post.creationDate;
     return os;
 }
+
+long &Post::getId() {
+    return this->id;
+}
+
+void Post::setId(const long &id) {
+    this->id = id;
+}

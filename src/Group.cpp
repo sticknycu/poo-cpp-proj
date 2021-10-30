@@ -63,3 +63,13 @@ std::ostream &operator<<(std::ostream &os, const Group &group) {
     }
     return os;
 }
+
+// Getter pentru campul "name"
+std::string &Group::getName() {
+    return this->name;
+}
+
+// Setter pentru campul "name"
+void Group::setName(const std::string &name) {
+    this->name = name;
+}
