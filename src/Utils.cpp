@@ -76,6 +76,7 @@ User Utils::registerUser() {
     return user;
 }
 
+// Implementarea pentru login
 void Utils::loginUser() {
     std::string username;
     std::cout << "Deci ai deja un cont. Te rugam sa introduci numele de utilizator:" << std::endl;

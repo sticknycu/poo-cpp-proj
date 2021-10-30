@@ -19,7 +19,7 @@ private:
     std::string password;
     std::string firstname;
     std::string lastname;
-    int cnp;
+    long cnp;
     std::string sex;
     Profile *userProfile;
 
@@ -55,9 +55,9 @@ public:
 
     void setLastname(std::string &text);
 
-    int& getCNP();
+    long& getCNP();
 
-    void setCNP(const int &text);
+    void setCNP(const long &text);
 
     std::string& getSex();
 

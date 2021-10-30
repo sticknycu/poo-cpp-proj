@@ -90,12 +90,12 @@ void User::setLastname(std::string &text) {
 }
 
 // Getter pentru campul "cnp"
-int& User::getCNP() {
+long& User::getCNP() {
     return this->cnp;
 }
 
 // Setter pentru campul "cnp"
-void User::setCNP(const int &text) {
+void User::setCNP(const long &text) {
     this->cnp = text;
 }
 
@@ -143,7 +143,7 @@ User User::getUserInformationFromDatabase(User &user) {
             user.setPassword(wordsExploded.at(1));
             user.setFirstname(wordsExploded.at(2));
             user.setLastname(wordsExploded.at(3));
-            user.setCNP(reinterpret_cast<const int &>(wordsExploded.at(4)));
+            user.setCNP(std::stol(wordsExploded.at(4)));
             user.setSex(wordsExploded.at(5));
         }
     }
