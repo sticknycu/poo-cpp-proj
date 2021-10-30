@@ -30,7 +30,7 @@ public:
     static std::vector<std::string> explodeString(std::string &text);
 
     // inregistrarea utilizatorului
-    static User registerUser();
+    static void registerUser();
 
     // logarea utilizatorului
     static void loginUser();

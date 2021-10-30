@@ -82,7 +82,7 @@ void Utils::handleRegister(User &user) {
 
 
 // Implementarea pentru register
-User Utils::registerUser() {
+void Utils::registerUser() {
     std::string username;
     std::cout << "Deci nu ai un cont. Te rugam sa introduci numele de utilizator dorit." << std::endl;
     std::cin >> username;
@@ -90,7 +90,7 @@ User Utils::registerUser() {
     user.setUsername(username);
     bool availabilityUser = User::checkUserAvailability(user);
     if (availabilityUser) {
-        std::cout << "Se pare ca ai cont, deci putem sa cream alt cont cu acelasi nume de utilizator." << std::endl;
+        std::cout << "Se pare ca ai cont, deci nu putem sa cream alt cont cu acelasi nume de utilizator." << std::endl;
         std::cout << "Te rugam sa revi cu alt nume de utilizator" << std::endl;
     } else {
         std::string password;
@@ -99,7 +99,7 @@ User Utils::registerUser() {
         std::cin >> password;
         user.setPassword(password);
         std::cout << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine." << std::endl;
-        configurateUser(user);
+        user = configurateUser(user);
         std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra" << std::endl;
         std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false." << std::endl;
         bool booleanValue;
@@ -107,10 +107,10 @@ User Utils::registerUser() {
         if (booleanValue) {
             configureProfile(user);
         } else {
-            std::cout << "Am inteles, totul este in regula, poti naviga si fara profil. Ce doresti sa faci in momentul de fata?" << std::endl;
+            std::cout << "Am inteles, totul este in regula, poti naviga si fara profil." << std::endl;
+            navigatePlatform(user);
         }
     }
-    return user;
 }
 
 // Implementarea pentru login
@@ -190,22 +190,30 @@ Profile Utils::configureProfile(User &user) {
 void Utils::navigatePlatform(User &user) {
     std::cout << "Acum ca doresti sa navighezi pe platforma, ai o multime de posibilitati." << std::endl;
     std::cout << "Poti crea o postare folosind /createPost" << std::endl;
-    std::cout << "Poti intra inr-un grup folosind /enterGroup" << std::endl;
+    std::cout << "Poti intra intr-un grup folosind /enterGroup" << std::endl;
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
     std::cout << "Foloseste comanda respectiva!" << std::endl;
-    std::string input;
-    std::cin >> input;
-    if (input == "/createPost") {
+    std::string inputString;
+    for(;;) {
+        std::cin >> inputString;
+
+        if (!inputString.empty()) {
+            break;
+        } else if (std::cin.fail()) {
+            std::cin.clear(); // unset failbit
+        }
+    }
+    if (inputString == "/createPost") {
         //TODO : Create post
-    } else if (input == "/enterGroup") {
+    } else if (inputString == "/enterGroup") {
         //TODO: Enter group
-    } else if (input == "/accessEvent") {
+    } else if (inputString == "/accessEvent") {
         //TODO: Access event
-    } else if (input == "/profile") {
+    } else if (inputString == "/profile") {
         configureProfile(user);
-    } else if (input == "/exit") {
+    } else if (inputString == "/exit") {
         std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
     } else {
         std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
