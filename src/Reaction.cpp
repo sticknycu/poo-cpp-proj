@@ -5,10 +5,10 @@
 #include "../includes/Reaction.h"
 
 // Implementarea constructorului de initializare
-Reaction::Reaction(const long &id, const std::string &name) {
+Reaction::Reaction(const long &id, ReactionEnum *reactionType) {
     std::cout << "[DEBUG] Apelare constructor Reaction.h" << std::endl;
     this->id = id;
-    this->name = name;
+    this->reactionType = reactionType;
 }
 
 // Implementarea destructorului
@@ -20,14 +20,14 @@ Reaction::~Reaction() {
 Reaction::Reaction(const Reaction &copie) {
     std::cout << "[DEBUG] Apelare constructor de copiere Reaction.h" << std::endl;
     this->id = copie.id;
-    this->name = copie.name;
+    this->reactionType = copie.reactionType;
 }
 
 // Implementarea operatorului =
 Reaction &Reaction::operator=(const Reaction &copie) {
     std::cout << "[DEBUG] Apelare operator = Reaction.h" << std::endl;
     this->id = copie.id;
-    this->name = copie.name;
+    this->reactionType = copie.reactionType;
     return *this;
 }
 
@@ -35,7 +35,7 @@ Reaction &Reaction::operator=(const Reaction &copie) {
 std::ostream &operator<<(std::ostream &os, const Reaction &reaction) {
     std::cout << "[DEBUG] Apelare operator << Reaction.h" << std::endl;
     os << std::endl << reaction.id;
-    os << std::endl << reaction.name;
+    os << std::endl << reaction.reactionType;
     return os;
 }
 

@@ -60,4 +60,5 @@ std::ostream &operator<<(std::ostream &os, const Post &post) {
     }
     os << std::endl << post.createdBy;
     os << std::endl << post.creationDate;
+    return os;
 }

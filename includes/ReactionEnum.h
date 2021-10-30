@@ -6,14 +6,17 @@
 #ifndef UTILITYIT_REACTIONENUM_H
 #define UTILITYIT_REACTIONENUM_H
 
+#include <ostream>
+
 enum class ReactionEnum {
     LIKE,
     DISLIKE,
     LOVE,
     SAD,
     CRY,
-    NERVOUS,
-    LAST_REACTION
+    NERVOUS
 };
+
+std::ostream &operator<<(std::ostream &os, ReactionEnum reactionType);
 
 #endif //UTILITYIT_REACTIONENUM_H

@@ -15,6 +15,7 @@ add_executable(UtilityIT
         src/Rule.cpp
         src/User.cpp
         src/Utils.cpp
+        src/ReactionEnum.cpp
 
         includes/User.h
         includes/Post.h
