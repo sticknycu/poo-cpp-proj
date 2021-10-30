@@ -27,7 +27,11 @@ public:
     // constructor de copiere
     Rule(const Rule& copie);
 
+    // operatorul =
     Rule& operator=(const Rule& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Rule &rule);
 };
 
 #endif //UTILITYIT_RULE_H

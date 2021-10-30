@@ -25,9 +25,17 @@ Rule::Rule(const Rule &copie) {
 
 // Implementarea operatorului =
 Rule &Rule::operator=(const Rule &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Rule.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Rule.h" << std::endl;
     this->id = copie.id;
     this->text = copie.text;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Rule &rule) {
+    std::cout << "[DEBUG] Apelare operator << Rule.h" << std::endl;
+    os << std::endl << rule.id;
+    os << std::endl << rule.text;
+    return os;
 }
 

@@ -29,10 +29,20 @@ Comment::Comment(const Comment &copie) {
 
 // Implementarea operatorului =
 Comment &Comment::operator=(const Comment &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Comment.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Comment.h" << std::endl;
     this->id = copie.id;
     this->text = copie.text;
     this->creationDate = copie.creationDate;
     this->createdBy = copie.createdBy;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Comment &comment) {
+    std::cout << "[DEBUG] Apelare operator << Comment.h" << std::endl;
+    os << std::endl << comment.id;
+    os << std::endl << comment.text;
+    os << std::endl << comment.createdBy;
+    os << std::endl << comment.creationDate;
+    return os;
 }

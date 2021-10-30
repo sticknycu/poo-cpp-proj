@@ -39,7 +39,11 @@ public:
     // constructor de copiere
     Post(const Post& copie);
 
+    // operatorul =
     Post& operator=(const Post& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Post &post);
 };
 
 

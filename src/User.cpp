@@ -38,7 +38,7 @@ User::User(const User &copie) {
 
 // Implementarea operatorului =
 User &User::operator=(const User &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere User.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = User.h" << std::endl;
     this->username = copie.username;
     this->password = copie.password;
     this->firstname = copie.firstname;
@@ -47,6 +47,19 @@ User &User::operator=(const User &copie) {
     this->sex = copie.sex;
     this->userProfile = copie.userProfile;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const User &user) {
+    std::cout << "[DEBUG] Apelare operator << User.h" << std::endl;
+    os << std::endl << user.username;
+    os << std::endl << user.password;
+    os << std::endl << user.firstname;
+    os << std::endl << user.lastname;
+    os << std::endl << user.cnp;
+    os << std::endl << user.sex;
+
+    return os;
 }
 
 // Getter pentru campul "username"

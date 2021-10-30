@@ -36,7 +36,11 @@ public:
     // constructor de copiere
     Event(const Event& copie);
 
+    // operatorul =
     Event& operator=(const Event& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Event &event);
 
 };
 

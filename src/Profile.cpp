@@ -34,7 +34,7 @@ Profile::Profile(const Profile &copie) {
 
 // Implementarea operatorului =
 Profile &Profile::operator=(const Profile &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Profile.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Profile.h" << std::endl;
     this->profileId = copie.profileId;
     this->posts = copie.posts;
     this->groups = copie.groups;
@@ -42,4 +42,26 @@ Profile &Profile::operator=(const Profile &copie) {
     this->studies = copie.studies;
     this->livingPlaces = copie.livingPlaces;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Profile &profile) {
+    std::cout << "[DEBUG] Apelare operator << Profile.h" << std::endl;
+    os << std::endl << profile.profileId;
+    for (const auto &post : profile.posts) {
+        os << std::endl << post;
+    }
+    for (const auto &group : profile.groups) {
+        os << std::endl << group;
+    }
+    for (const auto &follower : profile.followers) {
+        os << std::endl << follower;
+    }
+    for (const auto &study : profile.studies) {
+        os << std::endl << study;
+    }
+    for (const auto &livingPlace : profile.livingPlaces) {
+        os << std::endl << livingPlace;
+    }
+    return os;
 }

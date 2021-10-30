@@ -37,7 +37,11 @@ public:
     // constructor de copiere
     User(const User& copie);
 
+    // operatorul =
     User& operator=(const User& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const User &user);
 
     std::string& getUsername();
 

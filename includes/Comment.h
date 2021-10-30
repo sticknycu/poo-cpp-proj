@@ -32,7 +32,11 @@ public:
     // constructor de copiere
     Comment(const Comment& copie);
 
+    // operatorul =
     Comment& operator=(const Comment& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Comment &comment);
 };
 
 #endif //UTILITYIT_COMMENT_H

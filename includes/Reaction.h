@@ -29,7 +29,11 @@ public:
     // constructor de copiere
     Reaction(const Reaction& copie);
 
+    // operatorul =
     Reaction& operator=(const Reaction& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Reaction &reaction);
 
     /*std::string &getName() {
         std::string stringName;

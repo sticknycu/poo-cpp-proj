@@ -32,11 +32,30 @@ Group::Group(const Group &copie) {
 
 // Implementarea operatorului =
 Group &Group::operator=(const Group &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Group.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Group.h" << std::endl;
     this->description = copie.description;
     this->rules = copie.rules;
     this->posts = copie.posts;
     this->peopleJoined = copie.peopleJoined;
     this->peopleRequestedToJoin = copie.peopleRequestedToJoin;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Group &group) {
+    std::cout << "[DEBUG] Apelare operator << Group.h" << std::endl;
+    os << std::endl << group.description;
+    for (const auto &rule : group.rules) {
+        os << std::endl << rule;
+    }
+    for (const auto &post : group.posts) {
+        os << std::endl << post;
+    }
+    for (const auto &user : group.peopleJoined) {
+        os << std::endl << user;
+    }
+    for (const auto &user : group.peopleRequestedToJoin) {
+        os << std::endl << user;
+    }
+    return os;
 }

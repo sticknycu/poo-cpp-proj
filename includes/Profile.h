@@ -53,7 +53,11 @@ public:
     // constructor de copiere
     Profile(const Profile& copie);
 
+    // operatorul =
     Profile& operator=(const Profile& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Profile &profile);
 
 };
 

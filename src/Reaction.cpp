@@ -25,9 +25,17 @@ Reaction::Reaction(const Reaction &copie) {
 
 // Implementarea operatorului =
 Reaction &Reaction::operator=(const Reaction &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Reaction.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Reaction.h" << std::endl;
     this->id = copie.id;
     this->name = copie.name;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Reaction &reaction) {
+    std::cout << "[DEBUG] Apelare operator << Reaction.h" << std::endl;
+    os << std::endl << reaction.id;
+    os << std::endl << reaction.name;
+    return os;
 }
 

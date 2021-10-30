@@ -36,7 +36,7 @@ Event::Event(const Event &copie) {
 
 // Implementarea operatorului =
 Event &Event::operator=(const Event &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Event.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Event.h" << std::endl;
     this->name = copie.name;
     this->description = copie.description;
     this->timestamp = copie.timestamp;
@@ -45,4 +45,23 @@ Event &Event::operator=(const Event &copie) {
     this->peopleJoined = copie.peopleJoined;
     this->peopleInterested = copie.peopleInterested;
     return *this;
+}
+
+// Implementarea operatorului <<
+std::ostream &operator<<(std::ostream &os, const Event &event) {
+    std::cout << "[DEBUG] Apelare operator << Event.h" << std::endl;
+    os << std::endl << event.name;
+    os << std::endl << event.description;
+    os << std::endl << event.timestamp;
+    os << std::endl << event.duration;
+    for (const auto& userInvited : event.peopleInvited) {
+        os << std::endl << userInvited;
+    }
+    for (const auto& userJoined : event.peopleJoined) {
+        os << std::endl << userJoined;
+    }
+    for (const auto& userInterested : event.peopleInterested) {
+        os << std::endl << userInterested;
+    }
+    return os;
 }

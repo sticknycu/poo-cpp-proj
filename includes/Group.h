@@ -39,6 +39,9 @@ public:
     Group(const Group& copie);
 
     Group& operator=(const Group& copie);
+
+    // operatorul <<
+    friend std::ostream &operator<<(std::ostream &os, const Group &group);
 };
 
 #endif //UTILITYIT_GROUP_H

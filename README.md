@@ -29,7 +29,7 @@
 - [X] constructor de copiere sau cc (pt minim o clasă)
 - [X] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)
 - [X] destructor (pt minim o clasă, aceeași unde s-a făcut cc și op=)
-- [ ] `operator<<` pt toate clasele
+- [X] `operator<<` pt toate clasele
 - [X] cât mai multe `const`
 - [ ] implementarea a minim 2 funcții publice pentru funcționalități specifice temei alese (nu se iau în considerare citiri/afișări/getteri/setteri)
     - [ ] <prima funcționalitate>

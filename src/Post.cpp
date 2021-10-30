@@ -36,7 +36,7 @@ Post::Post(const Post &copie) {
 
 // Implementarea operatorului =
 Post &Post::operator=(const Post &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Post.h" << std::endl;
+    std::cout << "[DEBUG] Apelare operator = Post.h" << std::endl;
     this->id = copie.id;
     this->name = copie.name;
     this->description = copie.description;
@@ -45,4 +45,19 @@ Post &Post::operator=(const Post &copie) {
     this->createdBy = copie.createdBy;
     this->creationDate = copie.creationDate;
     return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, const Post &post) {
+    std::cout << "[DEBUG] Apelare operator << Post.h" << std::endl;
+    os << std::endl << post.id;
+    os << std::endl << post.name;
+    os << std::endl << post.description;
+    for (const auto &reaction : post.reactions) {
+        os << std::endl << reaction;
+    }
+    for (const auto &comment : post.comments) {
+        os << std::endl << comment;
+    }
+    os << std::endl << post.createdBy;
+    os << std::endl << post.creationDate;
 }
