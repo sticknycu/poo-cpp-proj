@@ -145,11 +145,11 @@ void Utils::handleProfile(Profile &profile) {
             .append("|").append(stringStudies)
             .append("|").append(stringLivingPlaces);
 
-    //file.open("profiles.txt", std::ios::out | std::ios::app);
+    file.open("profiles.txt", std::ios::out | std::ios::app);
 
-    //file << std::endl << data;
+    file << std::endl << data;
 
-    //file.close();
+    file.close();
 }
 
 

@@ -67,7 +67,7 @@ std::ostream &operator<<(std::ostream &os, const Profile &profile) {
 }
 
 // Getter pentru campul "profileId"
-long &Profile::getId() {
+long& Profile::getId() {
     return this->profileId;
 }
 

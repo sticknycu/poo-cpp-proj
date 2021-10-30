@@ -59,7 +59,7 @@ public:
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Profile &profile);
 
-    long &getId();
+    long& getId();
 
     void setId(const long &id);
 

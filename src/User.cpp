@@ -131,11 +131,9 @@ bool User::checkUserAvailability(User &user) {
 
     while (std::getline(file, data)) {
         std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
-        for (const auto &word : wordsExploded) {
-            if (user.getUsername() == word) {
-                file.close();
-                return true;
-            }
+        if (wordsExploded.at(0) == user.getUsername()) {
+            file.close();
+            return true;
         }
     }
 

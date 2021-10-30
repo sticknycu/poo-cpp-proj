@@ -1,2 +1,3 @@
-1|1,2|1|3,4|University of Bucharest|Bucharest
-2|1,2|1|5,6|University of Bucharest|Bucharest
+5000000000001||||University of Bucharest,ASE|Bucuresti
+5000000000002||||ASE,Poli|Brasov
+5000000000000||||ASE|Craiova
