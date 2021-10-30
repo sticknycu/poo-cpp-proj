@@ -24,7 +24,7 @@
     - [X] ReactionEnum
     - [X] Rule
     - [X] User
-    - [ ] Utils
+    - [X] Utils
 - [X] constructori de inițializare
 - [X] constructor de copiere sau cc (pt minim o clasă)
 - [X] `operator=` sau op= (pt minim o clasă, aceeași unde s-a făcut cc și destructor)

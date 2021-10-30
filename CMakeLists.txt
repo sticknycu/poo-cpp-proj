@@ -14,6 +14,7 @@ add_executable(UtilityIT
         src/Reaction.cpp
         src/Rule.cpp
         src/User.cpp
+        src/Utils.cpp
 
         includes/User.h
         includes/Post.h
@@ -27,4 +28,6 @@ add_executable(UtilityIT
         includes/Rule.h
 
         includes/ReactionEnum.h
+
+        includes/Utils.h
         )

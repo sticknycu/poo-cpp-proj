@@ -4,8 +4,7 @@
 
 #include "../includes/User.h"
 #include <fstream>
-#include <cstring>
-#include <sstream>
+#include "../includes/Utils.h"
 
 // Implementarea constructorului de initializare
 User::User(const std::string &email, const std::string &password, const std::string &firstname, const std::string &lastname,
@@ -63,31 +62,15 @@ void User::setEmail(std::string &userEmail) {
     this->email = userEmail;
 }
 
-// Implementarea pentru a face split al unui string.
-std::vector<std::string> explodeString(std::string &text) {
-    std::vector<std::string> words{};
-    char delimiter = ';';
-
-    std::istringstream sstream(text);
-    std::string word;
-    while (std::getline(sstream, word, delimiter)) {
-        word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
-        words.push_back(word);
-    }
-
-    return words;
-}
-
 // Implementarea de la userAvailability (verific daca user-ul exista)
 bool User::checkUserAvailability(const User &user) {
-    // Instantiez fisierul
     std::ifstream file;
     std::string data;
 
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = explodeString(data);
+        std::vector<std::string> wordsExploded = Utils::explodeString(data);
         for (const auto &word : wordsExploded) {
             if (user.email == word) {
                 file.close();
