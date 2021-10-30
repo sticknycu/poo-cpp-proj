@@ -3,7 +3,7 @@
 ### Tema 0
 
 - [X] nume proiect (îl puteți schimba ulterior)
-- [ ] Scurtă descriere a temei alese, ce v-ați propus să implementați
+- [X] Scurtă descriere a temei alese, ce v-ați propus să implementați
 - [X] actualizat `.gitignore` dacă nu sunt ignorate fișierele (binare) generate de editor/IDE; puteți folosi https://gitignore.io
 
 ## Tema 1 - UtilityIT
@@ -40,3 +40,15 @@
 - [ ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
 - [ ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
+## Description
+
+UtilityIT este o mini-plaforma de socializare.
+Aceasta simuleaza actiuni precum adaugarea de comentarii, adaugarea de reactii, crearea de post-uri noi, crearea de conturi noi.
+Toate informatiile sunt salvate in fisierele specifice .txt, de unde sunt manipulate datele.
+
+Mi-am propus sa implementez clasele Comment si Reaction specifice unui post.
+Evidentierea unui post se face prin clasa Post.
+Fiecare utilizator este definit prin clasa User, iar fiecare utilizator are un profil care se poate identifica prin clasa Profile.
+Fiecare profil este identificat in functie de id-ul gasit in clasa User.
+Ca si utilizator poti intra in grupuri, un grup fiind evidentiat prin clasa Group, iar fiecare grup poate avea niste reguli, fiecare regula fiind evidentiata prin clasa Rule.
+Am implementat si o clasa Utils prin care se folosesc functii statice, in general, care nu au legatura cu celelalte clase, precum split-ul unui string.
