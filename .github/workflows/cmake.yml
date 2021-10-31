@@ -16,15 +16,10 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-20.04]
-        cxx: [g++, clang++]
+        cxx: [clang++]
         include:
           - os: macos-10.15
             cxx: clang++
-          - os: windows-2019
-            cxx: cl
-          - os: windows-2019
-            cxx: g++
-            cmake_generator: "\"MinGW Makefiles\""
 
     steps:
       - uses: actions/checkout@v2
