@@ -32,9 +32,9 @@ jobs:
       - name: Prepare env
         shell: bash
         run: |
-          echo $GITHUB_WORKSPACE/UtilityIT/
+          echo $GITHUB_WORKSPACE
           mkdir $GITHUB_WORKSPACE/build
-          mkdir $GITHUB_WORKSPACE/UtilityIT/artifacts
+          mkdir $GITHUB_WORKSPACE/artifacts
       - name: Configure CMake
         env:
           CXX: ${{ matrix.cxx }}
@@ -44,7 +44,7 @@ jobs:
         shell: bash
         working-directory: ${{ github.workspace }}/build
         run: |
-          CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE/UtilityIT/ -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+          CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
       - name: Build
         working-directory: ${{ github.workspace }}/build
         shell: bash
@@ -55,7 +55,7 @@ jobs:
         # working-directory: ${{ github.workspace }}/build
         shell: bash
         # Use CMake to "install" build artifacts (only interested in CMake registered targets) to our custom artifacts directory
-        run: cmake --install UtilityIT/build --config $BUILD_TYPE --prefix artifacts
+        run: cmake --install build --config $BUILD_TYPE --prefix artifacts
 
       - name: Set Tag Name
         shell: bash

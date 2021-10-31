@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -12,12 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - uses: actions/checkout@v2
+      - name: dependencies
+        run:
+          sudo apt update && sudo apt install -y valgrind cppcheck g++-9 gcovr
+      - name: make
+        run: g++ *.cpp -o main -std=c++14 -Wall -Wextra -pedantic -Weffc++
+          --coverage -fprofile-arcs -ftest-coverage -g -O0 -lm
+      - name: cppcheck
+        run:
+          cppcheck --enable=all .
+      - name: valgrind
+        run:
+          valgrind --leak-check=full --show-leak-kinds=all
+          --track-origins=yes --error-exitcode=1 ./main
+      - name: coverage
+        run: |
+          gcov *.cpp
+          mkdir cov/
+          gcovr -r . --html --html-details -o cov/coverage.html --print-summary
+          mv -v cov/  public/
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          enable_jekyll: true
