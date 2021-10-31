@@ -289,7 +289,7 @@ void Utils::navigatePlatform(User &user) {
     std::string inputString;
     inputString = handleInput(inputString);
     if (inputString == "/createPost") {
-        //TODO : Create post
+        Post::handlePost(user);
     } else if (inputString == "/enterGroup") {
         //TODO: Enter group
     } else if (inputString == "/accessEvent") {

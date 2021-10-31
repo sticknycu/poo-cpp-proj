@@ -3,6 +3,9 @@
 //
 
 #include "../includes/Post.h"
+#include "../includes/Utils.h"
+#include <iostream>
+#include <fstream>
 
 // Implementarea constructorului de initializare
 Post::Post(const long &id, const std::string &description, const std::vector<ReactionEnum*> &reactions,
@@ -65,4 +68,42 @@ long &Post::getId() {
 
 void Post::setId(const long &id) {
     this->id = id;
+}
+
+void Post::createPost(User &user, const std::string &description) {
+    std::ofstream file;
+    std::ifstream readableOnly;
+    std::string data;
+
+    readableOnly.open("posts.txt", std::ios::in);
+
+    int i = 1;
+    while (getline(readableOnly, data)) {
+        i++;
+    }
+
+    std::string id = std::to_string(i);
+
+    data = id
+            .append("|").append(description)
+            .append("|")//reactions
+            .append("|").append(user.getUsername())
+            .append("|")//creation data
+            ;
+
+    file.open("posts.txt", std::ios::out | std::ios::app);
+
+    file << std::endl << data;
+
+    readableOnly.close();
+    file.close();
+}
+
+void Post::handlePost(User &user) {
+    std::cout << "Deci vrei sa creezi o postare. Am inteles. Pentru acest lucru, te rugam sa ne spui descrierea pe care doresti sa o adaugi postarii." << std::endl;
+    std::string input;
+    input = Utils::handleInput(input);
+    createPost(user, input);
+    std:: cout << "Postarea a fost creata cu succes!" << std::endl;
+    Utils::navigatePlatform(user);
 }

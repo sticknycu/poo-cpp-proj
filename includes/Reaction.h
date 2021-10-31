@@ -36,6 +36,8 @@ public:
 
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Reaction &reaction);
+
+    //TODO: add reaction to post
 };
 
 

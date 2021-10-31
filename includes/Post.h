@@ -47,6 +47,18 @@ public:
     long &getId();
 
     void setId(const long &id);
+
+    // Handle post when is going to be created
+    static void handlePost(User &user);
+
+    // Handle post of user. Function for save post information of user in file
+    static void createPost(User &user, const std::string &description);
+
+    // Handle post of user. Function for delete post information of user in file
+    static void deletePost(const long &id);
+
+    // Handle posts of user. Show posts of a user
+    static void showPosts(User &user);
 };
 
 

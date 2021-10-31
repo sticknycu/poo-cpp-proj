@@ -37,6 +37,10 @@ public:
 
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Comment &comment);
+
+    //TODO: handle comment
+
+    //TODO: add comments to post
 };
 
 #endif //UTILITYIT_COMMENT_H
