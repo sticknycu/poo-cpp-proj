@@ -5,12 +5,13 @@
 #include "../includes/Comment.h"
 
 // Implementarea constructorului de initializare
-Comment::Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text) {
+Comment::Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text, Post *post) {
     std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
     this->createdBy = createdBy;
     this->creationDate = creationDate;
     this->text = text;
+    this->post = post;
 }
 
 // Implementarea destructorului
@@ -25,6 +26,7 @@ Comment::Comment(const Comment &copie) {
     this->text = copie.text;
     this->creationDate = copie.creationDate;
     this->createdBy = copie.createdBy;
+    this->post = copie.post;
 }
 
 // Implementarea operatorului =
@@ -34,6 +36,7 @@ Comment &Comment::operator=(const Comment &copie) {
     this->text = copie.text;
     this->creationDate = copie.creationDate;
     this->createdBy = copie.createdBy;
+    this->post = copie.post;
     return *this;
 }
 
@@ -44,5 +47,6 @@ std::ostream &operator<<(std::ostream &os, const Comment &comment) {
     os << std::endl << comment.text;
     os << std::endl << comment.createdBy;
     os << std::endl << comment.creationDate;
+    os << std::endl << comment.post;
     return os;
 }

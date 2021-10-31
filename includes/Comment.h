@@ -10,6 +10,7 @@
 #include "User.h"
 
 class User;
+class Post;
 
 class Comment {
 private:
@@ -17,6 +18,7 @@ private:
     User *createdBy;
     long creationDate;
     std::string text;
+    Post *post;
 
 public:
 
@@ -24,7 +26,7 @@ public:
     Comment() =default;
 
     // constructor de initializare
-    Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text);
+    Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text, Post *post);
 
     // destructor
     ~Comment();
@@ -39,8 +41,9 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Comment &comment);
 
     //TODO: handle comment
+    static void handleComment(User &user);
 
-    //TODO: add comments to post
+    static void createComment()
 };
 
 #endif //UTILITYIT_COMMENT_H
