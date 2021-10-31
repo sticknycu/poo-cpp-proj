@@ -1,5 +1,5 @@
 # UtilityIT Template
-
+![C/C++ CI](https://github.com/nicugnm/poo-cpp-proj/workflows/C/C++%20CI/badge.svg?branch=main)
 ### Tema 0
 
 - [X] nume proiect (îl puteți schimba ulterior)
