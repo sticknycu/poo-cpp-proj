@@ -294,10 +294,14 @@ void Utils::navigatePlatform(User &user) {
         Post::handlePost(user);
     } else if (inputString == "/enterGroup") {
         //TODO: Enter group
+        std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa revi." << std::endl;
+        navigatePlatform(user);
     } else if (inputString == "/createRule") {
         Rule::createRule(user);
     } else if (inputString == "/accessEvent") {
         //TODO: Access event
+        std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa revi." << std::endl;
+        navigatePlatform(user);
     } else if (inputString == "/addComment") {
         Comment::handleComment(user);
     } else if (inputString == "/profile") {
