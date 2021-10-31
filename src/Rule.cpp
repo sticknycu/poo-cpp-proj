@@ -77,5 +77,6 @@ void Rule::handleRule(std::string &text) {
 
     file << std::endl << data;
 
+    readableOnly.close();
     file.close();
 }
