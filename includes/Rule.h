@@ -8,6 +8,10 @@
 
 #include <iostream>
 #include <utility>
+#include "Group.h"
+#include "User.h"
+
+class User;
 
 class Rule {
 
@@ -42,7 +46,10 @@ public:
     void setText(const std::string &text);
 
     // Handle rule for groups. Function for saving rule information to file.
-    static void handleRule(std::string &text);
+    static void handleRule(const std::string &text);
+
+    // function for creating a new rule for groups
+    static void createRule(User &user);
 };
 
 #endif //UTILITYIT_RULE_H

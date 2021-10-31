@@ -47,6 +47,10 @@ public:
     std::string &getName();
 
     void setName(const std::string &name);
+
+    void handleGroup(const User &user);
+
+
 };
 
 #endif //UTILITYIT_GROUP_H

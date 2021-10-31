@@ -3,6 +3,7 @@
 //
 
 #include "../includes/Rule.h"
+#include "../includes/Utils.h"
 #include <iostream>
 #include <fstream>
 
@@ -57,7 +58,7 @@ void Rule::setText(const std::string &text) {
     this->text = text;
 }
 
-void Rule::handleRule(std::string &text) {
+void Rule::handleRule(const std::string &text) {
     std::ofstream file;
     std::ifstream readableOnly;
     std::string data;
@@ -79,4 +80,12 @@ void Rule::handleRule(std::string &text) {
 
     readableOnly.close();
     file.close();
+}
+
+void Rule::createRule(User &user) {
+    std::cout << "Pentru a crea o regula, te rugam sa introduci textul ce descrie regula:" << std::endl;
+    std::string input;
+    input = Utils::handleInput(input);
+    handleRule(input);
+    Utils::navigatePlatform(user);
 }

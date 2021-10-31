@@ -280,6 +280,7 @@ Profile Utils::configureProfile(User &user) {
 void Utils::navigatePlatform(User &user) {
     std::cout << "Acum ca doresti sa navighezi pe platforma, ai o multime de posibilitati." << std::endl;
     std::cout << "Poti crea o postare folosind /createPost" << std::endl;
+    std::cout << "Poti crea o regula folosind /createRule" << std::endl;
     std::cout << "Poti intra intr-un grup folosind /enterGroup" << std::endl;
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
@@ -292,6 +293,8 @@ void Utils::navigatePlatform(User &user) {
         Post::handlePost(user);
     } else if (inputString == "/enterGroup") {
         //TODO: Enter group
+    } else if (inputString == "/createRule") {
+        Rule::createRule(user);
     } else if (inputString == "/accessEvent") {
         //TODO: Access event
     } else if (inputString == "/profile") {
