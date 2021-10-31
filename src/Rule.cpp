@@ -3,6 +3,8 @@
 //
 
 #include "../includes/Rule.h"
+#include <iostream>
+#include <fstream>
 
 // Implementarea constructorului de initializare
 Rule::Rule(const long &id, const std::string &text) {
@@ -39,3 +41,41 @@ std::ostream &operator<<(std::ostream &os, const Rule &rule) {
     return os;
 }
 
+long &Rule::getId() {
+    return this->id;
+}
+
+void Rule::setId(const long &id) {
+    this->id = id;
+}
+
+std::string &Rule::getText() {
+    return this->text;
+}
+
+void Rule::setText(const std::string &text) {
+    this->text = text;
+}
+
+void Rule::handleRule(std::string &text) {
+    std::ofstream file;
+    std::ifstream readableOnly;
+    std::string data;
+
+    readableOnly.open("rules.txt", std::ios::in);
+
+    int i = 1;
+    while (getline(readableOnly, data)) {
+        i++;
+    }
+
+    std::string id = std::to_string(i);
+
+    data = id.append("|").append(text);
+
+    file.open("rules.txt", std::ios::out | std::ios::app);
+
+    file << std::endl << data;
+
+    file.close();
+}

@@ -32,6 +32,17 @@ public:
 
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Rule &rule);
+
+    long &getId();
+
+    void setId(const long &id);
+
+    std::string &getText();
+
+    void setText(const std::string &text);
+
+    // Handle rule for groups. Function for saving rule information to file.
+    static void handleRule(std::string &text);
 };
 
 #endif //UTILITYIT_RULE_H
