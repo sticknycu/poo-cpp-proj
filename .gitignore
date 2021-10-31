@@ -26,6 +26,14 @@
 *.a
 *.lib
 
+# IDEA
+.idea/*
+cmake-build-debug/*
+
+# CMake debug
+UtilityIT/cmake-build-debug/*
+
+
 # Executables
 *.exe
 *.out
