@@ -282,6 +282,7 @@ void Utils::navigatePlatform(User &user) {
     std::cout << "Poti crea o postare folosind /createPost" << std::endl;
     std::cout << "Poti crea o regula folosind /createRule" << std::endl;
     std::cout << "Poti intra intr-un grup folosind /enterGroup" << std::endl;
+    std::cout << "Poti adauga un comentariu unei postari folosind /addComment" << std::endl;
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
@@ -297,6 +298,8 @@ void Utils::navigatePlatform(User &user) {
         Rule::createRule(user);
     } else if (inputString == "/accessEvent") {
         //TODO: Access event
+    } else if (inputString == "/addComment") {
+        Comment::handleComment(user);
     } else if (inputString == "/profile") {
         configureProfile(user);
         navigatePlatform(user);
@@ -353,4 +356,8 @@ void Utils::manageExistanceProfileData(Profile &profile) {
     newFile.close();
     remove("profiles.txt");
     rename("profilesNew.txt", "profiles.txt");
+}
+
+long Utils::getCurrentTime() {
+    return static_cast<long> (time(nullptr));;
 }

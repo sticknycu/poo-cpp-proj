@@ -15,10 +15,10 @@ class Post;
 class Comment {
 private:
     long id;
-    User *createdBy;
+    User createdBy;
     long creationDate;
-    std::string text;
-    Post *post;
+    static std::string text;
+    Post post;
 
 public:
 
@@ -26,7 +26,7 @@ public:
     Comment() =default;
 
     // constructor de initializare
-    Comment(const long &id, User *createdBy, const long &creationDate, const std::string &text, Post *post);
+    Comment(const long &id, User &createdBy, const long &creationDate, const std::string &text, Post &post);
 
     // destructor
     ~Comment();
@@ -40,10 +40,31 @@ public:
     // operatorul <<
     friend std::ostream &operator<<(std::ostream &os, const Comment &comment);
 
-    //TODO: handle comment
+    long &getId();
+
+    void setId(const long &id);
+
+    User &getCreatedBy();
+
+    void setCreatedBy(User &user);
+
+    long &getCreationDate();
+
+    void setCreationDate(const long &timestamp);
+
+    std::string &getText();
+
+    void setText(const std::string &text);
+
+    Post &getPost();
+
+    void setPost(Post &post);
+
+    // function to handle comments
     static void handleComment(User &user);
 
-    static void createComment()
+    // function to add comments to file
+    static void createComment(User &user, const std::string &text, const long &id);
 };
 
 #endif //UTILITYIT_COMMENT_H

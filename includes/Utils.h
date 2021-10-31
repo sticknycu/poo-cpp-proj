@@ -55,6 +55,8 @@ public:
 
     // Handle data to be removed if that exists already in file when profile is updated
     static void manageExistanceProfileData(Profile &profile);
+
+    static long getCurrentTime();
 };
 
 #endif //UTILITYIT_UTILS_H

@@ -58,7 +58,10 @@ public:
     static void deletePost(const long &id);
 
     // Handle posts of user. Show posts of a user
-    static void showPosts(User &user);
+    static void showPostsUser(User &user);
+
+    // Handle posts. Show all posts
+    static void showPosts();
 };
 
 
