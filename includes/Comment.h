@@ -15,10 +15,10 @@ class Post;
 class Comment {
 private:
     long id;
-    User createdBy;
+    User* createdBy;
     long creationDate;
-    static std::string text;
-    Post post;
+    std::string text;
+    Post* post;
 
 public:
 
@@ -26,7 +26,7 @@ public:
     Comment() =default;
 
     // constructor de initializare
-    Comment(const long &id, User &createdBy, const long &creationDate, const std::string &text, Post &post);
+    Comment(const long &id, User* createdBy, const long &creationDate, const std::string &text, Post* post);
 
     // destructor
     ~Comment();
@@ -44,9 +44,9 @@ public:
 
     void setId(const long &id);
 
-    User &getCreatedBy();
+    User* getCreatedBy();
 
-    void setCreatedBy(User &user);
+    void setCreatedBy(User *user);
 
     long &getCreationDate();
 
@@ -56,9 +56,9 @@ public:
 
     void setText(const std::string &text);
 
-    Post &getPost();
+    Post* getPost();
 
-    void setPost(Post &post);
+    void setPost(Post *post);
 
     // function to handle comments
     static void handleComment(User &user);

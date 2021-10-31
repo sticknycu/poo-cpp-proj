@@ -4,12 +4,10 @@
 
 #include "../includes/Comment.h"
 #include "../includes/Utils.h"
-#include <iostream>
 #include <fstream>
-#include <ctime>
 
 // Implementarea constructorului de initializare
-Comment::Comment(const long &id, User &createdBy, const long &creationDate, const std::string &text, Post &post) {
+Comment::Comment(const long &id, User* createdBy, const long &creationDate, const std::string &text, Post* post) {
     std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
     this->createdBy = createdBy;
@@ -63,11 +61,11 @@ void Comment::setId(const long &id) {
     this->id = id;
 }
 
-User &Comment::getCreatedBy() {
+User* Comment::getCreatedBy() {
     return this->createdBy;
 }
 
-void Comment::setCreatedBy(User &user) {
+void Comment::setCreatedBy(User* user) {
     this->createdBy = user;
 }
 
@@ -87,11 +85,11 @@ void Comment::setText(const std::string &text) {
     this->text = text;
 }
 
-Post &Comment::getPost() {
+Post* Comment::getPost() {
     return this->post;
 }
 
-void Comment::setPost(Post &post) {
+void Comment::setPost(Post* post) {
     this->post = post;
 }
 

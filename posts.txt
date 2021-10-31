@@ -1,3 +1,4 @@
 1|Description1|LIKE,LIKE,SAD|1,2|nghergu17|21.11.2001
 2|Description2|CRY,SAD|nghergu14|21.11.2222
 3|Salutare, Aceasta este o postare de test sa vad ca totul este in regula||registeruser|
+4|Aceasta postare este creata pentru a vedea ca totul este in regula||nghergu17|
