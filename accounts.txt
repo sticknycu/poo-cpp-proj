@@ -6,3 +6,4 @@ nghergu11|pa77|Nicolae|Marius|500000000004|F
 nghergu10|pa99|Nicolae|Ghergu|500000000005|F
 nghergu20|poo|Nicolae|Ghergu|500000000006|F
 ngher1|pa55|nicolae|ghergu|501|F
+registeruser|parolaregisteruser|Testare|User|500000000007|F
