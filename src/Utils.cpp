@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
 
 // Implementarea constructorului de initializare
 Utils::Utils() {
