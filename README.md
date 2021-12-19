@@ -58,9 +58,9 @@
   - [ ] predefinite
   - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
   - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
-- [X] funcții și atribute `static`
+- [ ] funcții și atribute `static`
 - [ ] STL
-- [X] cât mai multe `const`
+- [ ] cât mai multe `const`
 - [ ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
 
