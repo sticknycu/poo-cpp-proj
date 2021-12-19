@@ -5,7 +5,7 @@
 #include "../includes/BaseException.h"
 #include <iostream>
 
-BaseException::BaseException(const std::string &customMessage) : runtime_error("BasicException error: " + customMessage) {
+BaseException::BaseException(const std::string &customMessage) : runtime_error("BaseException Error " + customMessage) {
     std::cout << "[DEBUG] Apelare constructor BaseException.h" << std::endl;
 }
 
