@@ -11,7 +11,6 @@
 #include <vector>
 #include "User.h"
 #include "Group.h"
-#include <memory>
 
 class Post;
 class Group;

@@ -9,7 +9,6 @@
 #include <iostream>
 #include <utility>
 #include "Profile.h"
-#include <memory>
 
 class Profile;
 

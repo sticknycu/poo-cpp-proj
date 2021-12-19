@@ -10,7 +10,6 @@
 #include "Comment.h"
 #include "ReactionEnum.h"
 #include <vector>
-#include <memory>
 
 enum class ReactionEnum;
 class Comment;

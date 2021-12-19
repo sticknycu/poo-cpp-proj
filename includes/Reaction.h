@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include "ReactionEnum.h"
-#include <memory>
 
 
 enum class ReactionEnum;
