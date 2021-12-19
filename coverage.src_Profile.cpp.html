@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-19 18:42:50</td>
+            <td class="headerValue">2021-12-19 18:44:22</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -352,7 +352,7 @@
     <td align="right" class="lineno"><pre>8</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>Profile::Profile(const long &amp;profileId, const std::vector&lt;std::shared_ptr&lt;Post>> &amp;posts, const std::vector&lt;std::shared_ptr&lt;Group>> &amp;groups, const std::vector&lt;std::shared_ptr&lt;User>> &amp;followers,</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>Profile::Profile(const long &amp;profileId, const std::vector&lt;Post*> &amp;posts, const std::vector&lt;Group*> &amp;groups, const std::vector&lt;User*> &amp;followers,</pre></td>
     </tr>
 
     <tr>
@@ -856,7 +856,7 @@
     <td align="right" class="lineno"><pre>80</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;std::shared_ptr&lt;Post>> Profile::getPosts() {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;Post*> Profile::getPosts() {</pre></td>
     </tr>
 
     <tr>
@@ -891,7 +891,7 @@
     <td align="right" class="lineno"><pre>85</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void Profile::setPosts(std::vector&lt;std::shared_ptr&lt;Post>> &amp;posts) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Profile::setPosts(std::vector&lt;Post*> &amp;posts) {</pre></td>
     </tr>
 
     <tr>
@@ -926,7 +926,7 @@
     <td align="right" class="lineno"><pre>90</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;std::shared_ptr&lt;Group>> Profile::getGroups() {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;Group*> Profile::getGroups() {</pre></td>
     </tr>
 
     <tr>
@@ -961,7 +961,7 @@
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void Profile::setGroups(const std::vector&lt;std::shared_ptr&lt;Group>> &amp;groups) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Profile::setGroups(const std::vector&lt;Group*> &amp;groups) {</pre></td>
     </tr>
 
     <tr>
@@ -996,7 +996,7 @@
     <td align="right" class="lineno"><pre>100</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;std::shared_ptr&lt;User>> &amp;Profile::getFollowers() {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>std::vector&lt;User*> &amp;Profile::getFollowers() {</pre></td>
     </tr>
 
     <tr>
@@ -1031,7 +1031,7 @@
     <td align="right" class="lineno"><pre>105</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void Profile::setFollowers(const std::vector&lt;std::shared_ptr&lt;User>> &amp;followers) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Profile::setFollowers(const std::vector&lt;User*> &amp;followers) {</pre></td>
     </tr>
 
     <tr>

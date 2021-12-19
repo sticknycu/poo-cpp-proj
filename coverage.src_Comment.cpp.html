@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-19 18:42:50</td>
+            <td class="headerValue">2021-12-19 18:44:22</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -366,7 +366,7 @@
     <td align="right" class="lineno"><pre>10</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>Comment::Comment(const long &amp;id, std::shared_ptr&lt;User> createdBy, const long &amp;creationDate, const std::string &amp;text, std::shared_ptr&lt;Post> post) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>Comment::Comment(const long &amp;id, User* createdBy, const long &amp;creationDate, const std::string &amp;text, Post* post) {</pre></td>
     </tr>
 
     <tr>
@@ -744,7 +744,7 @@
     <td align="right" class="lineno"><pre>64</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::shared_ptr&lt;User> Comment::getCreatedBy() {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>User* Comment::getCreatedBy() {</pre></td>
     </tr>
 
     <tr>
@@ -772,7 +772,7 @@
     <td align="right" class="lineno"><pre>68</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void Comment::setCreatedBy(std::shared_ptr&lt;User> user) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Comment::setCreatedBy(User* user) {</pre></td>
     </tr>
 
     <tr>
@@ -912,7 +912,7 @@
     <td align="right" class="lineno"><pre>88</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>std::shared_ptr&lt;Post> Comment::getPost() {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>Post* Comment::getPost() {</pre></td>
     </tr>
 
     <tr>
@@ -940,7 +940,7 @@
     <td align="right" class="lineno"><pre>92</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>void Comment::setPost(std::shared_ptr&lt;Post> post) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>void Comment::setPost(Post* post) {</pre></td>
     </tr>
 
     <tr>

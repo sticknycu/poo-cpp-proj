@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-12-19 18:42:50</td>
+            <td class="headerValue">2021-12-19 18:44:22</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -877,7 +877,7 @@
     <td align="right" class="lineno"><pre>83</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;std::shared_ptr&lt;Post>> posts = profile.getPosts();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;Post*> posts = profile.getPosts();</pre></td>
     </tr>
 
     <tr>
@@ -961,7 +961,7 @@
     <td align="right" class="lineno"><pre>95</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;std::shared_ptr&lt;Group>> groups = profile.getGroups();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;Group*> groups = profile.getGroups();</pre></td>
     </tr>
 
     <tr>
@@ -1045,7 +1045,7 @@
     <td align="right" class="lineno"><pre>107</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;std::shared_ptr&lt;User>> followers = profile.getFollowers();</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>    std::vector&lt;User*> followers = profile.getFollowers();</pre></td>
     </tr>
 
     <tr>
@@ -2578,7 +2578,7 @@
     <td align="right" class="lineno"><pre>326</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>            std::cin.clear(); // unset failbit</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>            std::cin.clear();</pre></td>
     </tr>
 
     <tr>
