@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2021-11-20 11:04:30</td>
+            <td class="headerValue">2021-12-19 18:42:50</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -373,14 +373,14 @@
     <td align="right" class="lineno"><pre>11</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>Post::Post(const long &amp;id, const std::string &amp;description, const std::vector&lt;ReactionEnum*> &amp;reactions,</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>Post::Post(const long &amp;id, const std::string &amp;description, const std::vector&lt;std::shared_ptr&lt;ReactionEnum>> &amp;reactions,</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>12</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
-    <td align="left" class="src uncoveredLine"><pre>           const std::vector&lt;Comment*> &amp;comments, User* createdBy, const long &amp;creationDate) {</pre></td>
+    <td align="left" class="src uncoveredLine"><pre>           const std::vector&lt;std::shared_ptr&lt;Comment>> &amp;comments, std::shared_ptr&lt;User> createdBy, const long &amp;creationDate) {</pre></td>
     </tr>
 
     <tr>
