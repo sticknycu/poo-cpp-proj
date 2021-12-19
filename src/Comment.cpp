@@ -7,7 +7,7 @@
 #include <fstream>
 
 // Implementarea constructorului de initializare
-Comment::Comment(const long &id, User* createdBy, const long &creationDate, const std::string &text, Post* post) {
+Comment::Comment(const long &id, std::shared_ptr<User> createdBy, const long &creationDate, const std::string &text, std::shared_ptr<Post> post) {
     std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
     this->createdBy = createdBy;
@@ -61,11 +61,11 @@ void Comment::setId(const long &id) {
     this->id = id;
 }
 
-User* Comment::getCreatedBy() {
+std::shared_ptr<User> Comment::getCreatedBy() {
     return this->createdBy;
 }
 
-void Comment::setCreatedBy(User* user) {
+void Comment::setCreatedBy(std::shared_ptr<User> user) {
     this->createdBy = user;
 }
 
@@ -85,11 +85,11 @@ void Comment::setText(const std::string &text) {
     this->text = text;
 }
 
-Post* Comment::getPost() {
+std::shared_ptr<Post> Comment::getPost() {
     return this->post;
 }
 
-void Comment::setPost(Post* post) {
+void Comment::setPost(std::shared_ptr<Post> post) {
     this->post = post;
 }
 

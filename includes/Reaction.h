@@ -16,14 +16,14 @@ class Reaction {
 
 private:
     long id;
-    ReactionEnum* reactionType;
+    std::shared_ptr<ReactionEnum> reactionType;
 
 public:
     // constructor default
     Reaction() =default;
 
     // constructor de initializare
-    Reaction(const long &id, ReactionEnum *reactionType);
+    Reaction(const long &id, std::shared_ptr<ReactionEnum> reactionType);
 
     // destructor
     ~Reaction();

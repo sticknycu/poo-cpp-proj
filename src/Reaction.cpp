@@ -5,7 +5,7 @@
 #include "../includes/Reaction.h"
 
 // Implementarea constructorului de initializare
-Reaction::Reaction(const long &id, ReactionEnum *reactionType) {
+Reaction::Reaction(const long &id, std::shared_ptr<ReactionEnum> reactionType) {
     std::cout << "[DEBUG] Apelare constructor Reaction.h" << std::endl;
     this->id = id;
     this->reactionType = reactionType;

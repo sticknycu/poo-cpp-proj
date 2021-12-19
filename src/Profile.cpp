@@ -5,7 +5,7 @@
 #include "../includes/Profile.h"
 
 // Implementarea constructorului de initializare
-Profile::Profile(const long &profileId, const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
+Profile::Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts, const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
                  const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces) {
     std::cout << "[DEBUG] Apelare constructor Profile.h" << std::endl;
     this->profileId = profileId;
@@ -77,32 +77,32 @@ void Profile::setId(const long &id) {
 }
 
 // Getter pentru campul "posts"
-std::vector<Post*> Profile::getPosts() {
+std::vector<std::shared_ptr<Post>> Profile::getPosts() {
     return this->posts;
 }
 
 // Setter pentru campul "posts
-void Profile::setPosts(std::vector<Post*> &posts) {
+void Profile::setPosts(std::vector<std::shared_ptr<Post>> &posts) {
     this->posts = posts;
 }
 
 // Getter pentru campul "groups"
-std::vector<Group*> Profile::getGroups() {
+std::vector<std::shared_ptr<Group>> Profile::getGroups() {
     return this->groups;
 }
 
 // Setter pentru campul "groups"
-void Profile::setGroups(const std::vector<Group*> &groups) {
+void Profile::setGroups(const std::vector<std::shared_ptr<Group>> &groups) {
     this->groups = groups;
 }
 
 // Getter pentru campul "followers"
-std::vector<User*> &Profile::getFollowers() {
+std::vector<std::shared_ptr<User>> &Profile::getFollowers() {
     return this->followers;
 }
 
 // Setter pentru campul "followers"
-void Profile::setFollowers(const std::vector<User*> &followers) {
+void Profile::setFollowers(const std::vector<std::shared_ptr<User>> &followers) {
     this->followers = followers;
 }
 

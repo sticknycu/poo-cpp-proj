@@ -7,3 +7,5 @@ nghergu10|pa99|Nicolae|Ghergu|500000000005|F
 nghergu20|poo|Nicolae|Ghergu|500000000006|F
 ngher1|pa55|nicolae|ghergu|501|F
 registeruser|parolaregisteruser|Testare|User|500000000007|F
+numeutilizatortest|parolatest|Prenume Test|Nume Test|501110000000|F
+utilizatorsmartpointers|smartpointerspass|Smart|Pointer|5011111112222|F

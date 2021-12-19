@@ -8,8 +8,8 @@
 #include <fstream>
 
 // Implementarea constructorului de initializare
-Post::Post(const long &id, const std::string &description, const std::vector<ReactionEnum*> &reactions,
-           const std::vector<Comment*> &comments, User* createdBy, const long &creationDate) {
+Post::Post(const long &id, const std::string &description, const std::vector<std::shared_ptr<ReactionEnum>> &reactions,
+           const std::vector<std::shared_ptr<Comment>> &comments, std::shared_ptr<User> createdBy, const long &creationDate) {
     std::cout << "[DEBUG] Apelare constructor Post.h" << std::endl;
     this->id = id;
     this->description = description;

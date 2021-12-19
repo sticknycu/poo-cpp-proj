@@ -80,7 +80,7 @@ void Utils::handleProfile(Profile &profile) {
     std::string id = std::to_string(profile.getId());
 
     std::string stringPosts;
-    std::vector<Post*> posts = profile.getPosts();
+    std::vector<std::shared_ptr<Post>> posts = profile.getPosts();
     for (auto post : posts) {
         if (stringPosts.empty()) {
             stringPosts.append(std::to_string(post->getId()));
@@ -92,7 +92,7 @@ void Utils::handleProfile(Profile &profile) {
     }
 
     std::string stringGroups;
-    std::vector<Group*> groups = profile.getGroups();
+    std::vector<std::shared_ptr<Group>> groups = profile.getGroups();
     for (auto group : groups) {
         if (stringGroups.empty()) {
             stringGroups.append(group->getName());
@@ -104,7 +104,7 @@ void Utils::handleProfile(Profile &profile) {
     }
 
     std::string stringFollowers;
-    std::vector<User*> followers = profile.getFollowers();
+    std::vector<std::shared_ptr<User>> followers = profile.getFollowers();
     for (auto follower : followers) {
         if (stringFollowers.empty()) {
             stringFollowers.append(follower->getUsername());
