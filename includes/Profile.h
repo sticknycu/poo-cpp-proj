@@ -19,9 +19,9 @@ class User;
 class Profile {
 private:
     long profileId;
-    std::vector<std::shared_ptr<Post>> posts;
-    std::vector<std::shared_ptr<Group>> groups;
-    std::vector<std::shared_ptr<User>> followers;
+    std::vector<Post*> posts;
+    std::vector<Group*> groups;
+    std::vector<User*> followers;
     std::vector<std::string> studies;
     std::vector<std::string> livingPlaces;
     /*std::vector<std::string> otherNames;
@@ -44,7 +44,7 @@ public:
     Profile() =default;
 
     // constructor de initializare
-    Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts, const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
+    Profile(const long &profileId, const std::vector<Post*> &posts, const std::vector<Group*> &groups, const std::vector<User*> &followers,
          const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces);
 
     // destructor
@@ -63,17 +63,17 @@ public:
 
     void setId(const long &id);
 
-    std::vector<std::shared_ptr<Post>> getPosts();
+    std::vector<Post*> getPosts();
 
-    void setPosts(std::vector<std::shared_ptr<Post>> &posts);
+    void setPosts(std::vector<Post*> &posts);
 
-    std::vector<std::shared_ptr<Group>> getGroups();
+    std::vector<Group *> getGroups();
 
-    void setGroups(const std::vector<std::shared_ptr<Group>> &groups);
+    void setGroups(const std::vector<Group*> &groups);
 
-    std::vector<std::shared_ptr<User>> &getFollowers();
+    std::vector<User*> &getFollowers();
 
-    void setFollowers(const std::vector<std::shared_ptr<User>> &followers);
+    void setFollowers(const std::vector<User*> &followers);
 
     std::vector<std::string> &getStudies();
 

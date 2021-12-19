@@ -8,7 +8,7 @@
 
 // Implementarea constructorului de initializare
 User::User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
-           const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile) {
+           const int &cnp, const std::string &sex, Profile* &userProfile) {
     std::cout << "[DEBUG] Apelare constructor User.h" << std::endl;
     this->username = username;
     this->password = password;

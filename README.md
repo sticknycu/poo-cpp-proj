@@ -40,43 +40,6 @@
 - [X] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
 - [X] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
-
-## Tema 2
-
-#### Deadlines semestrul 1
-- săptămâna 7 (20 noiembrie): progres parțial
-- **săptămâna 8 (27 noiembrie): tema 2 gata**
-- săptămâna 9 (4 decembrie): (eventuale) modificări în urma feedback-ului
-
-#### Cerințe
-- [X] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri
-  - [ ] funcții virtuale (pure)
-  - [ ] apelarea constructorului din clasa de bază
-  - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
-- [ ] excepții
-  - [ ] predefinite
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
-- [ ] funcții și atribute `static`
-- [ ] STL
-- [ ] cât mai multe `const`
-- [ ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
-- [ ] încă un tag de `git`: de exemplu `v0.2`
-
-## Tema 3
-
-#### Deadlines semestrul 1
-- săptămâna 10 (11 decembrie): progres parțial
-- **săptămâna 11 (18 decembrie): tema 3 gata**
-- săptămâna 12 (22-29 decembrie): (eventuale) modificări în urma feedback-ului
-
-#### Cerințe
-- [ ] 2 design patterns
-- [ ] funcții și clase șablon (`template`)
-- [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
-
-
 ## Description
 
 UtilityIT este o mini-plaforma de socializare.
