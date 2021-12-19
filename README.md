@@ -54,10 +54,10 @@
   - [ ] funcții virtuale (pure)
   - [ ] apelarea constructorului din clasa de bază
   - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
-- [ ] excepții
-  - [ ] predefinite
-  - [ ] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
-  - [ ] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
+- [X] excepții
+  - [X] predefinite
+  - [X] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
+  - [X] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [X] funcții și atribute `static`
 - [ ] STL
 - [X] cât mai multe `const`

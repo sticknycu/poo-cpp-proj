@@ -12,20 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/BaseException.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/WrongPasswordException.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BaseException.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WrongPasswordException.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Comment.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Comment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Post.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Post.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Profile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Reaction.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Reaction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/User.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Post.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Post.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reaction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reaction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="utilityit" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,6 +71,11 @@
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="Unnamed" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="UtilityIT" RUN_TARGET_NAME="UtilityIT" EXPLICIT_BUILD_TARGET_NAME="all">

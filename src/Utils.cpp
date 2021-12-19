@@ -8,6 +8,9 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include "../includes/WrongPasswordException.h"
+
+class WrongPasswordException;
 
 // Implementarea constructorului de initializare
 Utils::Utils() {
@@ -227,7 +230,8 @@ void Utils::loginUser() {
             std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe." << std::endl;
             navigatePlatform(user);
         } else {
-            std::cout << "Din pacate, parola nu este buna. Te rugam sa revi." << std::endl;
+            std::string wrongPasswordMessage = "Din pacate, parola nu este buna. Te rugam sa revi.";
+            throw WrongPasswordException(wrongPasswordMessage);
         }
 
     }
