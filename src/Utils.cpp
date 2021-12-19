@@ -323,7 +323,7 @@ std::string Utils::handleInput(std::string &text) {
         if (!text.empty()) {
             break;
         } else if (std::cin.fail()) {
-            std::cin.clear(); // unset failbit
+            std::cin.clear();
         }
     }
     return text;
