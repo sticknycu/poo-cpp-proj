@@ -12,49 +12,55 @@
 
 class Utils {
 
+private:
+
+    Utils() = default;
+
+    static Utils* instance;
+
 public:
 
-    // constructor default fara parametrii
-    Utils();
-
-    // destructor
-    ~Utils();
-
-    // constructor de copiere
-    Utils(const Utils& copie);
+    Utils(const Utils&) = delete;
 
     // operatorul =
-    Utils& operator=(const Utils& copie);
+    Utils& operator=(const Utils&) = delete;
+
+    static Utils* getInstance() {
+        if (instance == nullptr) {
+            instance = new Utils();
+        }
+        return instance;
+    }
 
     // Implementarea pentru a face split al unui string.
-    static std::vector<std::string> explodeString(std::string &text, char delimiter);
+    std::vector<std::string> explodeString(std::string &text, char delimiter);
 
     // inregistrarea utilizatorului
-    static void registerUser();
+    void registerUser();
 
     // logarea utilizatorului
-    static void loginUser();
+    void loginUser();
 
     // Configurarea utilizatorului
-    static User configurateUser(User &user);
+    User configurateUser(User &user);
 
     // Configurarea profilului.
-    static Profile configureProfile(User &user);
+    Profile configureProfile(User &user);
 
     // Navigarea pe plaforma
-    static void navigatePlatform(User &user);
+    void navigatePlatform(User &user);
 
     // Handle register for users. Function for save user information to file.
-    static void handleRegister(User &user);
+    void handleRegister(User &user);
 
     // Handle profile for users. Function for save profile information to file.
-    static void handleProfile(Profile &profile);
+    void handleProfile(Profile &profile);
 
     // Handle string when is shit and don't want to
-    static std::string handleInput(std::string &text);
+    std::string handleInput(std::string &text);
 
     // Handle data to be removed if that exists already in file when profile is updated
-    static void manageExistanceProfileData(Profile &profile);
+    void manageExistanceProfileData(Profile &profile);
 
     static long getCurrentTime();
 };

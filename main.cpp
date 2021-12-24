@@ -11,9 +11,9 @@ void startApp() {
 
     std::cin >> message;
     if (message == "/register") {
-        Utils::registerUser();
+        Utils::getInstance()->registerUser();
     } else if (message == "/login") {
-        Utils::loginUser();
+        Utils::getInstance()->loginUser();
     } else {
         std::cout << "Din pacate nu am putut identifica aceasta comanda. Te rugam sa folosesti /register sau /login." << std::endl;
     }

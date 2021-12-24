@@ -96,12 +96,12 @@ void Comment::setPost(std::shared_ptr<Post> post) {
 void Comment::handleComment(User &user) {
     std::cout << "Pentru a adauga un comentariu, te rugam sa ne spui textul pe care trebuie sa-l contina:" << std::endl;
     std::string input;
-    input = Utils::handleInput(input);
+    input = Utils::getInstance()->handleInput(input);
     long id;
     std::cout << "De asemenea, trebuie sa stim si id-ul postarii. Il poti afla la navigarea platformei folosind /idMyPosts sau /idPosts" << std::endl;
     std::cin >> id;
     createComment(user, input, id);
-    Utils::navigatePlatform(user);
+    Utils::getInstance()->navigatePlatform(user);
 }
 
 void Comment::createComment(User &user, const std::string &text, const long &id) {

@@ -102,8 +102,8 @@ void Post::createPost(User &user, const std::string &description) {
 void Post::handlePost(User &user) {
     std::cout << "Deci vrei sa creezi o postare. Am inteles. Pentru acest lucru, te rugam sa ne spui descrierea pe care doresti sa o adaugi postarii." << std::endl;
     std::string input;
-    input = Utils::handleInput(input);
+    input = Utils::getInstance()->handleInput(input);
     createPost(user, input);
     std:: cout << "Postarea a fost creata cu succes!" << std::endl;
-    Utils::navigatePlatform(user);
+    Utils::getInstance()->navigatePlatform(user);
 }

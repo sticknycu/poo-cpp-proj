@@ -52,7 +52,7 @@
 - [X] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
 - [ ] moșteniri
   - [ ] funcții virtuale (pure)
-  - [ ] apelarea constructorului din clasa de bază
+  - [X] apelarea constructorului din clasa de bază
   - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [X] excepții
   - [X] predefinite
@@ -61,7 +61,7 @@
 - [X] funcții și atribute `static`
 - [ ] STL
 - [X] cât mai multe `const`
-- [ ] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
+- [X] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
 - [ ] încă un tag de `git`: de exemplu `v0.2`
 
 ## Tema 3

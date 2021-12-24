@@ -12,27 +12,6 @@
 
 class WrongPasswordException;
 
-// Implementarea constructorului de initializare
-Utils::Utils() {
-    std::cout << "[DEBUG] Apelare constructor Utils.h" << std::endl;
-}
-
-// Implementarea destructorului
-Utils::~Utils() {
-    std::cout << "[DEBUG] Apelare destructor Utils.h" << std::endl;
-}
-
-// Implementarea constructorului de copiere
-Utils::Utils(const Utils &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Utils.h" << std::endl;
-}
-
-// Implementarea operatorului =
-Utils &Utils::operator=(const Utils &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Utils.h" << std::endl;
-    return *this;
-}
-
 // Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::explodeString(std::string &text, char delimiter) {
     std::vector<std::string> words{};
