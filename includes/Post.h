@@ -17,6 +17,9 @@ class Comment;
 class User;
 
 class Post {
+
+    friend class PostBuilder;
+
 private:
     long id;
     std::string description;
@@ -63,6 +66,30 @@ public:
 
     // Handle posts. Show all posts
     static void showPosts();
+};
+
+class PostBuilder {
+private:
+
+    Post post;
+
+public:
+    PostBuilder() = default;
+
+    PostBuilder& id(long id) {
+        post.id = id;
+        return *this;
+    }
+
+    PostBuilder& description(std::string description) {
+        post.description = description;
+        return *this;
+    }
+
+    Post build() {
+        return post;
+    }
+
 };
 
 

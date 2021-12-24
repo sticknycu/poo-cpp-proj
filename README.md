@@ -50,8 +50,8 @@
 
 #### Cerințe
 - [X] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
-- [ ] moșteniri
-  - [ ] funcții virtuale (pure)
+- [X] moșteniri
+  - [X] funcții virtuale (pure)
   - [X] apelarea constructorului din clasa de bază
   - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
 - [X] excepții
@@ -72,7 +72,9 @@
 - săptămâna 12 (22-29 decembrie): (eventuale) modificări în urma feedback-ului
 
 #### Cerințe
-- [ ] 2 design patterns
+- [X] 2 design patterns
+  - [X] Builder
+  - [X] Singleton
 - [ ] funcții și clase șablon (`template`)
 - [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
 

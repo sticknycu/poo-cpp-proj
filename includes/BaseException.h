@@ -25,9 +25,9 @@ public:
     // destructor default
     ~BaseException() =default;
 
-    const std::string &getCustomMessage();
+    virtual const std::string &getCustomMessage();
 
-    void setCustomMessage(const std::string &customMessage);
+    virtual void setCustomMessage(const std::string &customMessage);
 };
 
 

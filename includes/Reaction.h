@@ -10,10 +10,11 @@
 #include "ReactionEnum.h"
 #include <memory>
 
-
 enum class ReactionEnum;
 
 class Reaction {
+
+    friend class ReactionBuilder;
 
 private:
     long id;
@@ -39,6 +40,29 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Reaction &reaction);
 
     //TODO: add reaction to post
+};
+
+class ReactionBuilder {
+private:
+
+    Reaction reaction;
+
+public:
+    ReactionBuilder() = default;
+
+    ReactionBuilder& id(long id) {
+        reaction.id = id;
+        return *this;
+    }
+
+    ReactionBuilder& reactionType(std::shared_ptr<ReactionEnum> reactionType) {
+        reaction.reactionType = reactionType;
+        return *this;
+    }
+
+    Reaction build() {
+        return reaction;
+    }
 };
 
 

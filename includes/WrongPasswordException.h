@@ -7,7 +7,7 @@
 
 #include "BaseException.h"
 
-class WrongPasswordException : public BaseException {
+class WrongPasswordException : public virtual BaseException {
 
 public:
     // constructor default
@@ -18,6 +18,10 @@ public:
 
     // destructor
     ~WrongPasswordException() =default;
+
+    const std::string &getCustomMessage();
+
+    void setCustomMessage(const std::string &customMessage);
 };
 
 
