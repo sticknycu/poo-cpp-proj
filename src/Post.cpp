@@ -8,8 +8,8 @@
 #include <fstream>
 
 // Implementarea constructorului de initializare
-Post::Post(const long &id, const std::string &description, const std::vector<ReactionEnum*> &reactions,
-           const std::vector<Comment*> &comments, User* createdBy, const long &creationDate) {
+Post::Post(const long &id, const std::string &description, const std::vector<std::shared_ptr<ReactionEnum>> &reactions,
+           const std::vector<std::shared_ptr<Comment>> &comments, std::shared_ptr<User> createdBy, const long &creationDate) {
     std::cout << "[DEBUG] Apelare constructor Post.h" << std::endl;
     this->id = id;
     this->description = description;
@@ -102,8 +102,8 @@ void Post::createPost(User &user, const std::string &description) {
 void Post::handlePost(User &user) {
     std::cout << "Deci vrei sa creezi o postare. Am inteles. Pentru acest lucru, te rugam sa ne spui descrierea pe care doresti sa o adaugi postarii." << std::endl;
     std::string input;
-    input = Utils::handleInput(input);
+    input = Utils::getInstance()->handleInput(input);
     createPost(user, input);
     std:: cout << "Postarea a fost creata cu succes!" << std::endl;
-    Utils::navigatePlatform(user);
+    Utils::getInstance()->navigatePlatform(user);
 }

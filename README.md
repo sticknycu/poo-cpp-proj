@@ -1,5 +1,5 @@
 # UtilityIT Template
-
+![C/C++ CI](https://github.com/nicugnm/poo-cpp-proj/workflows/C/C++%20CI/badge.svg?branch=main)
 ### Tema 0
 
 - [X] nume proiect (îl puteți schimba ulterior)
@@ -37,8 +37,47 @@
     - [X] loginUser
     - [X] navigatePlatform
 - [X] scenariu de utilizare a claselor definite: apelarea din `main` a tuturor funcțiilor _publice_ definite (nu generați constructori/getteri/setteri dacă nu aveți nevoie de ei); apelarea se va face direct sau indirect - adică din `main` se pot apela funcții care construiesc obiecte cu clasele definite și folosesc aceste obiecte
-- [ ] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
-- [ ] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
+- [X] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
+- [X] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
+
+
+## Tema 2
+
+#### Deadlines semestrul 1
+- săptămâna 7 (20 noiembrie): progres parțial
+- **săptămâna 8 (27 noiembrie): tema 2 gata**
+- săptămâna 9 (4 decembrie): (eventuale) modificări în urma feedback-ului
+
+#### Cerințe
+- [X] separarea codului din clase în `.h` (sau `.hpp`) și `.cpp`
+- [X] moșteniri
+  - [X] funcții virtuale (pure)
+  - [X] apelarea constructorului din clasa de bază
+  - [X] smart pointers / pointeri normali și verificat să nu fie memory leaks
+- [X] excepții
+  - [X] predefinite
+  - [X] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
+  - [X] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
+- [X] funcții și atribute `static`
+- [X] STL
+- [X] cât mai multe `const`
+- [X] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
+- [X] încă un tag de `git`: de exemplu `v0.2`
+
+## Tema 3
+
+#### Deadlines semestrul 1
+- săptămâna 10 (11 decembrie): progres parțial
+- **săptămâna 11 (18 decembrie): tema 3 gata**
+- săptămâna 12 (22-29 decembrie): (eventuale) modificări în urma feedback-ului
+
+#### Cerințe
+- [X] 2 design patterns
+  - [X] Builder
+  - [X] Singleton
+- [X] funcții și clase șablon (`template`)
+- [X] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
+
 
 ## Description
 

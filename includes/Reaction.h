@@ -8,22 +8,24 @@
 
 #include <iostream>
 #include "ReactionEnum.h"
-
+#include <memory>
 
 enum class ReactionEnum;
 
 class Reaction {
 
+    friend class ReactionBuilder;
+
 private:
     long id;
-    ReactionEnum* reactionType;
+    std::shared_ptr<ReactionEnum> reactionType;
 
 public:
     // constructor default
     Reaction() =default;
 
     // constructor de initializare
-    Reaction(const long &id, ReactionEnum *reactionType);
+    Reaction(const long &id, std::shared_ptr<ReactionEnum> reactionType);
 
     // destructor
     ~Reaction();
@@ -38,6 +40,29 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Reaction &reaction);
 
     //TODO: add reaction to post
+};
+
+class ReactionBuilder {
+private:
+
+    Reaction reaction;
+
+public:
+    ReactionBuilder() = default;
+
+    ReactionBuilder& id(long id) {
+        reaction.id = id;
+        return *this;
+    }
+
+    ReactionBuilder& reactionType(std::shared_ptr<ReactionEnum> reactionType) {
+        reaction.reactionType = reactionType;
+        return *this;
+    }
+
+    Reaction build() {
+        return reaction;
+    }
 };
 
 

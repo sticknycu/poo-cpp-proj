@@ -2,10 +2,10 @@ name: C++ CI
 
 on:
   push:
-    branches: [master] # replace with main (if applicable)
+    branches: [main] # replace with main (if applicable)
     tags: '*'
   pull_request:
-    branches: [master] # replace with main (if applicable)
+    branches: [main] # replace with main (if applicable)
 
 jobs:
   build:
@@ -20,11 +20,6 @@ jobs:
         include:
           - os: macos-10.15
             cxx: clang++
-          - os: windows-2019
-            cxx: cl
-          - os: windows-2019
-            cxx: g++
-            cmake_generator: "\"MinGW Makefiles\""
 
     steps:
       - uses: actions/checkout@v2
@@ -32,9 +27,9 @@ jobs:
       - name: Prepare env
         shell: bash
         run: |
-          echo $GITHUB_WORKSPACE/UtilityIT/
+          echo $GITHUB_WORKSPACE
           mkdir $GITHUB_WORKSPACE/build
-          mkdir $GITHUB_WORKSPACE/UtilityIT/artifacts
+          mkdir $GITHUB_WORKSPACE/artifacts
       - name: Configure CMake
         env:
           CXX: ${{ matrix.cxx }}
@@ -44,7 +39,7 @@ jobs:
         shell: bash
         working-directory: ${{ github.workspace }}/build
         run: |
-          CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE/UtilityIT/ -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+          CMAKE_GENERATOR=${{ matrix.cmake_generator }} cmake -S $GITHUB_WORKSPACE -B . -DCMAKE_BUILD_TYPE=$BUILD_TYPE
       - name: Build
         working-directory: ${{ github.workspace }}/build
         shell: bash

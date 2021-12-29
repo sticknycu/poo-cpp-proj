@@ -4,12 +4,10 @@
 
 #include "../includes/Comment.h"
 #include "../includes/Utils.h"
-#include <iostream>
 #include <fstream>
-#include <ctime>
 
 // Implementarea constructorului de initializare
-Comment::Comment(const long &id, User &createdBy, const long &creationDate, const std::string &text, Post &post) {
+Comment::Comment(const long &id, std::shared_ptr<User> createdBy, const long &creationDate, const std::string &text, std::shared_ptr<Post> post) {
     std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
     this->createdBy = createdBy;
@@ -63,11 +61,11 @@ void Comment::setId(const long &id) {
     this->id = id;
 }
 
-User &Comment::getCreatedBy() {
+std::shared_ptr<User> Comment::getCreatedBy() {
     return this->createdBy;
 }
 
-void Comment::setCreatedBy(User &user) {
+void Comment::setCreatedBy(std::shared_ptr<User> user) {
     this->createdBy = user;
 }
 
@@ -87,23 +85,23 @@ void Comment::setText(const std::string &text) {
     this->text = text;
 }
 
-Post &Comment::getPost() {
+std::shared_ptr<Post> Comment::getPost() {
     return this->post;
 }
 
-void Comment::setPost(Post &post) {
+void Comment::setPost(std::shared_ptr<Post> post) {
     this->post = post;
 }
 
 void Comment::handleComment(User &user) {
     std::cout << "Pentru a adauga un comentariu, te rugam sa ne spui textul pe care trebuie sa-l contina:" << std::endl;
     std::string input;
-    input = Utils::handleInput(input);
+    input = Utils::getInstance()->handleInput(input);
     long id;
     std::cout << "De asemenea, trebuie sa stim si id-ul postarii. Il poti afla la navigarea platformei folosind /idMyPosts sau /idPosts" << std::endl;
     std::cin >> id;
     createComment(user, input, id);
-    Utils::navigatePlatform(user);
+    Utils::getInstance()->navigatePlatform(user);
 }
 
 void Comment::createComment(User &user, const std::string &text, const long &id) {

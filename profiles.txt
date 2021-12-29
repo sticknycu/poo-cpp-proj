@@ -1,3 +1,2 @@
-5000000000001||||University of Bucharest,ASE|Bucuresti
-5000000000002||||ASE,Poli|Brasov
-5000000000000||||ASE|Craiova
+
+5000000000000||||ASE|Brasov
