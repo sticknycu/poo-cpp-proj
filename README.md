@@ -40,7 +40,6 @@
 - [X] după ce e gata prima temă, tag de `git`: de exemplu `v0.1`
 - [X] GitHub Actions sau alt serviciu de CI (Continuous Integration) - exemplu [aici](https://github.com/mcmarius/demo-poo/blob/master/.github/workflows/cmake.yml) (a se vedea și `CMakeLists.txt` din același repo pt compiler flags)
 
-
 ## Tema 2
 
 #### Deadlines semestrul 1
@@ -77,7 +76,6 @@
   - [X] Singleton
 - [X] funcții și clase șablon (`template`)
 - [X] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
-
 
 ## Description
 

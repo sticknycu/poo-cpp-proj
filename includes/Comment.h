@@ -44,7 +44,7 @@ public:
     long &getId();
 
     void setId(const long &id);
-
+  
     std::shared_ptr<User> getCreatedBy();
 
     void setCreatedBy(std::shared_ptr<User> user);
@@ -56,7 +56,7 @@ public:
     std::string &getText();
 
     void setText(const std::string &text);
-
+  
     std::shared_ptr<Post> getPost();
 
     void setPost(std::shared_ptr<Post> post);
