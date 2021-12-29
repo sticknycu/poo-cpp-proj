@@ -10,18 +10,22 @@
 #include "Comment.h"
 #include "ReactionEnum.h"
 #include <vector>
+#include <memory>
 
 enum class ReactionEnum;
 class Comment;
 class User;
 
 class Post {
+
+    friend class PostBuilder;
+
 private:
     long id;
     std::string description;
-    std::vector<ReactionEnum*> reactions;
-    std::vector<Comment*> comments;
-    User *createdBy;
+    std::vector<std::shared_ptr<ReactionEnum>> reactions;
+    std::vector<std::shared_ptr<Comment>> comments;
+    std::shared_ptr<User> createdBy;
     long creationDate;
 
 public:
@@ -29,8 +33,8 @@ public:
     Post() =default;
 
     // constructor de initializare
-    Post(const long &id, const std::string &description, const std::vector<ReactionEnum*> &reactions,
-         const std::vector<Comment*> &comments, User* createdBy, const long &creationDate);
+    Post(const long &id, const std::string &description, const std::vector<std::shared_ptr<ReactionEnum>> &reactions,
+         const std::vector<std::shared_ptr<Comment>> &comments, std::shared_ptr<User> createdBy, const long &creationDate);
 
     // destructor
     ~Post();
@@ -62,6 +66,30 @@ public:
 
     // Handle posts. Show all posts
     static void showPosts();
+};
+
+class PostBuilder {
+private:
+
+    Post post;
+
+public:
+    PostBuilder() = default;
+
+    PostBuilder& id(long id) {
+        post.id = id;
+        return *this;
+    }
+
+    PostBuilder& description(std::string description) {
+        post.description = description;
+        return *this;
+    }
+
+    Post build() {
+        return post;
+    }
+
 };
 
 

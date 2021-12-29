@@ -85,7 +85,7 @@ void Rule::handleRule(const std::string &text) {
 void Rule::createRule(User &user) {
     std::cout << "Pentru a crea o regula, te rugam sa introduci textul ce descrie regula:" << std::endl;
     std::string input;
-    input = Utils::handleInput(input);
+    input = Utils::getInstance()->handleInput(input);
     handleRule(input);
-    Utils::navigatePlatform(user);
+    Utils::getInstance()->navigatePlatform(user);
 }

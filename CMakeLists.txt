@@ -31,4 +31,4 @@ add_executable(UtilityIT
         includes/ReactionEnum.h
 
         includes/Utils.h
-        )
+        includes/BaseException.h includes/WrongPasswordException.h src/BaseException.cpp src/WrongPasswordException.cpp includes/Admin.h src/Admin.cpp)

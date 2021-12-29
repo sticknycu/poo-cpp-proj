@@ -9,6 +9,7 @@
 #include <iostream>
 #include <utility>
 #include "Profile.h"
+#include <memory>
 
 class Profile;
 
@@ -19,9 +20,9 @@ private:
     std::string password;
     std::string firstname;
     std::string lastname;
-    long cnp;
+    long cnp{};
     std::string sex;
-    Profile *userProfile;
+    std::shared_ptr<Profile> userProfile;
 
 public:
     // constructor default
@@ -29,7 +30,7 @@ public:
 
     // constructor de initializare
     User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
-         const int &cnp, const std::string &sex, Profile* &userProfile);
+         const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile);
 
     // destructor
     ~User();

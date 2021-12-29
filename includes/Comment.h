@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "User.h"
+#include <memory>
 
 class User;
 class Post;
@@ -15,10 +16,10 @@ class Post;
 class Comment {
 private:
     long id;
-    User* createdBy;
+    std::shared_ptr<User> createdBy;
     long creationDate;
     std::string text;
-    Post* post;
+    std::shared_ptr<Post> post;
 
 public:
 
@@ -26,7 +27,7 @@ public:
     Comment() =default;
 
     // constructor de initializare
-    Comment(const long &id, User* createdBy, const long &creationDate, const std::string &text, Post* post);
+    Comment(const long &id, std::shared_ptr<User> createdBy, const long &creationDate, const std::string &text, std::shared_ptr<Post> post);
 
     // destructor
     ~Comment();
@@ -43,10 +44,10 @@ public:
     long &getId();
 
     void setId(const long &id);
+  
+    std::shared_ptr<User> getCreatedBy();
 
-    User* getCreatedBy();
-
-    void setCreatedBy(User *user);
+    void setCreatedBy(std::shared_ptr<User> user);
 
     long &getCreationDate();
 
@@ -55,10 +56,10 @@ public:
     std::string &getText();
 
     void setText(const std::string &text);
+  
+    std::shared_ptr<Post> getPost();
 
-    Post* getPost();
-
-    void setPost(Post *post);
+    void setPost(std::shared_ptr<Post> post);
 
     // function to handle comments
     static void handleComment(User &user);

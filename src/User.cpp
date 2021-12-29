@@ -8,7 +8,7 @@
 
 // Implementarea constructorului de initializare
 User::User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
-           const int &cnp, const std::string &sex, Profile* &userProfile) {
+           const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile) {
     std::cout << "[DEBUG] Apelare constructor User.h" << std::endl;
     this->username = username;
     this->password = password;
@@ -130,7 +130,7 @@ bool User::checkUserAvailability(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
+        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
         if (wordsExploded.at(0) == user.getUsername()) {
             file.close();
             return true;
@@ -149,7 +149,7 @@ User User::getUserInformationFromDatabase(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::explodeString(data, '|');
+        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
         if (user.getUsername() == wordsExploded.at(0)) {
             user.setPassword(wordsExploded.at(1));
             user.setFirstname(wordsExploded.at(2));

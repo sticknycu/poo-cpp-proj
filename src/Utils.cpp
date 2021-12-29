@@ -8,27 +8,12 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include "../includes/WrongPasswordException.h"
+#include "../includes/Admin.h"
 
-// Implementarea constructorului de initializare
-Utils::Utils() {
-    std::cout << "[DEBUG] Apelare constructor Utils.h" << std::endl;
-}
-
-// Implementarea destructorului
-Utils::~Utils() {
-    std::cout << "[DEBUG] Apelare destructor Utils.h" << std::endl;
-}
-
-// Implementarea constructorului de copiere
-Utils::Utils(const Utils &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Utils.h" << std::endl;
-}
-
-// Implementarea operatorului =
-Utils &Utils::operator=(const Utils &copie) {
-    std::cout << "[DEBUG] Apelare constructor de copiere Utils.h" << std::endl;
-    return *this;
-}
+class WrongPasswordException;
+template<typename T>
+class Admin;
 
 // Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::explodeString(std::string &text, char delimiter) {
@@ -80,7 +65,7 @@ void Utils::handleProfile(Profile &profile) {
     std::string id = std::to_string(profile.getId());
 
     std::string stringPosts;
-    std::vector<Post*> posts = profile.getPosts();
+    std::vector<std::shared_ptr<Post>> posts = profile.getPosts();
     for (auto post : posts) {
         if (stringPosts.empty()) {
             stringPosts.append(std::to_string(post->getId()));
@@ -92,7 +77,7 @@ void Utils::handleProfile(Profile &profile) {
     }
 
     std::string stringGroups;
-    std::vector<Group*> groups = profile.getGroups();
+    std::vector<std::shared_ptr<Group>> groups = profile.getGroups();
     for (auto group : groups) {
         if (stringGroups.empty()) {
             stringGroups.append(group->getName());
@@ -104,7 +89,7 @@ void Utils::handleProfile(Profile &profile) {
     }
 
     std::string stringFollowers;
-    std::vector<User*> followers = profile.getFollowers();
+    std::vector<std::shared_ptr<User>> followers = profile.getFollowers();
     for (auto follower : followers) {
         if (stringFollowers.empty()) {
             stringFollowers.append(follower->getUsername());
@@ -227,7 +212,8 @@ void Utils::loginUser() {
             std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe." << std::endl;
             navigatePlatform(user);
         } else {
-            std::cout << "Din pacate, parola nu este buna. Te rugam sa revi." << std::endl;
+            std::string wrongPasswordMessage = "Din pacate, parola nu este buna. Te rugam sa revi.";
+            throw WrongPasswordException(wrongPasswordMessage);
         }
 
     }
@@ -287,6 +273,7 @@ void Utils::navigatePlatform(User &user) {
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
+    std::cout << "Afla cine sunt administratorii platformei folosind /admins" << std::endl;
     std::cout << "Foloseste comanda respectiva!" << std::endl;
 
     std::string inputString;
@@ -310,6 +297,11 @@ void Utils::navigatePlatform(User &user) {
         navigatePlatform(user);
     } else if (inputString == "/exit") {
         std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
+    } else if (inputString == "/admins") {
+        std::cout << "Lista administratorilor este: " << std::endl;
+        for (const User& castedUser : Admin<std::string>::getInstance()->getAdmins()) {
+            std::cout << castedUser << std::endl;
+        }
     } else {
         std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
         navigatePlatform(user);
