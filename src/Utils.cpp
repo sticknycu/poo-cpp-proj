@@ -9,8 +9,11 @@
 #include <fstream>
 #include <algorithm>
 #include "../includes/WrongPasswordException.h"
+#include "../includes/Admin.h"
 
 class WrongPasswordException;
+template<typename T>
+class Admin;
 
 // Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::explodeString(std::string &text, char delimiter) {
@@ -270,6 +273,7 @@ void Utils::navigatePlatform(User &user) {
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
     std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
+    std::cout << "Afla cine sunt administratorii platformei folosind /admins" << std::endl;
     std::cout << "Foloseste comanda respectiva!" << std::endl;
 
     std::string inputString;
@@ -293,6 +297,11 @@ void Utils::navigatePlatform(User &user) {
         navigatePlatform(user);
     } else if (inputString == "/exit") {
         std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
+    } else if (inputString == "/admins") {
+        std::cout << "Lista administratorilor este: " << std::endl;
+        for (const User& castedUser : Admin<std::string>::getInstance()->getAdmins()) {
+            std::cout << castedUser << std::endl;
+        }
     } else {
         std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
         navigatePlatform(user);

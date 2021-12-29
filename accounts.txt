@@ -1,11 +1,11 @@
-nghergu17|pooproject|Nicolae Marius|Ghergu|5000000000000|M
-nghergu14|pooproject|Nicolae Marius|Ghergu|5000000000001|M
-nghergu13|pa55|Marius|Ghergu|5000000000002|M
-nghergu12|pa22|Nicolae|Marius|5000000000003|M
-nghergu11|pa77|Nicolae|Marius|500000000004|F
-nghergu10|pa99|Nicolae|Ghergu|500000000005|F
-nghergu20|poo|Nicolae|Ghergu|500000000006|F
-ngher1|pa55|nicolae|ghergu|501|F
-registeruser|parolaregisteruser|Testare|User|500000000007|F
-numeutilizatortest|parolatest|Prenume Test|Nume Test|501110000000|F
-utilizatorsmartpointers|smartpointerspass|Smart|Pointer|5011111112222|F
+nghergu17|pooproject|Nicolae Marius|Ghergu|5000000000000|M|true
+nghergu14|pooproject|Nicolae Marius|Ghergu|5000000000001|M|false
+nghergu13|pa55|Marius|Ghergu|5000000000002|M|false
+nghergu12|pa22|Nicolae|Marius|5000000000003|M|false
+nghergu11|pa77|Nicolae|Marius|500000000004|F|false
+nghergu10|pa99|Nicolae|Ghergu|500000000005|F|false
+nghergu20|poo|Nicolae|Ghergu|500000000006|F|false
+ngher1|pa55|nicolae|ghergu|501|F|false
+registeruser|parolaregisteruser|Testare|User|500000000007|F|false
+numeutilizatortest|parolatest|Prenume Test|Nume Test|501110000000|F|false
+utilizatorsmartpointers|smartpointerspass|Smart|Pointer|5011111112222|F|false

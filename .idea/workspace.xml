@@ -11,14 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="Modify hardcoded messages">
+    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/Admin.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Admin.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/BaseException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/BaseException.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Post.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Post.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Reaction.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Reaction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/WrongPasswordException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/WrongPasswordException.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WrongPasswordException.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/WrongPasswordException.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/User.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +74,11 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="UtilityIT" RUN_TARGET_NAME="UtilityIT" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -103,7 +109,8 @@
       <workItem from="1639690987155" duration="169000" />
       <workItem from="1639937061650" duration="1592000" />
       <workItem from="1640267647813" duration="820000" />
-      <workItem from="1640354440066" duration="3073000" />
+      <workItem from="1640354440066" duration="3689000" />
+      <workItem from="1640792581516" duration="5108000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -126,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640356222860</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Design patterns and more.">
+      <created>1640357790995</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640357790995</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +161,7 @@
     <MESSAGE value="Add WrongPasswordException" />
     <MESSAGE value="Modify hardcoded messages" />
     <MESSAGE value="Make Utils as singleton." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make Utils as singleton." />
+    <MESSAGE value="Design patterns and more." />
+    <option name="LAST_COMMIT_MESSAGE" value="Design patterns and more." />
   </component>
 </project>

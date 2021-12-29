@@ -20,7 +20,7 @@ private:
     std::string password;
     std::string firstname;
     std::string lastname;
-    long cnp;
+    long cnp{};
     std::string sex;
     std::shared_ptr<Profile> userProfile;
 

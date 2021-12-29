@@ -59,10 +59,10 @@
   - [X] ierarhie proprie (cu baza `std::exception` sau derivată din `std::exception`)
   - [X] utilizare cu sens: de exemplu, `throw` în constructor, `try`/`catch` în `main`
 - [X] funcții și atribute `static`
-- [ ] STL
+- [X] STL
 - [X] cât mai multe `const`
 - [X] la fel ca mai sus, apelarea tuturor funcțiilor publice din `main`
-- [ ] încă un tag de `git`: de exemplu `v0.2`
+- [X] încă un tag de `git`: de exemplu `v0.2`
 
 ## Tema 3
 
@@ -75,8 +75,8 @@
 - [X] 2 design patterns
   - [X] Builder
   - [X] Singleton
-- [ ] funcții și clase șablon (`template`)
-- [ ] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
+- [X] funcții și clase șablon (`template`)
+- [X] un ultim (?) tag de `git`: de exemplu `v0.3` sau `v1.0`
 
 
 ## Description
