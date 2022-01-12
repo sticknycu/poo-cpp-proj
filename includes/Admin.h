@@ -7,6 +7,8 @@
 #define UTILITYIT_ADMIN_H
 
 #include <iostream>
+#include "../includes/User.h"
+#include <vector>
 
 class User;
 

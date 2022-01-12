@@ -12,8 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cmake.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cmake.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +82,6 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,7 +100,8 @@
       <workItem from="1640267647813" duration="820000" />
       <workItem from="1640354440066" duration="3689000" />
       <workItem from="1640792581516" duration="5108000" />
-      <workItem from="1641999187004" duration="6193000" />
+      <workItem from="1641999187004" duration="7548000" />
+      <workItem from="1642010293117" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -143,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642005063490</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add #include &lt;vector&gt; and windows compiler.">
+      <created>1642005607647</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642005607647</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +168,7 @@
     <MESSAGE value="Make Utils as singleton." />
     <MESSAGE value="Design patterns and more." />
     <MESSAGE value="Fix some of the issues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix some of the issues." />
+    <MESSAGE value="Add #include &lt;vector&gt; and windows compiler." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add #include &lt;vector&gt; and windows compiler." />
   </component>
 </project>
