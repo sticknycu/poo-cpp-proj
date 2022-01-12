@@ -9,21 +9,19 @@
 #include "../includes/Utils.h"
 
 template<typename T>
-bool Admin<T>::isAdmin(const T &_identificator, const std::string type) const {
+bool Admin<T>::isAdmin(const T &identificator_, const std::string& type) const {
     std::ifstream file;
     std::string data;
 
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
-
-        auto identificator = dynamic_cast<T>(_identificator);
+        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
 
         if (std::equal(type.begin(), type.end(), "username")) {
             User user;
-            if (identificator == wordsExploded.at(0)) {
-                user.setUsername(identificator);
+            if (identificator_ == wordsExploded.at(0)) {
+                user.setUsername(identificator_);
                 User::getUserInformationFromDatabase(user);
                 if (wordsExploded.at(6) == "true") {
                     return true;
@@ -31,8 +29,8 @@ bool Admin<T>::isAdmin(const T &_identificator, const std::string type) const {
             }
         } else if (std::equal(type.begin(), type.end(), "lastname")) {
             User user;
-            if (identificator == wordsExploded.at(3)) {
-                user.setLastname(identificator);
+            if (identificator_ == wordsExploded.at(3)) {
+                user.setLastname(identificator_);
                 User::getUserInformationFromDatabase(user);
                 if (wordsExploded.at(6) == "true") {
                     return true;
@@ -40,8 +38,8 @@ bool Admin<T>::isAdmin(const T &_identificator, const std::string type) const {
             }
         } else if (std::equal(type.begin(), type.end(), "firstname")) {
             User user;
-            if (identificator == wordsExploded.at(4)) {
-                user.setFirstname(identificator);
+            if (identificator_ == wordsExploded.at(4)) {
+                user.setFirstname(identificator_);
                 User::getUserInformationFromDatabase(user);
                 if (wordsExploded.at(6) == "true") {
                     return true;
@@ -49,8 +47,8 @@ bool Admin<T>::isAdmin(const T &_identificator, const std::string type) const {
             }
         } else if (std::equal(type.begin(), type.end(), "cnp")) {
             User user;
-            if (identificator == wordsExploded.at(4)) {
-                user.setCNP(identificator);
+            if (identificator_ == wordsExploded.at(4)) {
+                user.setCNP(identificator_);
                 User::getUserInformationFromDatabase(user);
                 if (wordsExploded.at(6) == "true") {
                     return true;
@@ -59,13 +57,11 @@ bool Admin<T>::isAdmin(const T &_identificator, const std::string type) const {
         }
     }
 
-    file.close();
-
     return false;
 }
 
 template<typename T>
-const std::vector<User>& Admin<T>::getAdmins() const {
+std::vector<User> Admin<T>::getAdmins() {
     std::ifstream file;
     std::string data;
 
@@ -74,7 +70,7 @@ const std::vector<User>& Admin<T>::getAdmins() const {
     std::vector<User> listUser;
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
+        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
 
         auto identificator = wordsExploded.at(6);
 
@@ -87,7 +83,19 @@ const std::vector<User>& Admin<T>::getAdmins() const {
         }
     }
 
-    file.close();
-
     return listUser;
+}
+
+template<typename T>
+Admin<T> &Admin<T>::operator=(const Admin<T> &copie) {
+    std::cout << "[DEBUG] Apelare operator = Admin.h" << std::endl;
+    this->identificator = copie.identificator;
+    return *this;
+}
+
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Admin<T> &admin) {
+    std::cout << "[DEBUG] Apelare operator << Comment.h" << std::endl;
+    os << std::endl << admin.identificator;
+    return os;
 }

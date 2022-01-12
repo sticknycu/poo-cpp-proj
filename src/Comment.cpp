@@ -4,7 +4,11 @@
 
 #include "../includes/Comment.h"
 #include "../includes/Utils.h"
+#include "../includes/Application.h"
 #include <fstream>
+
+class Utils;
+class Application;
 
 // Implementarea constructorului de initializare
 Comment::Comment(const long &id, std::shared_ptr<User> createdBy, const long &creationDate, const std::string &text, std::shared_ptr<Post> post) {
@@ -96,12 +100,12 @@ void Comment::setPost(std::shared_ptr<Post> post) {
 void Comment::handleComment(User &user) {
     std::cout << "Pentru a adauga un comentariu, te rugam sa ne spui textul pe care trebuie sa-l contina:" << std::endl;
     std::string input;
-    input = Utils::getInstance()->handleInput(input);
+    input = Utils::handleInput(input);
     long id;
     std::cout << "De asemenea, trebuie sa stim si id-ul postarii. Il poti afla la navigarea platformei folosind /idMyPosts sau /idPosts" << std::endl;
     std::cin >> id;
     createComment(user, input, id);
-    Utils::getInstance()->navigatePlatform(user);
+    Application::navigatePlatform(user);
 }
 
 void Comment::createComment(User &user, const std::string &text, const long &id) {

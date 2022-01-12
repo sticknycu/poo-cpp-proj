@@ -15,33 +15,21 @@ class Admin {
 
 private:
     T identificator;
-
-    static Admin<T>* instance;
+public:
 
     Admin<T>() = default;
 
-public:
+    Admin<T>(const Admin<T> &copie) = default;
 
-    static Admin<T>* getInstance() {
-        if (instance == nullptr) {
-            instance = new Admin<T>();
-        }
-        return instance;
-    }
+    Admin<T>& operator=(const Admin<T> &copie);
 
-    Admin<T>(const std::shared_ptr<T> &user) = delete;
-
-    Admin<T>(const T &copie) = delete;
-
-    Admin<T>& operator=(const T &copie) = delete;
-
-    friend std::ostream& operator <<(const std::ostream &os, const T &admin) = delete;
+    friend std::ostream& operator <<(std::ostream &os, const Admin<T> &admin);
 
     ~Admin<T>() = default;
 
-    bool isAdmin(const T &identificator, const std::string type) const;
+    bool isAdmin(const T &identificator_, const std::string& type) const;
 
-    const std::vector<User>& getAdmins() const;
+    std::vector<User> getAdmins();
 };
 
 

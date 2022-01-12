@@ -7,6 +7,8 @@
 
 #include "BaseException.h"
 
+class BaseException;
+
 class WrongPasswordException : public virtual BaseException {
 
 public:

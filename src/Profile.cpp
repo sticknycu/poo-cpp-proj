@@ -2,7 +2,11 @@
 // Created by nycuro on 10/30/21.
 //
 
+#include <fstream>
 #include "../includes/Profile.h"
+#include "../includes/Utils.h"
+
+class Utils;
 
 // Implementarea constructorului de initializare
 Profile::Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts, const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
@@ -124,4 +128,59 @@ std::vector<std::string> &Profile::getLivingPlaces() {
 // Setter pentru campul "livingPlaces"
 void Profile::setLivingPlaces(const std::vector<std::string> &livingPlaces) {
     this->livingPlaces = livingPlaces;
+}
+
+void Profile::manageExistenceProfileData(Profile &profile) {
+    std::ifstream oldFile;
+    std::ofstream newFile;
+    std::string data;
+
+    oldFile.open("profiles.txt");
+
+    bool exist = false;
+    while (std::getline(oldFile, data)) {
+        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
+        if (wordsExploded.at(0) == std::to_string(profile.getId())) {
+            exist = true;
+            break;
+        }
+    }
+
+
+    data = "";
+    if (exist) {
+        newFile.open("profilesNew.txt", std::ios::out | std::ios::app);
+        while (std::getline(oldFile, data)) {
+            std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
+            if (wordsExploded.at(0) != std::to_string(profile.getId())) {
+                newFile << data << std::endl;
+            }
+        }
+    }
+
+    remove("profiles.txt");
+    rename("profilesNew.txt", "profiles.txt");
+}
+
+const Profile Profile::configureProfile(User &user) {
+    std::cout << "Ne bucuram ca iti doresti sa iti configurezi profilul. De aceea, te rugam sa ne spui urmatoarele informatii:" << std::endl;
+    Profile profile;
+    profile.setId(user.getCNP());
+    std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+
+    std::string valuableString;
+    valuableString = Utils::handleInput(valuableString);
+
+    std::vector<std::string> studies = Utils::splitString(valuableString, ',');
+    profile.setStudies(studies);
+    std::cout << "Unde locuiesti si unde ai locuit pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+
+    valuableString = Utils::handleInput(valuableString);
+    std::vector<std::string> livingPlaces = Utils::splitString(valuableString, ',');
+    profile.setLivingPlaces(livingPlaces);
+
+    User::handleProfile(profile);
+
+    std::cout << "Ai configurat profilul cu succes!" << std::endl;
+    return profile;
 }

@@ -5,6 +5,13 @@
 #include "../includes/User.h"
 #include <fstream>
 #include "../includes/Utils.h"
+#include "../includes/Application.h"
+#include "../includes/WrongPasswordException.h"
+
+class User;
+class Utils;
+class Application;
+class WrongPasswordException;
 
 // Implementarea constructorului de initializare
 User::User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
@@ -130,7 +137,7 @@ bool User::checkUserAvailability(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
+        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
         if (wordsExploded.at(0) == user.getUsername()) {
             file.close();
             return true;
@@ -149,7 +156,7 @@ User User::getUserInformationFromDatabase(User &user) {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::getInstance()->explodeString(data, '|');
+        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
         if (user.getUsername() == wordsExploded.at(0)) {
             user.setPassword(wordsExploded.at(1));
             user.setFirstname(wordsExploded.at(2));
@@ -163,4 +170,217 @@ User User::getUserInformationFromDatabase(User &user) {
 
     return user;
 }
+
+// Functia pentru a salva datele utilizatorului in fisier
+void User::handleRegister(User &user) {
+    std::ofstream file;
+    std::string empty;
+
+    std::string username = user.getUsername();
+    std::string password = user.getPassword();
+    std::string firstname = user.getFirstname();
+    std::string lastname = user.getLastname();
+    std::string cnp = std::to_string(user.getCNP());
+    std::string sex = user.getSex();
+
+    std::string data = username
+            .append("|").append(password)
+            .append("|").append(firstname)
+            .append("|").append(lastname)
+            .append("|").append(cnp)
+            .append("|").append(sex);
+
+    file.open("accounts.txt", std::ios::out | std::ios::app);
+
+    file << std::endl << data;
+
+    file.close();
+}
+
+// Functia pentru a salva profilele in fisier
+void User::handleProfile(Profile &profile) {
+    std::ofstream file;
+    std::string empty;
+
+    Profile::manageExistenceProfileData(profile);
+
+    std::string id = std::to_string(profile.getId());
+
+    std::string stringPosts;
+    std::vector<std::shared_ptr<Post>> posts = profile.getPosts();
+    for (const auto& post : posts) {
+        if (stringPosts.empty()) {
+            stringPosts.append(std::to_string(post->getId()));
+        } else {
+            stringPosts = stringPosts
+                    .append((new std::string())->assign(1, ','))
+                    .append(std::to_string(post->getId()));
+        }
+    }
+
+    std::string stringGroups;
+    std::vector<std::shared_ptr<Group>> groups = profile.getGroups();
+    for (auto group : groups) {
+        if (stringGroups.empty()) {
+            stringGroups.append(group->getName());
+        } else {
+            stringGroups = stringGroups
+                    .append((new std::string())->assign(1, ','))
+                    .append(group->getName());
+        }
+    }
+
+    std::string stringFollowers;
+    std::vector<std::shared_ptr<User>> followers = profile.getFollowers();
+    for (const auto& follower : followers) {
+        if (stringFollowers.empty()) {
+            stringFollowers.append(follower->getUsername());
+        } else {
+            stringFollowers = stringFollowers
+                    .append((new std::string())->assign(1, ','))
+                    .append(follower->getUsername());
+        }
+    }
+
+    std::string stringStudies;
+    std::vector<std::string> studies = profile.getStudies();
+    for (const auto& study : studies) {
+        if (stringStudies.empty()) {
+            stringStudies = stringStudies.append(study);
+        } else {
+            stringStudies = stringStudies
+                    .append((new std::string())->assign(1, ','))
+                    .append(study);
+        }
+    }
+
+    std::string stringLivingPlaces;
+    std::vector<std::string> livingPlaces = profile.getLivingPlaces();
+    for (const auto& livingPlace : livingPlaces) {
+        if (stringLivingPlaces.empty()) {
+            stringLivingPlaces.append(livingPlace);
+        } else {
+            stringLivingPlaces = stringLivingPlaces
+                    .append((new std::string())->assign(1, ','))
+                    .append(livingPlace);
+        }
+    }
+
+    std::string data = id
+            .append("|").append(stringPosts)
+            .append("|").append(stringGroups)
+            .append("|").append(stringFollowers)
+            .append("|").append(stringStudies)
+            .append("|").append(stringLivingPlaces);
+
+    file.open("profiles.txt", std::ios::out | std::ios::app);
+
+    file << std::endl << data;
+
+    file.close();
+}
+
+
+// Implementarea pentru register
+void User::registerUser() {
+    std::string username;
+    std::cout << "Deci nu ai un cont. Te rugam sa introduci numele de utilizator dorit." << std::endl;
+    std::cin >> username;
+    User user;
+    user.setUsername(username);
+    bool availabilityUser = User::checkUserAvailability(user);
+    if (availabilityUser) {
+        std::cout << "Se pare ca ai cont, deci nu putem sa cream alt cont cu acelasi nume de utilizator." << std::endl;
+        std::cout << "Te rugam sa revii cu alt nume de utilizator" << std::endl;
+    } else {
+        std::string password;
+        std::cout << "Se pare ca nu exista nici un nume de utilizator ca cel introdus." << std::endl;
+        std::cout << "Te rugam sa introduci o parola pentru a putea efectua crearea contului." << std::endl;
+        std::cin >> password;
+        user.setPassword(password);
+        std::cout << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine." << std::endl;
+        user = configureUser(user);
+        std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra" << std::endl;
+        std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false." << std::endl;
+        bool booleanValue;
+        std::cin >> booleanValue;
+        if (booleanValue) {
+            Profile::configureProfile(user);
+        } else {
+            std::cout << "Am inteles, totul este in regula, poti naviga si fara profil." << std::endl;
+            Application::navigatePlatform(user);
+        }
+    }
+}
+
+// Implementarea pentru login
+void User::loginUser() {
+    std::string username;
+    std::cout << "Deci ai deja un cont. Te rugam sa introduci numele de utilizator:" << std::endl;
+    std::cin >> username;
+    User user;
+    user.setUsername(username);
+    bool availabilityUser = User::checkUserAvailability(user);
+    if (!availabilityUser) {
+        std::cout << "Nu am gasit nici un utilizator cu acest nume. Doresti sa creezi un cont?" << std::endl;
+        bool booleanValue;
+        std::cin >> booleanValue;
+        if (booleanValue) {
+            std::cout << "Cum raspunsul tau este pozitiv, te voi transmite catre pasii de inregistrare" << std::endl;
+            User::registerUser();
+        } else {
+            std::cout
+                    << "Din pacate nu poti naviga pe platforma daca nu ai un cont. Vrei sa introduci alt nume de utilizator?"
+                    << std::endl;
+            std::cin >> booleanValue;
+            if (booleanValue) {
+                std::cout << "Te voi transmite la pasul de login in cateva momente.." << std::endl;
+                loginUser();
+            } else {
+                std::cout
+                        << "Din pacate, pentru a putea folosi platforma ai nevoie de un nume de utilizator. Te rugam sa revii cu unul."
+                        << std::endl;
+                exit(0);
+            }
+        }
+    } else {
+        std::string password;
+        std::cout
+                << "Se pare ca ai introdus un nume de utilizator ce exista in platforma noastra. Te rugam sa introduci parola:"
+                << std::endl;
+        std::cin >> password;
+        User authedUser = User::getUserInformationFromDatabase(user);
+        if (authedUser.getPassword() == password) {
+            std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe." << std::endl;
+            Application::navigatePlatform(user);
+        } else {
+            std::string wrongPasswordMessage = "Din pacate, parola nu este buna. Te rugam sa revii.";
+            throw WrongPasswordException(wrongPasswordMessage);
+        }
+
+    }
+}
+
+// Implementarea pentru configurarea User-ului
+const User& User::configureUser(User &user) {
+    std::string text;
+    std::cout << "Facem acest lucru deoarece trebuie sa respectam legislatia in vigoare." << std::endl;
+    std::cout << "Astfel, spune-ne care este prenumele tau:" << std::endl;
+    text = Utils::handleInput(text);
+    user.setFirstname(text);
+    std::cout << "Ne-ar interesa si care este numele tau de familie:" << std::endl;
+    text = Utils::handleInput(text);
+    user.setLastname(text);
+    std::cout << "Spune-ne te rog si CNP-ul tau:" << std::endl;
+    std::cin >> text;
+    user.setCNP(std::stol(text));
+    // TODO: verify age
+    std::cout << "Ultimul pas este despre sexul tau, te rog sa ni-l comunici:" << std::endl;
+    std::cin >> text;
+    text = std::toupper(text[0]);
+    user.setSex(text);
+    handleRegister(user);
+    return user;
+}
+
 

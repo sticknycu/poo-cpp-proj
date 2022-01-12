@@ -28,7 +28,7 @@ jobs:
           --track-origins=yes --error-exitcode=1 ./main
       - name: coverage
         run: |
-          gcov *.cpp
+          gcov src/*.cpp
           mkdir cov/
           gcovr -r . --html --html-details -o cov/coverage.html --print-summary
           mv -v cov/  public/

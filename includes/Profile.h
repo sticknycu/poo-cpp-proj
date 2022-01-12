@@ -84,6 +84,11 @@ public:
 
     void setLivingPlaces(const std::vector<std::string> &livingPlaces);
 
+    // Handle data to be removed if that exists already in file when profile is updated
+    static void manageExistenceProfileData(Profile &profile);
+
+    // Configurarea profilului.
+    static const Profile configureProfile(User &user);
 };
 
 #endif //UTILITYIT_PROFILE_H

@@ -1,5 +1,6 @@
 # UtilityIT Template
-![C/C++ CI](https://github.com/nicugnm/poo-cpp-proj/workflows/C/C++%20CI/badge.svg?branch=main)
+[![C/C++ CI](https://github.com/nicugnm/poo-cpp-proj/workflows/C/C++%20CI/badge.svg?branch=main)](https://github.com/nicugnm/poo-cpp-proj/actions/workflows/c-cpp.yml?query=branch%3Amain)
+[![C++ CI](https://github.com/nicugnm/poo-cpp-proj/workflows/C++%20CI/badge.svg?branch=main)](https://github.com/nicugnm/poo-cpp-proj/actions/workflows/cmake.yml?query=branch%3Amain)
 ### Tema 0
 
 - [X] nume proiect (îl puteți schimba ulterior)

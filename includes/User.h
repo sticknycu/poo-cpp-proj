@@ -71,6 +71,21 @@ public:
     static bool checkUserAvailability(User &user);
 
     static User getUserInformationFromDatabase(User &user);
+
+    // inregistrarea utilizatorului
+    static void registerUser();
+
+    // logarea utilizatorului
+    static void loginUser();
+
+    // Configurarea utilizatorului
+    static const User& configureUser(User &user);
+
+    // Handle register for users. Function for save user information to file.
+    static void handleRegister(User &user);
+
+    // Handle profile for users. Function for save profile information to file.
+    static void handleProfile(Profile &profile);
 };
 
 

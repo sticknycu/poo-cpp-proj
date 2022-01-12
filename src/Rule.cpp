@@ -4,8 +4,12 @@
 
 #include "../includes/Rule.h"
 #include "../includes/Utils.h"
+#include "../includes/Application.h"
 #include <iostream>
 #include <fstream>
+
+class Utils;
+class Application;
 
 // Implementarea constructorului de initializare
 Rule::Rule(const long &id, const std::string &text) {
@@ -85,7 +89,7 @@ void Rule::handleRule(const std::string &text) {
 void Rule::createRule(User &user) {
     std::cout << "Pentru a crea o regula, te rugam sa introduci textul ce descrie regula:" << std::endl;
     std::string input;
-    input = Utils::getInstance()->handleInput(input);
+    input = Utils::handleInput(input);
     handleRule(input);
-    Utils::getInstance()->navigatePlatform(user);
+    Application::navigatePlatform(user);
 }

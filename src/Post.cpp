@@ -4,8 +4,12 @@
 
 #include "../includes/Post.h"
 #include "../includes/Utils.h"
+#include "../includes/Application.h"
 #include <iostream>
 #include <fstream>
+
+class Utils;
+class Application;
 
 // Implementarea constructorului de initializare
 Post::Post(const long &id, const std::string &description, const std::vector<std::shared_ptr<ReactionEnum>> &reactions,
@@ -102,8 +106,8 @@ void Post::createPost(User &user, const std::string &description) {
 void Post::handlePost(User &user) {
     std::cout << "Deci vrei sa creezi o postare. Am inteles. Pentru acest lucru, te rugam sa ne spui descrierea pe care doresti sa o adaugi postarii." << std::endl;
     std::string input;
-    input = Utils::getInstance()->handleInput(input);
+    input = Utils::handleInput(input);
     createPost(user, input);
     std:: cout << "Postarea a fost creata cu succes!" << std::endl;
-    Utils::getInstance()->navigatePlatform(user);
+    Application::navigatePlatform(user);
 }
