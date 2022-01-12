@@ -11,26 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="Design patterns and more.">
-      <change afterPath="$PROJECT_DIR$/includes/Application.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/c-cpp.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/c-cpp.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Admin.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Admin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Profile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/User.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/WrongPasswordException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/WrongPasswordException.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cmake.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cmake.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Post.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Post.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rule.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +106,7 @@
       <workItem from="1640267647813" duration="820000" />
       <workItem from="1640354440066" duration="3689000" />
       <workItem from="1640792581516" duration="5108000" />
-      <workItem from="1641999187004" duration="5768000" />
+      <workItem from="1641999187004" duration="6193000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -153,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640357790995</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fix some of the issues.">
+      <created>1642005063490</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642005063490</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +165,7 @@
     <MESSAGE value="Modify hardcoded messages" />
     <MESSAGE value="Make Utils as singleton." />
     <MESSAGE value="Design patterns and more." />
-    <option name="LAST_COMMIT_MESSAGE" value="Design patterns and more." />
+    <MESSAGE value="Fix some of the issues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix some of the issues." />
   </component>
 </project>

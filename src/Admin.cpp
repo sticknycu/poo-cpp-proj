@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "../includes/Utils.h"
 
 template<typename T>
