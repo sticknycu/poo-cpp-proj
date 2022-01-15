@@ -20,7 +20,7 @@ public:
 
     Meniu& operator=(const Meniu &copie) = delete;
 
-    static Meniu* getInstance();
+    static Meniu &getInstance();
 
     void startApp();
 };

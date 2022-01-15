@@ -27,9 +27,7 @@ void Meniu::startApp() {
 
 }
 
-Meniu *Meniu::getInstance() {
-    if (instance == nullptr) {
-        instance = new Meniu();
-    }
+Meniu &Meniu::getInstance() {
+    static Meniu instance;
     return instance;
 }

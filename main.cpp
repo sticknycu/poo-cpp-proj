@@ -3,6 +3,6 @@
 class Meniu;
 
 int main() {
-    Meniu::getInstance()->startApp();
+    Meniu::getInstance().startApp();
     return 0;
 }

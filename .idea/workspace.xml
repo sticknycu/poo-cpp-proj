@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Meniu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Meniu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Application.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Meniu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Meniu.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +109,7 @@
       <workItem from="1641999187004" duration="7548000" />
       <workItem from="1642010293117" duration="278000" />
       <workItem from="1642066356971" duration="22000" />
-      <workItem from="1642244505075" duration="1705000" />
+      <workItem from="1642244505075" duration="2396000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -165,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642010488214</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Meniu.cpp/.h">
+      <created>1642260187002</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642260187002</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +192,7 @@
     <MESSAGE value="Fix some of the issues." />
     <MESSAGE value="Add #include &lt;vector&gt; and windows compiler." />
     <MESSAGE value="Add #include &lt;vector&gt; and User.h" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add #include &lt;vector&gt; and User.h" />
+    <MESSAGE value="Add Meniu.cpp/.h" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Meniu.cpp/.h" />
   </component>
 </project>
