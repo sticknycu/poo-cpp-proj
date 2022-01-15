@@ -15,8 +15,6 @@ public:
 
     // Navigarea pe plaforma
     static void navigatePlatform(User &user);
-
-    static void startApplication();
 };
 
 

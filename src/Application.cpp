@@ -55,7 +55,3 @@ void Application::navigatePlatform(User &user) {
         navigatePlatform(user);
     }
 }
-
-void Application::startApplication() {
-    return;
-}
