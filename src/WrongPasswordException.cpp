@@ -9,7 +9,7 @@ WrongPasswordException::WrongPasswordException(const std::string &customMessage)
     std::cout << "[DEBUG] Apelare constructor WrongPasswordException.h" << std::endl;
 }
 
-const std::string &WrongPasswordException::getCustomMessage() {
+std::string WrongPasswordException::getCustomMessage() {
     return "(WrongPasswordException): ";
 }
 

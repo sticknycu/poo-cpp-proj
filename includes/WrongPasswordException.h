@@ -21,7 +21,7 @@ public:
     // destructor
     ~WrongPasswordException() override = default;
 
-    const std::string &getCustomMessage() override;
+    std::string getCustomMessage() override;
 
     void setCustomMessage(const std::string &customMessage) override;
 };
