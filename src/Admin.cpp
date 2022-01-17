@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <vector>
 
 template<typename T>
 bool Admin<T>::isAdmin(const T &identificator_, const std::string &type) const {
