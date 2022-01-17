@@ -51,7 +51,7 @@ public:
 
     long &getId();
 
-    void setId(const long &id);
+    void setId(const long &id_);
 
     // Handle post when is going to be created
     static void handlePost(User &user);

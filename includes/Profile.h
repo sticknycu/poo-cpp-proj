@@ -66,29 +66,29 @@ public:
 
     std::vector<std::shared_ptr<Post>> getPosts();
 
-    void setPosts(std::vector<std::shared_ptr<Post>> &posts);
+    void setPosts(std::vector<std::shared_ptr<Post>> &posts_);
 
     std::vector<std::shared_ptr<Group>> getGroups();
 
-    void setGroups(const std::vector<std::shared_ptr<Group>> &groups);
+    void setGroups(const std::vector<std::shared_ptr<Group>> &groups_);
 
     std::vector<std::shared_ptr<User>> &getFollowers();
 
-    void setFollowers(const std::vector<std::shared_ptr<User>> &followers);
+    void setFollowers(const std::vector<std::shared_ptr<User>> &followers_);
 
     std::vector<std::string> &getStudies();
 
-    void setStudies(const std::vector<std::string> &studies);
+    void setStudies(const std::vector<std::string> &studies_);
 
     std::vector<std::string> &getLivingPlaces();
 
-    void setLivingPlaces(const std::vector<std::string> &livingPlaces);
+    void setLivingPlaces(const std::vector<std::string> &livingPlaces_);
 
     // Handle data to be removed if that exists already in file when profile is updated
     static void manageExistenceProfileData(Profile &profile);
 
     // Configurarea profilului.
-    static const Profile configureProfile(User &user);
+    static Profile configureProfile(User &user);
 };
 
 #endif //UTILITYIT_PROFILE_H

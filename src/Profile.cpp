@@ -85,9 +85,9 @@ std::vector<std::shared_ptr<Post>> Profile::getPosts() {
     return this->posts;
 }
 
-// Setter pentru campul "posts
-void Profile::setPosts(std::vector<std::shared_ptr<Post>> &posts) {
-    this->posts = posts;
+// Setter pentru campul "posts_
+void Profile::setPosts(std::vector<std::shared_ptr<Post>> &posts_) {
+    this->posts = posts_;
 }
 
 // Getter pentru campul "groups"
@@ -95,9 +95,9 @@ std::vector<std::shared_ptr<Group>> Profile::getGroups() {
     return this->groups;
 }
 
-// Setter pentru campul "groups"
-void Profile::setGroups(const std::vector<std::shared_ptr<Group>> &groups) {
-    this->groups = groups;
+// Setter pentru campul "groups_"
+void Profile::setGroups(const std::vector<std::shared_ptr<Group>> &groups_) {
+    this->groups = groups_;
 }
 
 // Getter pentru campul "followers"
@@ -105,9 +105,9 @@ std::vector<std::shared_ptr<User>> &Profile::getFollowers() {
     return this->followers;
 }
 
-// Setter pentru campul "followers"
-void Profile::setFollowers(const std::vector<std::shared_ptr<User>> &followers) {
-    this->followers = followers;
+// Setter pentru campul "followers_"
+void Profile::setFollowers(const std::vector<std::shared_ptr<User>> &followers_) {
+    this->followers = followers_;
 }
 
 // Getter pentru campul "studies"
@@ -115,9 +115,9 @@ std::vector<std::string> &Profile::getStudies() {
     return this->studies;
 }
 
-// Setter pentru campul "studies"
-void Profile::setStudies(const std::vector<std::string> &studies) {
-    this->studies = studies;
+// Setter pentru campul "studies_"
+void Profile::setStudies(const std::vector<std::string> &studies_) {
+    this->studies = studies_;
 }
 
 // Getter pentru campul "livingPlaces"
@@ -125,9 +125,9 @@ std::vector<std::string> &Profile::getLivingPlaces() {
     return this->livingPlaces;
 }
 
-// Setter pentru campul "livingPlaces"
-void Profile::setLivingPlaces(const std::vector<std::string> &livingPlaces) {
-    this->livingPlaces = livingPlaces;
+// Setter pentru campul "livingPlaces_"
+void Profile::setLivingPlaces(const std::vector<std::string> &livingPlaces_) {
+    this->livingPlaces = livingPlaces_;
 }
 
 void Profile::manageExistenceProfileData(Profile &profile) {
@@ -162,11 +162,14 @@ void Profile::manageExistenceProfileData(Profile &profile) {
     rename("profilesNew.txt", "profiles.txt");
 }
 
-const Profile Profile::configureProfile(User &user) {
-    std::cout << "Ne bucuram ca iti doresti sa iti configurezi profilul. De aceea, te rugam sa ne spui urmatoarele informatii:" << std::endl;
+Profile Profile::configureProfile(User &user) {
+    std::cout
+            << "Ne bucuram ca iti doresti sa iti configurezi profilul. De aceea, te rugam sa ne spui urmatoarele informatii:"
+            << std::endl;
     Profile profile;
     profile.setId(user.getCNP());
-    std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
+    std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii."
+              << std::endl;
 
     std::string valuableString;
     valuableString = Utils::handleInput(valuableString);

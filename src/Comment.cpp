@@ -6,6 +6,7 @@
 #include "../includes/Utils.h"
 #include "../includes/Application.h"
 #include <fstream>
+#include <string>
 
 class Utils;
 class Application;

@@ -7,19 +7,23 @@
 #include "../includes/Application.h"
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <utility>
 
 class Utils;
+
 class Application;
 
 // Implementarea constructorului de initializare
 Post::Post(const long &id, const std::string &description, const std::vector<std::shared_ptr<ReactionEnum>> &reactions,
-           const std::vector<std::shared_ptr<Comment>> &comments, std::shared_ptr<User> createdBy, const long &creationDate) {
+           const std::vector<std::shared_ptr<Comment>> &comments, std::shared_ptr<User> createdBy,
+           const long &creationDate) {
     std::cout << "[DEBUG] Apelare constructor Post.h" << std::endl;
     this->id = id;
     this->description = description;
     this->reactions = reactions;
     this->comments = comments;
-    this->createdBy = createdBy;
+    this->createdBy = std::move(createdBy);
     this->creationDate = creationDate;
 }
 
@@ -70,8 +74,8 @@ long &Post::getId() {
     return this->id;
 }
 
-void Post::setId(const long &id) {
-    this->id = id;
+void Post::setId(const long &id_) {
+    this->id = id_;
 }
 
 void Post::createPost(User &user, const std::string &description) {

@@ -7,6 +7,7 @@
 #include "../includes/Application.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 
 class Utils;
 class Application;
@@ -50,16 +51,16 @@ long &Rule::getId() {
     return this->id;
 }
 
-void Rule::setId(const long &id) {
-    this->id = id;
+void Rule::setId(const long &id_) {
+    this->id = id_;
 }
 
 std::string &Rule::getText() {
     return this->text;
 }
 
-void Rule::setText(const std::string &text) {
-    this->text = text;
+void Rule::setText(const std::string &text_) {
+    this->text = text_;
 }
 
 void Rule::handleRule(const std::string &text) {
