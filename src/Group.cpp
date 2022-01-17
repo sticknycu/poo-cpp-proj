@@ -69,7 +69,11 @@ std::string &Group::getName() {
     return this->name;
 }
 
-// Setter pentru campul "name"
-void Group::setName(const std::string &name) {
-    this->name = name;
+// Setter pentru campul "name_"
+void Group::setName(const std::string &name_) {
+    this->name = name_;
+}
+
+void Group::handleGroup(const User &user) {
+    std::cout << "TODO" << std::endl;
 }

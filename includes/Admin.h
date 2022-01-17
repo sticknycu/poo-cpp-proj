@@ -20,7 +20,7 @@ template <typename T>
 class Admin {
 
 private:
-    T *identificator;
+    T identificator;
 public:
 
     Admin() = default;

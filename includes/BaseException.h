@@ -20,10 +20,10 @@ public:
     BaseException() =default;
 
     // constructor de initializare
-    BaseException(const std::string &customMessage);
+    explicit BaseException(const std::string &customMessage);
 
     // destructor default
-    ~BaseException() =default;
+    ~BaseException() override = default;
 
     virtual const std::string &getCustomMessage();
 

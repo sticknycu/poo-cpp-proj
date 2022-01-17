@@ -19,7 +19,7 @@ class User;
 
 class Profile {
 private:
-    long profileId;
+    long profileId{};
     std::vector<std::shared_ptr<Post>> posts;
     std::vector<std::shared_ptr<Group>> groups;
     std::vector<std::shared_ptr<User>> followers;

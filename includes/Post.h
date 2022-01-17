@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Comment.h"
 #include "ReactionEnum.h"
+#include <utility>
 #include <vector>
 #include <memory>
 
@@ -21,12 +22,12 @@ class Post {
     friend class PostBuilder;
 
 private:
-    long id;
+    long id{};
     std::string description;
     std::vector<std::shared_ptr<ReactionEnum>> reactions;
     std::vector<std::shared_ptr<Comment>> comments;
     std::shared_ptr<User> createdBy;
-    long creationDate;
+    long creationDate{};
 
 public:
     // constructor default
@@ -82,7 +83,7 @@ public:
     }
 
     PostBuilder& description(std::string description) {
-        post.description = description;
+        post.description = std::move(description);
         return *this;
     }
 

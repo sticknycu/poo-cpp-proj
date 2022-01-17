@@ -15,9 +15,9 @@ class Post;
 
 class Comment {
 private:
-    long id;
+    long id{};
     std::shared_ptr<User> createdBy;
-    long creationDate;
+    long creationDate{};
     std::string text;
     std::shared_ptr<Post> post;
 

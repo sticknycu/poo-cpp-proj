@@ -46,9 +46,9 @@ public:
 
     std::string &getName();
 
-    void setName(const std::string &name);
+    void setName(const std::string &name_);
 
-    void handleGroup(const User &user);
+    static void handleGroup(const User &user);
 
 
 };
