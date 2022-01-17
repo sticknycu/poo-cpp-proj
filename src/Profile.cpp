@@ -131,7 +131,7 @@ void Profile::setLivingPlaces(const std::vector<std::string> &livingPlaces_) {
     this->livingPlaces = livingPlaces_;
 }
 
-void Profile::manageExistenceProfileData(Profile &profile) {
+void Profile::manageExistenceProfileData() {
     std::ifstream oldFile;
     std::ofstream newFile;
     std::string data;
@@ -141,7 +141,7 @@ void Profile::manageExistenceProfileData(Profile &profile) {
     bool exist = false;
     while (std::getline(oldFile, data)) {
         std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
-        if (wordsExploded.at(0) == std::to_string(profile.getId())) {
+        if (wordsExploded.at(0) == std::to_string(this->getId())) {
             exist = true;
             break;
         }
@@ -153,7 +153,7 @@ void Profile::manageExistenceProfileData(Profile &profile) {
         newFile.open("profilesNew.txt", std::ios::out | std::ios::app);
         while (std::getline(oldFile, data)) {
             std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
-            if (wordsExploded.at(0) != std::to_string(profile.getId())) {
+            if (wordsExploded.at(0) != std::to_string(this->getId())) {
                 newFile << data << std::endl;
             }
         }

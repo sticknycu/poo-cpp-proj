@@ -202,7 +202,7 @@ void User::handleProfile(Profile &profile) {
     std::ofstream file;
     std::string empty;
 
-    Profile::manageExistenceProfileData(profile);
+    profile.manageExistenceProfileData();
 
     std::string id = std::to_string(profile.getId());
 
@@ -213,19 +213,19 @@ void User::handleProfile(Profile &profile) {
             stringPosts.append(std::to_string(post->getId()));
         } else {
             stringPosts = stringPosts
-                    .append((new std::string())->assign(1, ','))
+                    .append(std::string(","))
                     .append(std::to_string(post->getId()));
         }
     }
 
     std::string stringGroups;
     std::vector<std::shared_ptr<Group>> groups = profile.getGroups();
-    for (auto group : groups) {
+    for (const auto &group: groups) {
         if (stringGroups.empty()) {
             stringGroups.append(group->getName());
         } else {
             stringGroups = stringGroups
-                    .append((new std::string())->assign(1, ','))
+                    .append(std::string(","))
                     .append(group->getName());
         }
     }
@@ -237,7 +237,7 @@ void User::handleProfile(Profile &profile) {
             stringFollowers.append(follower->getUsername());
         } else {
             stringFollowers = stringFollowers
-                    .append((new std::string())->assign(1, ','))
+                    .append(std::string(","))
                     .append(follower->getUsername());
         }
     }
@@ -249,7 +249,7 @@ void User::handleProfile(Profile &profile) {
             stringStudies = stringStudies.append(study);
         } else {
             stringStudies = stringStudies
-                    .append((new std::string())->assign(1, ','))
+                    .append(std::string(","))
                     .append(study);
         }
     }
@@ -261,7 +261,7 @@ void User::handleProfile(Profile &profile) {
             stringLivingPlaces.append(livingPlace);
         } else {
             stringLivingPlaces = stringLivingPlaces
-                    .append((new std::string())->assign(1, ','))
+                    .append(std::string(","))
                     .append(livingPlace);
         }
     }
