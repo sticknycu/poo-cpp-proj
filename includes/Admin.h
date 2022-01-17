@@ -29,7 +29,7 @@ public:
 
     Admin<T>& operator=(const Admin<T> &copie);
 
-    friend std::ostream &operator<<(std::ostream &os, const Admin &admin);
+    friend std::ostream &operator<<(std::ostream &os, const Admin<T> &admin);
 
     ~Admin() = default;
 
