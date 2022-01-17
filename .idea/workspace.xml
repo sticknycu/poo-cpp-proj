@@ -13,15 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/includes/Admin.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Admin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/BaseException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/BaseException.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Comment.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Comment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Event.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Event.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Group.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Group.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Post.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Post.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Profile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Reaction.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Reaction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/WrongPasswordException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/WrongPasswordException.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Group.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Group.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +109,7 @@
       <workItem from="1642010293117" duration="278000" />
       <workItem from="1642066356971" duration="22000" />
       <workItem from="1642244505075" duration="4415000" />
-      <workItem from="1642426105535" duration="2353000" />
+      <workItem from="1642426105535" duration="3246000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -190,7 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642429339896</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix warnings">
+      <created>1642429772755</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642429772755</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix warnings">
+      <created>1642429931961</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642429931961</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +213,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Add WrongPasswordException" />
     <MESSAGE value="Modify hardcoded messages" />
     <MESSAGE value="Make Utils as singleton." />
@@ -218,6 +224,10 @@
     <MESSAGE value="Add Meniu.cpp/.h" />
     <MESSAGE value="Re-create singleton. Ref: https://stackoverflow.com/questions/1008019/c-singleton-design-pattern/1008289#1008289" />
     <MESSAGE value="Fix build." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix build." />
+    <MESSAGE value="Fix warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix warnings" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

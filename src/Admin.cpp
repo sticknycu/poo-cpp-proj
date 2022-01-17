@@ -2,8 +2,10 @@
 // Created by Nicolae Marius Ghergu on 29.12.2021.
 //
 
+#include <iostream>
+
 template<typename T>
-bool Admin<T>::isAdmin(const T &identificator_, const std::string& type) const {
+bool Admin<T>::isAdmin(const T &identificator_, const std::string &type) const {
     std::ifstream file;
     std::string data;
 
