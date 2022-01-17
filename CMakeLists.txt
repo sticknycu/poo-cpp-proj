@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(UtilityIT
         main.cpp
 
-        src/Admin.cpp
         src/Comment.cpp
         src/Event.cpp
         src/Group.cpp

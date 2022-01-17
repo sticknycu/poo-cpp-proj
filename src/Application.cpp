@@ -8,9 +8,6 @@
 
 class Utils;
 
-template <typename T>
-class Admin;
-
 void Application::navigatePlatform(User &user) {
     std::cout << "Acum ca doresti sa navighezi pe platforma, ai o multime de posibilitati." << std::endl;
     std::cout << "Poti crea o postare folosind /createPost" << std::endl;
@@ -46,7 +43,8 @@ void Application::navigatePlatform(User &user) {
         std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
     } else if (inputString == "/admins") {
         std::cout << "Lista administratorilor este: " << std::endl;
-        Admin<std::string> admin;
+        std::string identificator;
+        Admin<std::string> admin{};
         for (const User& castedUser : admin.getAdmins()) {
             std::cout << castedUser << std::endl;
         }

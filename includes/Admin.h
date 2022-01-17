@@ -9,30 +9,35 @@
 #include <iostream>
 #include "../includes/User.h"
 #include <vector>
+#include <fstream>
+#include <string>
+#include "../includes/Utils.h"
 
 class User;
+class Utils;
 
 template <typename T>
 class Admin {
 
 private:
-    T identificator;
+    T *identificator;
 public:
 
-    Admin<T>() = default;
+    Admin() = default;
 
-    Admin<T>(const Admin<T> &copie) = default;
+    Admin(const Admin &copie) = default;
 
     Admin<T>& operator=(const Admin<T> &copie);
 
     friend std::ostream& operator <<(std::ostream &os, const Admin<T> &admin);
 
-    ~Admin<T>() = default;
+    ~Admin() = default;
 
     bool isAdmin(const T &identificator_, const std::string& type) const;
 
     std::vector<User> getAdmins();
 };
 
+#include "../src/Admin.cpp"
 
 #endif //UTILITYIT_ADMIN_H
