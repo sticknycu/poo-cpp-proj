@@ -5,6 +5,7 @@
 #include <fstream>
 #include "../includes/Profile.h"
 #include "../includes/Utils.h"
+#include <string>
 
 class Utils;
 
