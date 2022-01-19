@@ -22,7 +22,7 @@ public:
 
     static Meniu &getInstance();
 
-    void startApp();
+    static void startApp();
 };
 
 

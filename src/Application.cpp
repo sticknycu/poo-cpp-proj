@@ -21,35 +21,33 @@ void Application::navigatePlatform(User &user) {
     std::cout << "Foloseste comanda respectiva!" << std::endl;
 
     std::string inputString;
-    inputString = Utils::handleInput(inputString);
-    if (inputString == "/createPost") {
-        Post::handlePost(user);
-    } else if (inputString == "/enterGroup") {
-        //TODO: Enter group
-        std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii." << std::endl;
-        navigatePlatform(user);
-    } else if (inputString == "/createRule") {
-        Rule::createRule(user);
-    } else if (inputString == "/accessEvent") {
-        //TODO: Access event
-        std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii." << std::endl;
-        navigatePlatform(user);
-    } else if (inputString == "/addComment") {
-        Comment::handleComment(user);
-    } else if (inputString == "/profile") {
-        Profile::configureProfile(user);
-        navigatePlatform(user);
-    } else if (inputString == "/exit") {
-        std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
-    } else if (inputString == "/admins") {
-        std::cout << "Lista administratorilor este: " << std::endl;
-        std::string identificator;
-        Admin<std::string> admin{};
-        for (const User& castedUser : admin.getAdmins()) {
-            std::cout << castedUser << std::endl;
+    //inputString = Utils::handleInput(inputString);
+    while (std::cin >> inputString) {
+        if (inputString == "/createPost") {
+            Post::handlePost(user);
+        } else if (inputString == "/enterGroup") {
+            std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii."
+                      << std::endl;
+        } else if (inputString == "/createRule") {
+            Rule::createRule(user);
+        } else if (inputString == "/accessEvent") {
+            std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii."
+                      << std::endl;
+        } else if (inputString == "/addComment") {
+            Comment::handleComment(user);
+        } else if (inputString == "/profile") {
+            Profile::configureProfile(user);
+        } else if (inputString == "/exit") {
+            std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
+        } else if (inputString == "/admins") {
+            std::cout << "Lista administratorilor este: " << std::endl;
+            std::string identificator;
+            Admin<std::string> admin{};
+            for (const User &castedUser: admin.getAdmins()) {
+                std::cout << castedUser << std::endl;
+            }
+        } else {
+            std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
         }
-    } else {
-        std::cout << "Comanda nu a fost gasita. Te voi trimite inapoi la navigarea pe platforma." << std::endl;
-        navigatePlatform(user);
     }
 }

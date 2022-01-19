@@ -16,15 +16,17 @@ void Meniu::startApp() {
 
     std::string message;
 
-    std::cin >> message;
-    if (message == "/register") {
-        User::registerUser();
-    } else if (message == "/login") {
-        User::loginUser();
-    } else {
-        std::cout << "Din pacate nu am putut identifica aceasta comanda. Te rugam sa folosesti /register sau /login." << std::endl;
+    while (std::cin >> message) {
+        if (message == "/register") {
+            User::registerUser();
+        } else if (message == "/login") {
+            User::loginUser();
+        } else {
+            std::cout
+                    << "Din pacate nu am putut identifica aceasta comanda. Te rugam sa folosesti /register sau /login."
+                    << std::endl;
+        }
     }
-
 }
 
 Meniu &Meniu::getInstance() {

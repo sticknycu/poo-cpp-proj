@@ -13,9 +13,16 @@
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Group.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Group.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Post.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Post.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Profile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Meniu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Meniu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Meniu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Meniu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/comments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Post.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Post.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +115,8 @@
       <workItem from="1642066356971" duration="22000" />
       <workItem from="1642244505075" duration="4415000" />
       <workItem from="1642426105535" duration="6919000" />
-      <workItem from="1642585755976" duration="1345000" />
+      <workItem from="1642585755976" duration="2849000" />
+      <workItem from="1642601061569" duration="1024000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -243,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642435912267</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Builder Design Pattern for Groups, Posts, Profile.">
+      <created>1642587126732</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1642587126732</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +291,8 @@
     <MESSAGE value="Fix warnings" />
     <MESSAGE value="Fix windows workflow" />
     <MESSAGE value="Fix memory leaks using new std::string, instead of std::string('value')" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix memory leaks using new std::string, instead of std::string('value')" />
+    <MESSAGE value="Builder Design Pattern for Groups, Posts, Profile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Builder Design Pattern for Groups, Posts, Profile." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

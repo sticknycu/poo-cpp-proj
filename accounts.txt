@@ -9,3 +9,4 @@ ngher1|pa55|nicolae|ghergu|501|F|false
 registeruser|parolaregisteruser|Testare|User|500000000007|F|false
 numeutilizatortest|parolatest|Prenume Test|Nume Test|501110000000|F|false
 utilizatorsmartpointers|smartpointerspass|Smart|Pointer|5011111112222|F|false
+yess12|yesssss12|yes prenume|yes nume|500000009999|M

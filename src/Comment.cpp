@@ -7,6 +7,7 @@
 #include "../includes/Application.h"
 #include <fstream>
 #include <string>
+#include <utility>
 
 class Utils;
 class Application;
@@ -15,10 +16,10 @@ class Application;
 Comment::Comment(const long &id, std::shared_ptr<User> createdBy, const long &creationDate, const std::string &text, std::shared_ptr<Post> post) {
     std::cout << "[DEBUG] Apelare constructor Comment.h" << std::endl;
     this->id = id;
-    this->createdBy = createdBy;
+    this->createdBy = std::move(createdBy);
     this->creationDate = creationDate;
     this->text = text;
-    this->post = post;
+    this->post = std::move(post);
 }
 
 // Implementarea destructorului
@@ -94,19 +95,30 @@ std::shared_ptr<Post> Comment::getPost() {
     return this->post;
 }
 
-void Comment::setPost(std::shared_ptr<Post> post) {
-    this->post = post;
+void Comment::setPost(std::shared_ptr<Post> post_) {
+    this->post = post_;
 }
 
 void Comment::handleComment(User &user) {
     std::cout << "Pentru a adauga un comentariu, te rugam sa ne spui textul pe care trebuie sa-l contina:" << std::endl;
     std::string input;
     input = Utils::handleInput(input);
-    long id;
-    std::cout << "De asemenea, trebuie sa stim si id-ul postarii. Il poti afla la navigarea platformei folosind /idMyPosts sau /idPosts" << std::endl;
-    std::cin >> id;
-    createComment(user, input, id);
-    Application::navigatePlatform(user);
+    std::string localInput;
+    std::cout
+            << "De asemenea, trebuie sa stim si id-ul postarii. Il poti afla la navigarea platformei folosind /idMyPosts sau /idPosts"
+            << std::endl;
+    while (std::cin >> localInput) {
+        if (localInput == "/idMyPosts" || localInput == "/idPosts") {
+            std::cout << "Te rugam sa introduci aceasta comanda in navigarea platformei. Deocamdata dorim un ID."
+                      << std::endl;
+            std::cout << "In cazul in care nu ai unul, te rugam sa revii la navigarea platformei cu /exit" << std::endl;
+        } else if (localInput == "/exit") {
+            Application::navigatePlatform(user);
+        } else {
+            long id = std::stol(localInput);
+            createComment(user, input, id);
+        }
+    }
 }
 
 void Comment::createComment(User &user, const std::string &text, const long &id) {

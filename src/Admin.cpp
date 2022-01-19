@@ -69,7 +69,7 @@ std::vector<User> Admin<T>::getAdmins() {
     while (std::getline(file, data)) {
         std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
 
-        auto identificator = wordsExploded.at(6);
+        auto identificator = wordsExploded.at(5);
 
         if (identificator == "true") {
             auto username = wordsExploded.at(0);

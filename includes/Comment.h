@@ -59,7 +59,7 @@ public:
   
     std::shared_ptr<Post> getPost();
 
-    void setPost(std::shared_ptr<Post> post);
+    void setPost(std::shared_ptr<Post> post_);
 
     // function to handle comments
     static void handleComment(User &user);

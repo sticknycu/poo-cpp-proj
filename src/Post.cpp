@@ -113,5 +113,4 @@ void Post::handlePost(User &user) {
     input = Utils::handleInput(input);
     createPost(user, input);
     std:: cout << "Postarea a fost creata cu succes!" << std::endl;
-    Application::navigatePlatform(user);
 }

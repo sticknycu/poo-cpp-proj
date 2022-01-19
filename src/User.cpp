@@ -9,12 +9,16 @@
 #include "../includes/WrongPasswordException.h"
 
 class User;
+
 class Utils;
+
 class Application;
+
 class WrongPasswordException;
 
 // Implementarea constructorului de initializare
-User::User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
+User::User(const std::string &username, const std::string &password, const std::string &firstname,
+           const std::string &lastname,
            const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile) {
     std::cout << "[DEBUG] Apelare constructor User.h" << std::endl;
     this->username = username;
@@ -70,7 +74,7 @@ std::ostream &operator<<(std::ostream &os, const User &user) {
 }
 
 // Getter pentru campul "username"
-std::string& User::getUsername() {
+std::string &User::getUsername() {
     return this->username;
 }
 
@@ -80,7 +84,7 @@ void User::setUsername(std::string &text) {
 }
 
 // Getter pentru campul "password"
-std::string& User::getPassword() {
+std::string &User::getPassword() {
     return this->password;
 }
 
@@ -90,7 +94,7 @@ void User::setPassword(std::string &text) {
 }
 
 // Getter pentru campul "firstname"
-std::string& User::getFirstname() {
+std::string &User::getFirstname() {
     return this->firstname;
 }
 
@@ -100,7 +104,7 @@ void User::setFirstname(std::string &text) {
 }
 
 // Getter pentru campul "lastname"
-std::string& User::getLastname() {
+std::string &User::getLastname() {
     return this->lastname;
 }
 
@@ -110,7 +114,7 @@ void User::setLastname(std::string &text) {
 }
 
 // Getter pentru campul "cnp"
-long& User::getCNP() {
+long &User::getCNP() {
     return this->cnp;
 }
 
@@ -120,7 +124,7 @@ void User::setCNP(const long &text) {
 }
 
 // Getter pentru campul "sex"
-std::string& User::getSex() {
+std::string &User::getSex() {
     return this->sex;
 }
 
@@ -208,7 +212,7 @@ void User::handleProfile(Profile &profile) {
 
     std::string stringPosts;
     std::vector<std::shared_ptr<Post>> posts = profile.getPosts();
-    for (const auto& post : posts) {
+    for (const auto &post: posts) {
         if (stringPosts.empty()) {
             stringPosts.append(std::to_string(post->getId()));
         } else {
@@ -232,7 +236,7 @@ void User::handleProfile(Profile &profile) {
 
     std::string stringFollowers;
     std::vector<std::shared_ptr<User>> followers = profile.getFollowers();
-    for (const auto& follower : followers) {
+    for (const auto &follower: followers) {
         if (stringFollowers.empty()) {
             stringFollowers.append(follower->getUsername());
         } else {
@@ -244,7 +248,7 @@ void User::handleProfile(Profile &profile) {
 
     std::string stringStudies;
     std::vector<std::string> studies = profile.getStudies();
-    for (const auto& study : studies) {
+    for (const auto &study: studies) {
         if (stringStudies.empty()) {
             stringStudies = stringStudies.append(study);
         } else {
@@ -256,7 +260,7 @@ void User::handleProfile(Profile &profile) {
 
     std::string stringLivingPlaces;
     std::vector<std::string> livingPlaces = profile.getLivingPlaces();
-    for (const auto& livingPlace : livingPlaces) {
+    for (const auto &livingPlace: livingPlaces) {
         if (stringLivingPlaces.empty()) {
             stringLivingPlaces.append(livingPlace);
         } else {
@@ -298,10 +302,14 @@ void User::registerUser() {
         std::cout << "Te rugam sa introduci o parola pentru a putea efectua crearea contului." << std::endl;
         std::cin >> password;
         user.setPassword(password);
-        std::cout << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine." << std::endl;
+        std::cout
+                << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine."
+                << std::endl;
         user = configureUser(user);
-        std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra" << std::endl;
-        std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false." << std::endl;
+        std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra"
+                  << std::endl;
+        std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false."
+                  << std::endl;
         bool booleanValue;
         std::cin >> booleanValue;
         if (booleanValue) {
@@ -326,8 +334,9 @@ void User::loginUser() {
         bool booleanValue;
         std::cin >> booleanValue;
         if (booleanValue) {
-            std::cout << "Cum raspunsul tau este pozitiv, te voi transmite catre pasii de inregistrare" << std::endl;
-            User::registerUser();
+            std::cout << "Cum raspunsul tau este pozitiv, te voi transmite catre pasii de inregistrare"
+                      << std::endl;
+            registerUser();
         } else {
             std::cout
                     << "Din pacate nu poti naviga pe platforma daca nu ai un cont. Vrei sa introduci alt nume de utilizator?"
@@ -351,8 +360,9 @@ void User::loginUser() {
         std::cin >> password;
         User authedUser = User::getUserInformationFromDatabase(user);
         if (authedUser.getPassword() == password) {
-            std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe." << std::endl;
-            Application::navigatePlatform(user);
+            std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe."
+                      << std::endl;
+            Application::navigatePlatform(authedUser);
         } else {
             std::string wrongPasswordMessage = "Din pacate, parola nu este buna. Te rugam sa revii.";
             throw WrongPasswordException(wrongPasswordMessage);
@@ -362,7 +372,7 @@ void User::loginUser() {
 }
 
 // Implementarea pentru configurarea User-ului
-const User& User::configureUser(User &user) {
+const User &User::configureUser(User &user) {
     std::string text;
     std::cout << "Facem acest lucru deoarece trebuie sa respectam legislatia in vigoare." << std::endl;
     std::cout << "Astfel, spune-ne care este prenumele tau:" << std::endl;
@@ -382,5 +392,3 @@ const User& User::configureUser(User &user) {
     handleRegister(user);
     return user;
 }
-
-

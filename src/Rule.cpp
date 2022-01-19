@@ -92,5 +92,4 @@ void Rule::createRule(User &user) {
     std::string input;
     input = Utils::handleInput(input);
     handleRule(input);
-    Application::navigatePlatform(user);
 }
