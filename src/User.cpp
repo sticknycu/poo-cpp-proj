@@ -8,8 +8,12 @@
 #include "../includes/Application.h"
 #include "../includes/WrongPasswordException.h"
 #include "../includes/UserFactory.h"
+#include "../dependencies/include/bcrypt.h"
+#include "../Meniu.h"
 
 class User;
+
+class Meniu;
 
 class Group;
 
@@ -306,11 +310,12 @@ void User::registerUser() {
         std::cout << "Se pare ca nu exista nici un nume de utilizator ca cel introdus." << std::endl;
         std::cout << "Te rugam sa introduci o parola pentru a putea efectua crearea contului." << std::endl;
         std::cin >> password;
+        password = bcrypt::generateHash(password);
         user.setPassword(password);
         std::cout
                 << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine."
                 << std::endl;
-        user = configureUser();
+        user.configureUser();
         std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra"
                   << std::endl;
         std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false."
@@ -363,8 +368,9 @@ void User::loginUser() {
                 << "Se pare ca ai introdus un nume de utilizator ce exista in platforma noastra. Te rugam sa introduci parola:"
                 << std::endl;
         std::cin >> password;
+
         User authedUser = User::getUserInformationFromDatabase(user);
-        if (authedUser.getPassword() == password) {
+        if (bcrypt::validatePassword(password, authedUser.getPassword())) {
             std::cout << "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe."
                       << std::endl;
             Application::navigatePlatform(authedUser);
@@ -378,7 +384,7 @@ void User::loginUser() {
 
 // Implementarea pentru configurarea User-ului
 User User::configureUser() {
-    return UserFactory::user();
+    return UserFactory::user(*this);
 }
 
 void User::showInformationsAboutUser() {

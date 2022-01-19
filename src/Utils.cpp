@@ -5,7 +5,6 @@
 #include "../includes/Utils.h"
 #include <vector>
 #include <iostream>
-#include <sstream>
 #include <algorithm>
 #include "../includes/WrongPasswordException.h"
 #include "../includes/Admin.h"
@@ -16,16 +15,17 @@ class Admin;
 
 // Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::splitString(std::string &text, char delimiter) {
-    std::vector<std::string> words;
+    std::vector<std::string> out;
 
-    std::istringstream sstream(text);
-    std::string word;
-    while (std::getline(sstream, word, delimiter)) {
-        word.erase(std::remove_if(word.begin(), word.end(), ispunct), word.end());
-        words.push_back(word);
+    std::string::size_type beg = 0;
+    for (auto end = 0; (end = text.find(delimiter, end)) != std::string::npos; ++end) {
+        out.push_back(text.substr(beg, end - beg));
+        beg = end + 1;
     }
 
-    return words;
+    out.push_back(text.substr(beg));
+
+    return out;
 }
 
 const std::string& Utils::handleInput(std::string &text) {

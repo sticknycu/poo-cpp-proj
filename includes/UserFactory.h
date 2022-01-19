@@ -16,7 +16,7 @@ class Utils;
 
 class UserFactory {
 public:
-    static User user();
+    static User user(User &user_);
 
     static Profile profile(User &user_);
 };

@@ -11,14 +11,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/includes/UserFactory.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserFactory.cpp" afterDir="false" />
+    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="§">
+      <change afterPath="$PROJECT_DIR$/dependencies/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/include/bcrypt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/src/bcrypt.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/src/blowfish.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/src/node_blf.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/src/openbsd.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/test/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/User.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/UserFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/UserFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserFactory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +73,14 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dependencies" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dependencies" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/includes" />
     </key>
@@ -118,7 +130,7 @@
       <workItem from="1642244505075" duration="4415000" />
       <workItem from="1642426105535" duration="6919000" />
       <workItem from="1642585755976" duration="2849000" />
-      <workItem from="1642601061569" duration="5998000" />
+      <workItem from="1642601061569" duration="9465000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -288,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642607281020</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Virtual destructor + factory design pattern">
+      <created>1642609212516</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1642609212516</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,9 +345,71 @@
     <MESSAGE value="Virtual functions" />
     <MESSAGE value="Include &lt;algorithm&gt;" />
     <MESSAGE value="try catch exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="try catch exception" />
+    <MESSAGE value="Virtual destructor + factory design pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Virtual destructor + factory design pattern" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>311</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>312</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>313</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>371</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>372</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>370</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>369</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>373</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>375</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>172</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/User.cpp</url>
+          <line>174</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

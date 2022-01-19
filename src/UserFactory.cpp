@@ -6,9 +6,10 @@
 #include <iostream>
 #include <string>
 
-
-User UserFactory::user() {
+User UserFactory::user(User &user_) {
     UserBuilder userBuilder;
+    userBuilder.username(user_.getUsername());
+    userBuilder.password(user_.getPassword());
     std::string text;
     std::cout << "Facem acest lucru deoarece trebuie sa respectam legislatia in vigoare." << std::endl;
     std::cout << "Astfel, spune-ne care este prenumele tau:" << std::endl;
@@ -24,7 +25,9 @@ User UserFactory::user() {
     std::cout << "Ultimul pas este despre sexul tau, te rog sa ni-l comunici:" << std::endl;
     std::cin >> text;
     userBuilder.sex(std::to_string(std::toupper(text[0])));
-    return userBuilder.build();
+    User u = userBuilder.build();
+    User::handleRegister(u);
+    return u;
 }
 
 Profile UserFactory::profile(User &user_) {

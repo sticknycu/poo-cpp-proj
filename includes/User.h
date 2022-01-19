@@ -87,7 +87,7 @@ public:
     static void loginUser();
 
     // Configurarea utilizatorului
-    static User configureUser();
+    User configureUser();
 
     // Handle register for users. Function for save user information to file.
     static void handleRegister(User &user);
