@@ -19,4 +19,4 @@ add_executable(UtilityIT
         src/BaseException.cpp
         src/WrongPasswordException.cpp
         src/Application.cpp
-        Meniu.cpp includes/FileNotFoundException.h src/FileNotFoundException.cpp)
+        Meniu.cpp includes/FileNotFoundException.h src/FileNotFoundException.cpp includes/UserFactory.h src/UserFactory.cpp)

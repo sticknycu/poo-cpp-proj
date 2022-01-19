@@ -16,11 +16,11 @@ class Post;
 
 class Group;
 
-class User;
-
 class Profile;
 
 class User {
+
+    friend class UserBuilder;
 
 private:
     std::string username;
@@ -33,14 +33,15 @@ private:
 
 public:
     // constructor default
-    User() =default;
+    explicit User() = default;
 
     // constructor de initializare
-    User(const std::string &username, const std::string &password, const std::string &firstname, const std::string &lastname,
-         const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile);
+    explicit User(const std::string &username, const std::string &password, const std::string &firstname,
+                  const std::string &lastname,
+                  const int &cnp, const std::string &sex, std::shared_ptr<Profile> &userProfile);
 
     // destructor
-    ~User();
+    virtual ~User();
 
     // constructor de copiere
     User(const User& copie);
@@ -86,7 +87,7 @@ public:
     static void loginUser();
 
     // Configurarea utilizatorului
-    static const User &configureUser(User &user);
+    static User configureUser();
 
     // Handle register for users. Function for save user information to file.
     static void handleRegister(User &user);
@@ -95,6 +96,46 @@ public:
     static void handleProfile(Profile &profile);
 
     virtual void showInformationsAboutUser();
+};
+
+class UserBuilder {
+    User user;
+
+public:
+    UserBuilder &username(const std::string &username_) {
+        user.username = username_;
+        return *this;
+    }
+
+    UserBuilder &password(const std::string &password_) {
+        user.password = password_;
+        return *this;
+    }
+
+    UserBuilder &firstname(const std::string &firstname_) {
+        user.firstname = firstname_;
+        return *this;
+    }
+
+    UserBuilder &lastname(const std::string &lastname_) {
+        user.lastname = lastname_;
+        return *this;
+    }
+
+    UserBuilder &sex(const std::string &sex_) {
+        user.sex = sex_;
+        return *this;
+    }
+
+    UserBuilder &cnp(const int &cnp_) {
+        user.cnp = cnp_;
+        return *this;
+    }
+
+
+    User build() {
+        return user;
+    }
 };
 
 
@@ -133,7 +174,7 @@ public:
             const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces);
 
     // destructor
-    ~Profile();
+    ~Profile() override;
 
     // constructor de copiere
     Profile(const Profile &copie);

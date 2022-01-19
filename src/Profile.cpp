@@ -6,8 +6,11 @@
 #include "../includes/Utils.h"
 #include <string>
 #include <algorithm>
+#include "../includes/UserFactory.h"
 
 class Utils;
+
+class UserFactory;
 
 // Implementarea constructorului de initializare
 Profile::Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts, const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
@@ -164,29 +167,7 @@ void Profile::manageExistenceProfileData() {
 }
 
 Profile Profile::configureProfile(User &user) {
-    std::cout
-            << "Ne bucuram ca iti doresti sa iti configurezi profilul. De aceea, te rugam sa ne spui urmatoarele informatii:"
-            << std::endl;
-    Profile profile;
-    profile.setId(user.getCNP());
-    std::cout << "Ce studiezi si ce studii ai avut pana acum? Te rugam sa le notezi cu virgula, fara spatii."
-              << std::endl;
-
-    std::string valuableString;
-    valuableString = Utils::handleInput(valuableString);
-
-    std::vector<std::string> studies = Utils::splitString(valuableString, ',');
-    profile.setStudies(studies);
-    std::cout << "Unde locuiesti si unde ai locuit pana acum? Te rugam sa le notezi cu virgula, fara spatii." << std::endl;
-
-    valuableString = Utils::handleInput(valuableString);
-    std::vector<std::string> livingPlaces = Utils::splitString(valuableString, ',');
-    profile.setLivingPlaces(livingPlaces);
-
-    User::handleProfile(profile);
-
-    std::cout << "Ai configurat profilul cu succes!" << std::endl;
-    return profile;
+    return UserFactory::profile(user);
 }
 
 void Profile::showInformationsAboutUser() {

@@ -16,7 +16,7 @@ class Admin;
 
 // Implementarea pentru a face split unui string.
 std::vector<std::string> Utils::splitString(std::string &text, char delimiter) {
-    std::vector<std::string> words{};
+    std::vector<std::string> words;
 
     std::istringstream sstream(text);
     std::string word;

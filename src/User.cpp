@@ -7,6 +7,7 @@
 #include "../includes/Utils.h"
 #include "../includes/Application.h"
 #include "../includes/WrongPasswordException.h"
+#include "../includes/UserFactory.h"
 
 class User;
 
@@ -309,7 +310,7 @@ void User::registerUser() {
         std::cout
                 << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine."
                 << std::endl;
-        user = configureUser(user);
+        user = configureUser();
         std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra"
                   << std::endl;
         std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false."
@@ -376,25 +377,8 @@ void User::loginUser() {
 }
 
 // Implementarea pentru configurarea User-ului
-const User &User::configureUser(User &user) {
-    std::string text;
-    std::cout << "Facem acest lucru deoarece trebuie sa respectam legislatia in vigoare." << std::endl;
-    std::cout << "Astfel, spune-ne care este prenumele tau:" << std::endl;
-    text = Utils::handleInput(text);
-    user.setFirstname(text);
-    std::cout << "Ne-ar interesa si care este numele tau de familie:" << std::endl;
-    text = Utils::handleInput(text);
-    user.setLastname(text);
-    std::cout << "Spune-ne te rog si CNP-ul tau:" << std::endl;
-    std::cin >> text;
-    user.setCNP(std::stol(text));
-    // TODO: verify age
-    std::cout << "Ultimul pas este despre sexul tau, te rog sa ni-l comunici:" << std::endl;
-    std::cin >> text;
-    text = std::toupper(text[0]);
-    user.setSex(text);
-    handleRegister(user);
-    return user;
+User User::configureUser() {
+    return UserFactory::user();
 }
 
 void User::showInformationsAboutUser() {
