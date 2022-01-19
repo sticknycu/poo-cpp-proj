@@ -11,14 +11,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="Virtual">
+    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/FileNotFoundException.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileNotFoundException.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/User.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1642244505075" duration="4415000" />
       <workItem from="1642426105535" duration="6919000" />
       <workItem from="1642585755976" duration="2849000" />
-      <workItem from="1642601061569" duration="3538000" />
+      <workItem from="1642601061569" duration="3902000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -266,7 +264,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642602392488</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Virtual functions">
+      <created>1642606714937</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1642606714937</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Include &lt;algorithm&gt;">
+      <created>1642606886739</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1642606886739</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +313,9 @@
     <MESSAGE value="Fix memory leaks using new std::string, instead of std::string('value')" />
     <MESSAGE value="Builder Design Pattern for Groups, Posts, Profile." />
     <MESSAGE value="Rezolva recursivitatea infinita folosind while() {}" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rezolva recursivitatea infinita folosind while() {}" />
+    <MESSAGE value="Virtual functions" />
+    <MESSAGE value="Include &lt;algorithm&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Include &lt;algorithm&gt;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

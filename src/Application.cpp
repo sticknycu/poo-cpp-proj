@@ -5,6 +5,9 @@
 #include "../includes/Application.h"
 #include "../includes/Utils.h"
 #include "../includes/Admin.h"
+#include "../includes/FileNotFoundException.h"
+
+class FileNotFoundException;
 
 class Utils;
 
@@ -25,12 +28,20 @@ void Application::navigatePlatform(User &user) {
     //inputString = Utils::handleInput(inputString);
     while (std::cin >> inputString) {
         if (inputString == "/createPost") {
-            Post::handlePost(user);
+            try {
+                Post::handlePost(user);
+            } catch (FileNotFoundException &e) {
+                e.what();
+            }
         } else if (inputString == "/enterGroup") {
             std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii."
                       << std::endl;
         } else if (inputString == "/createRule") {
-            Rule::createRule(user);
+            try {
+                Rule::createRule(user);
+            } catch (FileNotFoundException &e) {
+                e.what();
+            }
         } else if (inputString == "/accessEvent") {
             std::cout << "Din pacate aceasta functionalitate inca nu este implementata. Te rugam sa reviii."
                       << std::endl;
