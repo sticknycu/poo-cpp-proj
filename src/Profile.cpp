@@ -5,6 +5,7 @@
 #include <fstream>
 #include "../includes/Utils.h"
 #include <string>
+#include <algorithm>
 
 class Utils;
 
