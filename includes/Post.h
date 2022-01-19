@@ -71,19 +71,33 @@ public:
 
 class PostBuilder {
 private:
-
     Post post;
 
 public:
     PostBuilder() = default;
 
-    PostBuilder& id(long id) {
+    PostBuilder &id(long id) {
         post.id = id;
         return *this;
     }
 
-    PostBuilder& description(std::string description) {
-        post.description = std::move(description);
+    PostBuilder &description(std::string &description_) {
+        post.description = description_;
+        return *this;
+    }
+
+    PostBuilder &reactions(std::vector<std::shared_ptr<ReactionEnum>> &reactions_) {
+        post.reactions = reactions_;
+        return *this;
+    }
+
+    PostBuilder &comments(std::vector<std::shared_ptr<Comment>> &comments_) {
+        post.comments = comments_;
+        return *this;
+    }
+
+    PostBuilder &createdBy(std::shared_ptr<User> &user_) {
+        post.createdBy = user_;
         return *this;
     }
 

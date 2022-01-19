@@ -11,11 +11,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="Fix memory leaks using new std::string, instead of std::string('value')">
+    <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/Group.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Group.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/Post.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Post.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/Profile.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Profile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +85,6 @@
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +107,8 @@
       <workItem from="1642010293117" duration="278000" />
       <workItem from="1642066356971" duration="22000" />
       <workItem from="1642244505075" duration="4415000" />
-      <workItem from="1642426105535" duration="5658000" />
+      <workItem from="1642426105535" duration="6919000" />
+      <workItem from="1642585755976" duration="1345000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -240,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642434898619</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix memory leaks using new std::string, instead of std::string('value')">
+      <created>1642435912267</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1642435912267</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,9 +275,21 @@
     <MESSAGE value="Fix errors" />
     <MESSAGE value="Fix warnings" />
     <MESSAGE value="Fix windows workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix windows workflow" />
+    <MESSAGE value="Fix memory leaks using new std::string, instead of std::string('value')" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix memory leaks using new std::string, instead of std::string('value')" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/includes/Profile.h</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

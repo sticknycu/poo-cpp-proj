@@ -18,6 +18,8 @@ class Group;
 class User;
 
 class Profile {
+    friend class ProfileBuilder;
+
 private:
     long profileId{};
     std::vector<std::shared_ptr<Post>> posts;
@@ -89,6 +91,49 @@ public:
 
     // Configurarea profilului.
     static Profile configureProfile(User &user);
+};
+
+class ProfileBuilder {
+
+private:
+    Profile profile;
+
+public:
+    ProfileBuilder() = default;
+
+    ProfileBuilder &profileId(long &profileId_) {
+        profile.profileId = profileId_;
+        return *this;
+    }
+
+    ProfileBuilder &posts(std::vector<std::shared_ptr<Post>> &posts_) {
+        profile.posts = posts_;
+        return *this;
+    }
+
+    ProfileBuilder &groups(std::vector<std::shared_ptr<Group>> &groups_) {
+        profile.groups = groups_;
+        return *this;
+    }
+
+    ProfileBuilder &followers(std::vector<std::shared_ptr<User>> &followers_) {
+        profile.followers = followers_;
+        return *this;
+    }
+
+    ProfileBuilder &studies(std::vector<std::string> &studies_) {
+        profile.studies = studies_;
+        return *this;
+    }
+
+    ProfileBuilder &livingPlaces(std::vector<std::string> &livingPlaces_) {
+        profile.livingPlaces = livingPlaces_;
+        return *this;
+    }
+
+    Profile build() {
+        return profile;
+    }
 };
 
 #endif //UTILITYIT_PROFILE_H

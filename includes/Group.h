@@ -17,6 +17,8 @@ class User;
 
 class Group {
 
+    friend class GroupBuilder;
+
 private:
     std::string name;
     std::string description;
@@ -51,6 +53,45 @@ public:
     static void handleGroup(const User &user);
 
 
+};
+
+class GroupBuilder {
+private:
+    Group group;
+public:
+    GroupBuilder &name(std::string &name_) {
+        group.name = name_;
+        return *this;
+    }
+
+    GroupBuilder &description(std::string &description_) {
+        group.description = description_;
+        return *this;
+    }
+
+    GroupBuilder &rules(std::vector<Rule> &rules_) {
+        group.rules = rules_;
+        return *this;
+    }
+
+    GroupBuilder &posts(std::vector<Post> &posts_) {
+        group.posts = posts_;
+        return *this;
+    }
+
+    GroupBuilder &peopleJoined(std::vector<User> &peopleJoined_) {
+        group.peopleJoined = peopleJoined_;
+        return *this;
+    }
+
+    GroupBuilder &peopleRequestedToJoin(std::vector<User> &peopleRequestedToJoin_) {
+        group.peopleRequestedToJoin = peopleRequestedToJoin_;
+        return *this;
+    }
+
+    Group build() {
+        return group;
+    }
 };
 
 #endif //UTILITYIT_GROUP_H
