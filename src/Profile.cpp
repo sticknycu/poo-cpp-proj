@@ -3,7 +3,6 @@
 //
 
 #include <fstream>
-#include "../includes/Profile.h"
 #include "../includes/Utils.h"
 #include <string>
 
@@ -187,4 +186,24 @@ Profile Profile::configureProfile(User &user) {
 
     std::cout << "Ai configurat profilul cu succes!" << std::endl;
     return profile;
+}
+
+void Profile::showInformationsAboutUser() {
+    User::showInformationsAboutUser();
+    std::cout << "Profile informations: " << std::endl;
+    std::for_each(this->getFollowers().begin(), this->getFollowers().end(), [](const std::shared_ptr<User> &user) {
+        std::cout << user.get();
+    });
+    std::for_each(this->getGroups().begin(), this->getGroups().end(), [](const std::shared_ptr<Group> &group) {
+        std::cout << group.get();
+    });
+    std::for_each(this->getLivingPlaces().begin(), this->getLivingPlaces().end(), [](const std::string &livingPlace) {
+        std::cout << livingPlace;
+    });
+    std::for_each(this->getPosts().begin(), this->getPosts().end(), [](const std::shared_ptr<Post> &post) {
+        std::cout << post;
+    });
+    std::for_each(this->getStudies().begin(), this->getStudies().end(), [](const std::string &study) {
+        std::cout << study;
+    });
 }

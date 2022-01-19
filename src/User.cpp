@@ -10,6 +10,10 @@
 
 class User;
 
+class Group;
+
+class Profile;
+
 class Utils;
 
 class Application;
@@ -391,4 +395,13 @@ const User &User::configureUser(User &user) {
     user.setSex(text);
     handleRegister(user);
     return user;
+}
+
+void User::showInformationsAboutUser() {
+    std::cout << "User informations: " << std::endl;
+    std::cout << this->getUsername() << std::endl;
+    std::cout << this->getFirstname() << std::endl;
+    std::cout << this->getLastname() << std::endl;
+    std::cout << this->getSex() << std::endl;
+    std::cout << this->getCNP() << std::endl;
 }

@@ -19,4 +19,4 @@ add_executable(UtilityIT
         src/BaseException.cpp
         src/WrongPasswordException.cpp
         src/Application.cpp
-        Meniu.cpp Meniu.h)
+        Meniu.cpp)
