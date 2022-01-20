@@ -13,6 +13,8 @@ class WrongPasswordException : virtual public BaseException {
 
 public:
 
+    WrongPasswordException() = default;
+
     // constructor de initializare
     explicit WrongPasswordException(const std::string &customMessage);
 

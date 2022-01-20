@@ -12,6 +12,9 @@ class BaseException;
 class FileNotFoundException : virtual public BaseException {
 
 public:
+
+    FileNotFoundException() = default;
+
     // constructor de initializare
     explicit FileNotFoundException(const std::string &customMessage);
 
