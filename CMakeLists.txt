@@ -19,4 +19,8 @@ add_executable(UtilityIT
         src/BaseException.cpp
         src/WrongPasswordException.cpp
         src/Application.cpp
-        Meniu.cpp src/FileNotFoundException.cpp src/UserFactory.cpp dependencies/src/bcrypt.cpp dependencies/src/blowfish.cpp)
+        Meniu.cpp
+        src/FileNotFoundException.cpp
+        src/UserFactory.cpp
+        dependencies/src/bcrypt.cpp
+        dependencies/src/blowfish.cpp)
