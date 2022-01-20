@@ -25,9 +25,9 @@ public:
     // destructor default
     ~BaseException() override = default;
 
-    virtual std::string getCustomMessage();
+    virtual std::string getCustomMessage() = 0;
 
-    virtual void setCustomMessage(const std::string &customMessage_);
+    virtual void setCustomMessage(const std::string &customMessage_) = 0;
 };
 
 

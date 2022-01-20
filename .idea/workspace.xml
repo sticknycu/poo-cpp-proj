@@ -12,8 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/dependencies/src/bcrypt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/src/bcrypt.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies/src/openbsd.h" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/src/openbsd.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/BaseException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/BaseException.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/FileNotFoundException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/FileNotFoundException.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/WrongPasswordException.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/WrongPasswordException.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +83,14 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UtilityIT" type="CLionNativeAppRunConfigurationType" nameIsGenerated="true" PROGRAM_PARAMS="-v" REDIRECT_INPUT="false" ELEVATE="true" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="UtilityIT" TARGET_NAME="UtilityIT" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="UtilityIT" RUN_TARGET_NAME="UtilityIT">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -115,7 +117,8 @@
       <workItem from="1642244505075" duration="4415000" />
       <workItem from="1642426105535" duration="6919000" />
       <workItem from="1642585755976" duration="2849000" />
-      <workItem from="1642601061569" duration="10890000" />
+      <workItem from="1642601061569" duration="11590000" />
+      <workItem from="1642701954534" duration="1757000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -313,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642617935676</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="?">
+      <created>1642618059877</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1642618059877</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
