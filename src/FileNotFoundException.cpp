@@ -5,7 +5,8 @@
 #include "../includes/FileNotFoundException.h"
 #include <iostream>
 
-FileNotFoundException::FileNotFoundException(const std::string &customMessage) : BaseException(
+FileNotFoundException::FileNotFoundException(const std::string &customMessage)
+        : runtime_error(customMessage), BaseException(
         getCustomMessage() + " " + customMessage) {
     std::cout << "[DEBUG] Apelare constructor FileNotFoundException.h" << std::endl;
 }
