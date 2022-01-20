@@ -9,7 +9,7 @@
 
 class BaseException;
 
-class FileNotFoundException : public virtual BaseException {
+class FileNotFoundException : virtual public BaseException {
 
 public:
     // constructor de initializare

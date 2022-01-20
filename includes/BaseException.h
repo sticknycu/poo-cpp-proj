@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <string>
 
-class BaseException : public std::runtime_error {
+class BaseException : virtual public std::runtime_error {
 
 private:
 
@@ -17,7 +17,7 @@ private:
 public:
 
     // constructor default
-    BaseException() =default;
+    BaseException() = default;
 
     // constructor de initializare
     explicit BaseException(const std::string &customMessage);

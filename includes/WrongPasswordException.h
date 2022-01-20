@@ -9,7 +9,7 @@
 
 class BaseException;
 
-class WrongPasswordException : public virtual BaseException {
+class WrongPasswordException : virtual public BaseException {
 
 public:
 
