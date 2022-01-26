@@ -18,7 +18,7 @@ void Application::navigatePlatform(User &user) {
     std::cout << "Poti intra intr-un grup folosind /enterGroup" << std::endl;
     std::cout << "Poti adauga un comentariu unei postari folosind /addComment" << std::endl;
     std::cout << "Poti accesa un eveniment folosind /accessEvent" << std::endl;
-    std::cout << "Poti sa iti modifici informatiile despre profil folosind /profile" << std::endl;
+    std::cout << "Poti sa iti modifici informatiile despre profil folosind /profileObject" << std::endl;
     std::cout << "Daca doresti sa iesi de pe platforma, foloseste /exit" << std::endl;
     std::cout << "Afla cine sunt administratorii platformei folosind /admins" << std::endl;
     std::cout << "poti afla informatiile pe care le avem despre tine folosind /myInfo" << std::endl;
@@ -51,8 +51,11 @@ void Application::navigatePlatform(User &user) {
             std::cout << "Informatiile pe care le avem despre tine sunt: " << std::endl;
             User userManage = Profile::getUserInformationFromDatabase(user);
             userManage.showInformationsAboutUser();
-        } else if (inputString == "/profile") {
-            Profile::configureProfile(user);
+        } else if (inputString == "/profileObject") {
+            ProfileBuilder profileBuilder;
+            profileBuilder.profile();
+            Profile newProfile = profileBuilder.build();
+            User::handleProfile(newProfile);
         } else if (inputString == "/exit") {
             std::cout << "Iti multumim ca ai folosit platforma noastra!" << std::endl;
             exit(0);

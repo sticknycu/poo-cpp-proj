@@ -12,8 +12,6 @@ private:
     Meniu() = default;
 
     ~Meniu() = default;
-
-    static Meniu *instance;
 public:
 
     Meniu(const Meniu &copie) = delete;

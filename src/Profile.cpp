@@ -4,16 +4,19 @@
 
 #include <fstream>
 #include "../includes/Utils.h"
+#include "../includes/User.h"
 #include <string>
 #include <algorithm>
-#include "../includes/UserFactory.h"
 
 class Utils;
+
+class User;
 
 class UserFactory;
 
 // Implementarea constructorului de initializare
-Profile::Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts, const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
+Profile::Profile(const long &profileId, const std::vector<std::shared_ptr<Post>> &posts,
+                 const std::vector<std::shared_ptr<Group>> &groups, const std::vector<std::shared_ptr<User>> &followers,
                  const std::vector<std::string> &studies, const std::vector<std::string> &livingPlaces) {
     std::cout << "[DEBUG] Apelare constructor Profile.h" << std::endl;
     this->profileId = profileId;
@@ -143,8 +146,8 @@ void Profile::manageExistenceProfileData() {
 
     bool exist = false;
     while (std::getline(oldFile, data)) {
-        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
-        if (wordsExploded.at(0) == std::to_string(this->getId())) {
+        std::vector<std::string> fields = Utils::splitString(data, '|');
+        if (fields.at(0) == std::to_string(this->getId())) {
             exist = true;
             break;
         }
@@ -155,8 +158,8 @@ void Profile::manageExistenceProfileData() {
     if (exist) {
         newFile.open("profilesNew.txt", std::ios::out | std::ios::app);
         while (std::getline(oldFile, data)) {
-            std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
-            if (wordsExploded.at(0) != std::to_string(this->getId())) {
+            std::vector<std::string> fields = Utils::splitString(data, '|');
+            if (fields.at(0) != std::to_string(this->getId())) {
                 newFile << data << std::endl;
             }
         }
@@ -166,18 +169,14 @@ void Profile::manageExistenceProfileData() {
     rename("profilesNew.txt", "profiles.txt");
 }
 
-Profile Profile::configureProfile(User &user) {
-    return UserFactory::profile(user);
-}
-
 void Profile::showInformationsAboutUser() {
     User::showInformationsAboutUser();
     std::cout << "Profile informations: " << std::endl;
     std::for_each(this->getFollowers().begin(), this->getFollowers().end(), [](const std::shared_ptr<User> &user) {
-        std::cout << user.get();
+        std::cout << *user;
     });
     std::for_each(this->getGroups().begin(), this->getGroups().end(), [](const std::shared_ptr<Group> &group) {
-        std::cout << group.get();
+        std::cout << *group;
     });
     std::for_each(this->getLivingPlaces().begin(), this->getLivingPlaces().end(), [](const std::string &livingPlace) {
         std::cout << livingPlace;

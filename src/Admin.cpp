@@ -13,41 +13,41 @@ bool Admin<T>::isAdmin(const T &identificator_, const std::string &type) const {
     file.open("accounts.txt");
 
     while (std::getline(file, data)) {
-        std::vector<std::string> wordsExploded = Utils::splitString(data, '|');
+        std::vector<std::string> fields = Utils::splitString(data, '|');
 
         if (std::equal(type.begin(), type.end(), "username")) {
             User user;
-            if (identificator_ == wordsExploded.at(0)) {
+            if (identificator_ == fields.at(0)) {
                 user.setUsername(identificator_);
                 User::getUserInformationFromDatabase(user);
-                if (wordsExploded.at(6) == "true") {
+                if (fields.at(6) == "true") {
                     return true;
                 }
             }
         } else if (std::equal(type.begin(), type.end(), "lastname")) {
             User user;
-            if (identificator_ == wordsExploded.at(3)) {
+            if (identificator_ == fields.at(3)) {
                 user.setLastname(identificator_);
                 User::getUserInformationFromDatabase(user);
-                if (wordsExploded.at(6) == "true") {
+                if (fields.at(6) == "true") {
                     return true;
                 }
             }
         } else if (std::equal(type.begin(), type.end(), "firstname")) {
             User user;
-            if (identificator_ == wordsExploded.at(4)) {
+            if (identificator_ == fields.at(4)) {
                 user.setFirstname(identificator_);
                 User::getUserInformationFromDatabase(user);
-                if (wordsExploded.at(6) == "true") {
+                if (fields.at(6) == "true") {
                     return true;
                 }
             }
         } else if (std::equal(type.begin(), type.end(), "cnp")) {
             User user;
-            if (identificator_ == wordsExploded.at(4)) {
+            if (identificator_ == fields.at(4)) {
                 user.setCNP(identificator_);
                 User::getUserInformationFromDatabase(user);
-                if (wordsExploded.at(6) == "true") {
+                if (fields.at(6) == "true") {
                     return true;
                 }
             }

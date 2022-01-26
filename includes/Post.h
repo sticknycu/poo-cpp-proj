@@ -56,13 +56,13 @@ public:
     // Handle post when is going to be created
     static void handlePost(User &user);
 
-    // Handle post of user. Function for save post information of user in file
+    // Handle post of userObject. Function for save post information of userObject in file
     static void createPost(User &user, const std::string &description);
 
-    // Handle post of user. Function for delete post information of user in file
+    // Handle post of userObject. Function for delete post information of userObject in file
     static void deletePost(const long &id);
 
-    // Handle posts of user. Show posts of a user
+    // Handle posts of userObject. Show posts of a userObject
     static void showPostsUser(User &user);
 
     // Handle posts. Show all posts

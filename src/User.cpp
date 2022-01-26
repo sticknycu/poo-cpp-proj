@@ -7,7 +7,6 @@
 #include "../includes/Utils.h"
 #include "../includes/Application.h"
 #include "../includes/WrongPasswordException.h"
-#include "../includes/UserFactory.h"
 #include "../dependencies/include/bcrypt.h"
 #include "../Meniu.h"
 
@@ -22,8 +21,6 @@ class Profile;
 class Utils;
 
 class Application;
-
-class WrongPasswordException;
 
 // Implementarea constructorului de initializare
 User::User(const std::string &username, const std::string &password, const std::string &firstname,
@@ -142,7 +139,7 @@ void User::setSex(std::string &text) {
     this->sex = text;
 }
 
-// Implementarea de la userAvailability (verific daca user-ul exista)
+// Implementarea de la userAvailability (verific daca userObject-ul exista)
 bool User::checkUserAvailability(User &user) {
     std::ifstream file;
     std::string data;
@@ -303,7 +300,7 @@ void User::registerUser() {
     user.setUsername(username);
     bool availabilityUser = User::checkUserAvailability(user);
     if (availabilityUser) {
-        std::cout << "Se pare ca ai cont, deci nu putem sa cream alt cont cu acelasi nume de utilizator." << std::endl;
+        std::cout << "Nume indisponibil." << std::endl;
         std::cout << "Te rugam sa revii cu alt nume de utilizator" << std::endl;
     } else {
         std::string password;
@@ -315,15 +312,28 @@ void User::registerUser() {
         std::cout
                 << "Acum ca totul este in regula, va trebui sa facem niste setari. Te rog spune-ne mai multe despre tine."
                 << std::endl;
-        user.configureUser();
+        UserBuilder userBuilder;
+        userBuilder = userBuilder.user();
+        User newUser = userBuilder.build();
+        newUser.setUsername(username);
+        newUser.setPassword(password);
         std::cout << "Felicitari, avem toate informatiile necesare pentru a putea naviga pe platforma noastra"
                   << std::endl;
         std::cout << "Doresti sa ai si un profil sau sa navighezi pe platforma fara profil? Raspunde cu true sau false."
                   << std::endl;
+        std::string val;
+        std::cin >> val;
         bool booleanValue;
-        std::cin >> booleanValue;
+        if (val == "true") {
+            booleanValue = true;
+        } else if (val == "false") {
+            booleanValue = false;
+        } else {
+            booleanValue = true;
+        }
         if (booleanValue) {
-            Profile::configureProfile(user);
+            ProfileBuilder profileBuilder;
+            profileBuilder.profile();
         } else {
             std::cout << "Am inteles, totul este in regula, poti naviga si fara profil." << std::endl;
             Application::navigatePlatform(user);
@@ -365,7 +375,7 @@ void User::loginUser() {
     } else {
         std::string password;
         std::cout
-                << "Se pare ca ai introdus un nume de utilizator ce exista in platforma noastra. Te rugam sa introduci parola:"
+                << "Te rugam sa introduci parola"
                 << std::endl;
         std::cin >> password;
 
@@ -375,16 +385,11 @@ void User::loginUser() {
                       << std::endl;
             Application::navigatePlatform(authedUser);
         } else {
-            std::string wrongPasswordMessage = "Din pacate, parola nu este buna. Te rugam sa revii.";
+            std::string wrongPasswordMessage = "Combinatia user-parola nu este buna. Te rugam sa revii.";
             throw WrongPasswordException(wrongPasswordMessage);
         }
 
     }
-}
-
-// Implementarea pentru configurarea User-ului
-User User::configureUser() {
-    return UserFactory::user(*this);
 }
 
 void User::showInformationsAboutUser() {
