@@ -12,7 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da484f41-5860-45ba-a9b1-d7fa1e175966" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/Utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/Utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Meniu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Meniu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +83,6 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UtilityIT" type="CLionNativeAppRunConfigurationType" nameIsGenerated="true" PROGRAM_PARAMS="-v" REDIRECT_INPUT="false" ELEVATE="true" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="UtilityIT" TARGET_NAME="UtilityIT" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="UtilityIT" RUN_TARGET_NAME="UtilityIT">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
@@ -117,7 +115,9 @@
       <workItem from="1642601061569" duration="11590000" />
       <workItem from="1642701954534" duration="3794000" />
       <workItem from="1643191787379" duration="20000" />
-      <workItem from="1643191820729" duration="1796000" />
+      <workItem from="1643191820729" duration="2008000" />
+      <workItem from="1643376668248" duration="27000" />
+      <workItem from="1643980872691" duration="669000" />
     </task>
     <task id="LOCAL-00001" summary="Add WrongPasswordException">
       <created>1639943101716</created>
@@ -371,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643193455032</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="fixes part 1 (duplicate x2)">
+      <created>1643193629827</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1643193629827</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +397,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Make Utils as singleton." />
     <MESSAGE value="Design patterns and more." />
     <MESSAGE value="Fix some of the issues." />
     <MESSAGE value="Add #include &lt;vector&gt; and windows compiler." />
@@ -415,7 +421,8 @@
     <MESSAGE value="?" />
     <MESSAGE value="fixes part 1" />
     <MESSAGE value="fixes part 1 (duplicate)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes part 1 (duplicate)" />
+    <MESSAGE value="fixes part 1 (duplicate x2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes part 1 (duplicate x2)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -440,32 +447,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>381</line>
+          <line>370</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>382</line>
+          <line>371</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>380</line>
+          <line>369</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>379</line>
+          <line>368</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>383</line>
+          <line>372</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/User.cpp</url>
-          <line>385</line>
+          <line>374</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

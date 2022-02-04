@@ -358,19 +358,8 @@ void User::loginUser() {
                       << std::endl;
             registerUser();
         } else {
-            std::cout
-                    << "Din pacate nu poti naviga pe platforma daca nu ai un cont. Vrei sa introduci alt nume de utilizator?"
-                    << std::endl;
-            std::cin >> booleanValue;
-            if (booleanValue) {
-                std::cout << "Te voi transmite la pasul de login in cateva momente.." << std::endl;
-                loginUser();
-            } else {
-                std::cout
-                        << "Din pacate, pentru a putea folosi platforma ai nevoie de un nume de utilizator. Te rugam sa revii cu unul."
-                        << std::endl;
-                exit(0);
-            }
+            throw std::runtime_error("Din pacate nu poti naviga pe platforma daca nu ai un cont.");
+            exit(1);
         }
     } else {
         std::string password;

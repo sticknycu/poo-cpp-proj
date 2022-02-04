@@ -11,12 +11,13 @@ class Meniu {
 private:
     Meniu() = default;
 
-    ~Meniu() = default;
 public:
 
     Meniu(const Meniu &copie) = delete;
 
-    Meniu& operator=(const Meniu &copie) = delete;
+    ~Meniu() = default;
+
+    Meniu &operator=(const Meniu &copie) = delete;
 
     static Meniu &getInstance();
 

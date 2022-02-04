@@ -29,6 +29,7 @@ jobs:
       - name: coverage
         run: |
           gcov src/*.cpp
+          gcov *.cpp
           mkdir cov/
           gcovr -r . --html --html-details -o cov/coverage.html --print-summary
           mv -v cov/  public/
