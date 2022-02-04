@@ -164,11 +164,11 @@ class TopUser : virtual public User {
 private:
     int countNumeric{};
 public:
-    explicit TopUser() = default;
+    TopUser() = default;
 
     TopUser(const User &copie, int countNumeric);
 
-    explicit TopUser(int countNumeric_);
+    TopUser(int countNumeric_);
 
     ~TopUser() override;
 

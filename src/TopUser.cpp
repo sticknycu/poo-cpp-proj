@@ -28,3 +28,7 @@ TopUser::TopUser(int countNumeric_) {
 }
 
 TopUser::TopUser(const User &copie, int countNumeric) : User(copie), countNumeric(countNumeric) {}
+
+TopUser::~TopUser() {
+
+}
