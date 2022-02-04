@@ -17,7 +17,7 @@ jobs:
         run:
           sudo apt update && sudo apt install -y valgrind cppcheck g++-9 gcovr
       - name: make
-        run: g++ main.cpp Meniu.cpp dependencies/src/bcrypt.cpp dependencies/src/blowfish.cpp src/FileNotFoundException.cpp src/Application.cpp src/BaseException.cpp src/Comment.cpp src/Event.cpp src/Group.cpp src/Post.cpp src/Profile.cpp src/Reaction.cpp src/ReactionEnum.cpp src/Rule.cpp src/User.cpp src/Utils.cpp src/WrongPasswordException.cpp -o main -std=c++17 -Wall -Wextra -pedantic -Weffc++ -O3 -flto
+        run: g++ main.cpp Meniu.cpp dependencies/src/bcrypt.cpp dependencies/src/blowfish.cpp src/TopUser.cpp src/FileNotFoundException.cpp src/Application.cpp src/BaseException.cpp src/Comment.cpp src/Event.cpp src/Group.cpp src/Post.cpp src/Profile.cpp src/Reaction.cpp src/ReactionEnum.cpp src/Rule.cpp src/User.cpp src/Utils.cpp src/WrongPasswordException.cpp -o main -std=c++17 -Wall -Wextra -pedantic -Weffc++ -O3 -flto
           --coverage -fprofile-arcs -ftest-coverage -g -O0 -lm
       - name: cppcheck
         run:

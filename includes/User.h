@@ -158,6 +158,39 @@ public:
 };
 
 
+class TopUser : virtual public User {
+    friend class TopUserBuilder;
+
+private:
+    int countNumeric{};
+public:
+    explicit TopUser() = default;
+
+    TopUser(const User &copie, int countNumeric);
+
+    explicit TopUser(int countNumeric_);
+
+    ~TopUser() override;
+
+    int getCountNumeric(Profile &profile) const;
+
+    void setCountNumeric(int countNumeric_);
+};
+
+class TopUserBuilder {
+private:
+    TopUser topUser;
+public:
+    TopUserBuilder &countNumeric(int &countNumeric_) {
+        topUser.countNumberic = countNumeric_;
+        return *this;
+    }
+
+    TopUser build() {
+        return topUser;
+    }
+};
+
 class Profile : virtual public User {
     friend class ProfileBuilder;
 

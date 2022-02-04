@@ -359,7 +359,6 @@ void User::loginUser() {
             registerUser();
         } else {
             throw std::runtime_error("Din pacate nu poti naviga pe platforma daca nu ai un cont.");
-            exit(1);
         }
     } else {
         std::string password;

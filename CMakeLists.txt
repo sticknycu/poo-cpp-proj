@@ -22,4 +22,4 @@ add_executable(UtilityIT
         Meniu.cpp
         src/FileNotFoundException.cpp
         dependencies/src/bcrypt.cpp
-        dependencies/src/blowfish.cpp)
+        dependencies/src/blowfish.cpp src/TopUser.cpp)
