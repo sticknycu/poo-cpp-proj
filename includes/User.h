@@ -182,7 +182,7 @@ private:
     TopUser topUser;
 public:
     TopUserBuilder &countNumeric(int &countNumeric_) {
-        topUser.countNumberic = countNumeric_;
+        topUser.countNumeric = countNumeric_;
         return *this;
     }
 
