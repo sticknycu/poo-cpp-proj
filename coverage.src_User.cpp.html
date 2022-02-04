@@ -275,7 +275,7 @@
           </tr>
           <tr>
             <td class="headerName">Date:</td>
-            <td class="headerValue">2022-02-04 13:36:44</td>
+            <td class="headerValue">2022-02-04 14:41:56</td>
             <td></td>
             <td class="headerName">Branches:</td>
             <td class="headerTableEntry">0</td>
@@ -2830,207 +2830,200 @@
     <td align="right" class="lineno"><pre>362</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>            exit(1);</pre></td>
+    <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
     <td align="right" class="lineno"><pre>363</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
-    <td align="left" class="src "><pre>        }</pre></td>
-    </tr>
-
-    <tr>
-    <td align="right" class="lineno"><pre>364</pre></td>
-    <td align="right" class="linebranch"></td>
-    <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    } else {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>365</pre></td>
+    <td align="right" class="lineno"><pre>364</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>        std::string password;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>366</pre></td>
+    <td align="right" class="lineno"><pre>365</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        std::cout</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>367</pre></td>
+    <td align="right" class="lineno"><pre>366</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>                &lt;&lt; "Te rugam sa introduci parola"</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>368</pre></td>
+    <td align="right" class="lineno"><pre>367</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>                &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>369</pre></td>
+    <td align="right" class="lineno"><pre>368</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>        std::cin >> password;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>370</pre></td>
+    <td align="right" class="lineno"><pre>369</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>371</pre></td>
+    <td align="right" class="lineno"><pre>370</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>        User authedUser = User::getUserInformationFromDatabase(user);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>372</pre></td>
+    <td align="right" class="lineno"><pre>371</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>        if (bcrypt::validatePassword(password, authedUser.getPassword())) {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>373</pre></td>
+    <td align="right" class="lineno"><pre>372</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>            std::cout &lt;&lt; "Ai fost logat cu succes pe platforma. Spune-ne ce doresti sa faci mai departe."</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>374</pre></td>
+    <td align="right" class="lineno"><pre>373</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>                      &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>375</pre></td>
+    <td align="right" class="lineno"><pre>374</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>            Application::navigatePlatform(authedUser);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>376</pre></td>
+    <td align="right" class="lineno"><pre>375</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        } else {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>377</pre></td>
+    <td align="right" class="lineno"><pre>376</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>            std::string wrongPasswordMessage = "Combinatia user-parola nu este buna. Te rugam sa revii.";</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>378</pre></td>
+    <td align="right" class="lineno"><pre>377</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>            throw WrongPasswordException(wrongPasswordMessage);</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>379</pre></td>
+    <td align="right" class="lineno"><pre>378</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>        }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>380</pre></td>
+    <td align="right" class="lineno"><pre>379</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>381</pre></td>
+    <td align="right" class="lineno"><pre>380</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>    }</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>382</pre></td>
+    <td align="right" class="lineno"><pre>381</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>383</pre></td>
+    <td align="right" class="lineno"><pre>382</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre></pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>384</pre></td>
+    <td align="right" class="lineno"><pre>383</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>void User::showInformationsAboutUser() {</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>385</pre></td>
+    <td align="right" class="lineno"><pre>384</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; "User informations: " &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>386</pre></td>
+    <td align="right" class="lineno"><pre>385</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; this->getUsername() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>387</pre></td>
+    <td align="right" class="lineno"><pre>386</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; this->getFirstname() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>388</pre></td>
+    <td align="right" class="lineno"><pre>387</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; this->getLastname() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>389</pre></td>
+    <td align="right" class="lineno"><pre>388</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; this->getSex() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>390</pre></td>
+    <td align="right" class="lineno"><pre>389</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount uncoveredLine"><pre></pre></td>
     <td align="left" class="src uncoveredLine"><pre>    std::cout &lt;&lt; this->getCNP() &lt;&lt; std::endl;</pre></td>
     </tr>
 
     <tr>
-    <td align="right" class="lineno"><pre>391</pre></td>
+    <td align="right" class="lineno"><pre>390</pre></td>
     <td align="right" class="linebranch"></td>
     <td align="right" class="linecount "><pre></pre></td>
     <td align="left" class="src "><pre>}</pre></td>
