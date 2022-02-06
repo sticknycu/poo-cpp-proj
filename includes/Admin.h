@@ -7,42 +7,37 @@
 #define UTILITYIT_ADMIN_H
 
 #include <iostream>
+#include "../includes/User.h"
+#include <vector>
+#include <fstream>
+#include <string>
+#include "../includes/Utils.h"
 
 class User;
+class Utils;
 
 template <typename T>
 class Admin {
 
 private:
     T identificator;
-
-    static Admin<T>* instance;
-
-    Admin<T>() = default;
-
 public:
 
-    static Admin<T>* getInstance() {
-        if (instance == nullptr) {
-            instance = new Admin<T>();
-        }
-        return instance;
-    }
+    Admin() = default;
 
-    Admin<T>(const std::shared_ptr<T> &user) = delete;
+    Admin(const Admin &copie) = default;
 
-    Admin<T>(const T &copie) = delete;
+    Admin<T>& operator=(const Admin<T> &copie);
 
-    Admin<T>& operator=(const T &copie) = delete;
+    friend std::ostream &operator<<(std::ostream &os, const Admin<T> &admin);
 
-    friend std::ostream& operator <<(const std::ostream &os, const T &admin) = delete;
+    ~Admin() = default;
 
-    ~Admin<T>() = default;
+    bool isAdmin(const T &identificator_, const std::string& type) const;
 
-    bool isAdmin(const T &identificator, const std::string type) const;
-
-    const std::vector<User>& getAdmins() const;
+    std::vector<User> getAdmins();
 };
 
+#include "../src/Admin.cpp"
 
 #endif //UTILITYIT_ADMIN_H

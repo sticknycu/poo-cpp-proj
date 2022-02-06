@@ -15,8 +15,8 @@ class Event {
 private:
     std::string name;
     std::string description;
-    long timestamp;
-    long duration;
+    long timestamp{};
+    long duration{};
     std::vector<User> peopleInvited;
     std::vector<User> peopleJoined;
     std::vector<User> peopleInterested;
@@ -24,7 +24,7 @@ private:
 public:
 
     // constructor default
-    Event() =default;
+    Event() = default;
 
     // constructor de initializare
     Event(const std::string &name, const std::string &description, const long &timestamp, const long &duration,

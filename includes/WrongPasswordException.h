@@ -7,21 +7,23 @@
 
 #include "BaseException.h"
 
-class WrongPasswordException : public virtual BaseException {
+class BaseException;
+
+class WrongPasswordException : virtual public BaseException {
 
 public:
-    // constructor default
-    WrongPasswordException() =default;
+
+    WrongPasswordException() = default;
 
     // constructor de initializare
-    WrongPasswordException(const std::string &customMessage);
+    explicit WrongPasswordException(const std::string &customMessage);
 
     // destructor
-    ~WrongPasswordException() =default;
+    ~WrongPasswordException() override = default;
 
-    const std::string &getCustomMessage();
+    std::string getCustomMessage() override;
 
-    void setCustomMessage(const std::string &customMessage);
+    void setCustomMessage(const std::string &customMessage) override;
 };
 
 

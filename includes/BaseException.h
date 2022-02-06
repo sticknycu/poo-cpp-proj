@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <string>
 
-class BaseException : public std::runtime_error {
+class BaseException : virtual public std::runtime_error {
 
 private:
 
@@ -17,17 +17,17 @@ private:
 public:
 
     // constructor default
-    BaseException() =default;
+    BaseException() = default;
 
     // constructor de initializare
-    BaseException(const std::string &customMessage);
+    explicit BaseException(const std::string &customMessage);
 
     // destructor default
-    ~BaseException() =default;
+    ~BaseException() override = default;
 
-    virtual const std::string &getCustomMessage();
+    virtual std::string getCustomMessage() = 0;
 
-    virtual void setCustomMessage(const std::string &customMessage);
+    virtual void setCustomMessage(const std::string &customMessage_) = 0;
 };
 
 

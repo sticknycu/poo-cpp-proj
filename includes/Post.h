@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Comment.h"
 #include "ReactionEnum.h"
+#include <utility>
 #include <vector>
 #include <memory>
 
@@ -21,12 +22,12 @@ class Post {
     friend class PostBuilder;
 
 private:
-    long id;
+    long id{};
     std::string description;
     std::vector<std::shared_ptr<ReactionEnum>> reactions;
     std::vector<std::shared_ptr<Comment>> comments;
     std::shared_ptr<User> createdBy;
-    long creationDate;
+    long creationDate{};
 
 public:
     // constructor default
@@ -50,18 +51,18 @@ public:
 
     long &getId();
 
-    void setId(const long &id);
+    void setId(const long &id_);
 
     // Handle post when is going to be created
     static void handlePost(User &user);
 
-    // Handle post of user. Function for save post information of user in file
+    // Handle post of userObject. Function for save post information of userObject in file
     static void createPost(User &user, const std::string &description);
 
-    // Handle post of user. Function for delete post information of user in file
+    // Handle post of userObject. Function for delete post information of userObject in file
     static void deletePost(const long &id);
 
-    // Handle posts of user. Show posts of a user
+    // Handle posts of userObject. Show posts of a userObject
     static void showPostsUser(User &user);
 
     // Handle posts. Show all posts
@@ -70,19 +71,33 @@ public:
 
 class PostBuilder {
 private:
-
     Post post;
 
 public:
     PostBuilder() = default;
 
-    PostBuilder& id(long id) {
+    PostBuilder &id(long id) {
         post.id = id;
         return *this;
     }
 
-    PostBuilder& description(std::string description) {
-        post.description = description;
+    PostBuilder &description(std::string &description_) {
+        post.description = description_;
+        return *this;
+    }
+
+    PostBuilder &reactions(std::vector<std::shared_ptr<ReactionEnum>> &reactions_) {
+        post.reactions = reactions_;
+        return *this;
+    }
+
+    PostBuilder &comments(std::vector<std::shared_ptr<Comment>> &comments_) {
+        post.comments = comments_;
+        return *this;
+    }
+
+    PostBuilder &createdBy(std::shared_ptr<User> &user_) {
+        post.createdBy = user_;
         return *this;
     }
 

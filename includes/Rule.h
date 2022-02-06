@@ -39,11 +39,11 @@ public:
 
     long &getId();
 
-    void setId(const long &id);
+    void setId(const long &id_);
 
     std::string &getText();
 
-    void setText(const std::string &text);
+    void setText(const std::string &text_);
 
     // Handle rule for groups. Function for saving rule information to file.
     static void handleRule(const std::string &text);

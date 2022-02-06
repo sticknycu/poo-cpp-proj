@@ -9,10 +9,11 @@ BaseException::BaseException(const std::string &customMessage) : runtime_error("
     std::cout << "[DEBUG] Apelare constructor BaseException.h" << std::endl;
 }
 
-const std::string &BaseException::getCustomMessage() {
+std::string BaseException::getCustomMessage() {
     return this->customMessage;
 }
 
-void BaseException::setCustomMessage(const std::string &customMessage) {
-    this->customMessage = customMessage;
+void BaseException::setCustomMessage(const std::string &customMessage_) {
+    this->customMessage = customMessage_;
 }
+

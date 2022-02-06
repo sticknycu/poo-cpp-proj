@@ -9,6 +9,7 @@
 #include <iostream>
 #include "ReactionEnum.h"
 #include <memory>
+#include <utility>
 
 enum class ReactionEnum;
 
@@ -17,7 +18,7 @@ class Reaction {
     friend class ReactionBuilder;
 
 private:
-    long id;
+    long id{};
     std::shared_ptr<ReactionEnum> reactionType;
 
 public:
@@ -56,7 +57,7 @@ public:
     }
 
     ReactionBuilder& reactionType(std::shared_ptr<ReactionEnum> reactionType) {
-        reaction.reactionType = reactionType;
+        reaction.reactionType = std::move(reactionType);
         return *this;
     }
 

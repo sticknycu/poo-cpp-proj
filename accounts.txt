@@ -1,11 +1,3 @@
-nghergu17|pooproject|Nicolae Marius|Ghergu|5000000000000|M|true
-nghergu14|pooproject|Nicolae Marius|Ghergu|5000000000001|M|false
-nghergu13|pa55|Marius|Ghergu|5000000000002|M|false
-nghergu12|pa22|Nicolae|Marius|5000000000003|M|false
-nghergu11|pa77|Nicolae|Marius|500000000004|F|false
-nghergu10|pa99|Nicolae|Ghergu|500000000005|F|false
-nghergu20|poo|Nicolae|Ghergu|500000000006|F|false
-ngher1|pa55|nicolae|ghergu|501|F|false
-registeruser|parolaregisteruser|Testare|User|500000000007|F|false
-numeutilizatortest|parolatest|Prenume Test|Nume Test|501110000000|F|false
-utilizatorsmartpointers|smartpointerspass|Smart|Pointer|5011111112222|F|false
+bcrypt1|$2b$10$OyRUMhTcqpDTBeXTstL5NOwln6DsRjGdVCJlC.3mWyj4hdsAsB1k6|bcrypt prenume|bcrypt nume|-1016402148|70
+bcrypt2|$2b$10$mCjatl3c8jtHAkU3N.NXJ.WgjB.QHMOgGCJNqQp6s2i2WF3qC8mUC|bcrypt test|bcrypt test|-2132125469|70
+||Prenume test|Nume test|1693366030|77
